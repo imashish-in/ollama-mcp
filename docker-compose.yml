@@ -1,0 +1,148 @@
+version: '3.8'
+
+services:
+  # MCPHost service
+  mcphost:
+    image: your-username/mcphost:latest
+    container_name: mcphost
+    restart: unless-stopped
+    volumes:
+      - ./config:/home/mcphost/config
+      - ./logs:/home/mcphost/logs
+      - ./data:/home/mcphost/data
+    environment:
+      - ARTIFACTORY_URL=http://artifactory:8081
+      - ARTIFACTORY_USER=admin
+      - ARTIFACTORY_PASS=password
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      - artifactory
+      - ollama
+    networks:
+      - mcphost-network
+    profiles:
+      - full
+      - mcphost-only
+
+  # Artifactory service
+  artifactory:
+    image: releases-docker.jfrog.io/jfrog/artifactory-oss:latest
+    container_name: artifactory
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+      - "8082:8082"
+    environment:
+      - ARTIFACTORY_HOME=/var/opt/jfrog/artifactory
+      - ARTIFACTORY_MASTER_KEY=FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      - ARTIFACTORY_JOIN_KEY=FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+    volumes:
+      - artifactory_data:/var/opt/jfrog/artifactory
+      - artifactory_logs:/var/opt/jfrog/artifactory/logs
+    networks:
+      - mcphost-network
+    profiles:
+      - full
+      - artifactory-only
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/artifactory/api/system/ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  # Ollama service for AI models
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - mcphost-network
+    profiles:
+      - full
+      - ollama-only
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  # Nginx reverse proxy (optional)
+  nginx:
+    image: nginx:alpine
+    container_name: mcphost-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - artifactory
+      - mcphost
+    networks:
+      - mcphost-network
+    profiles:
+      - full
+      - nginx
+
+  # Redis for caching (optional)
+  redis:
+    image: redis:alpine
+    container_name: mcphost-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - mcphost-network
+    profiles:
+      - full
+      - cache
+
+  # PostgreSQL for persistent storage (optional)
+  postgres:
+    image: postgres:15-alpine
+    container_name: mcphost-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: mcphost
+      POSTGRES_USER: mcphost
+      POSTGRES_PASSWORD: mcphost_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - mcphost-network
+    profiles:
+      - full
+      - database
+
+# Named volumes for persistent data
+volumes:
+  artifactory_data:
+    driver: local
+  artifactory_logs:
+    driver: local
+  ollama_data:
+    driver: local
+  redis_data:
+    driver: local
+  postgres_data:
+    driver: local
+
+# Network configuration
+networks:
+  mcphost-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

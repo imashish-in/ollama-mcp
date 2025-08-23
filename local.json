@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "type": "builtin",
+      "name": "fs"
+    },
+    "artifactory": {
+      "type": "builtin",
+      "name": "artifactory"
+    }
+  }
+}
