@@ -1,0 +1,87 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "type": "builtin",
+      "name": "fs"
+    },
+    "artifactory": {
+      "type": "builtin",
+      "name": "artifactory",
+      "config": {
+        "instances": {
+          "localhost": {
+            "name": "Localhost Artifactory",
+            "url": "http://localhost",
+            "username": "admin",
+            "password": "B@55w0rd",
+            "timeout": 30,
+            "verifySSL": false,
+            "description": "Local Artifactory instance"
+          }
+        },
+        "defaultInstance": "localhost",
+        "commonSettings": {
+          "maxRetries": 3,
+          "retryDelay": 5,
+          "userAgent": "MCPHost-Artifactory-Client/1.0",
+          "logLevel": "info"
+        }
+      }
+    },
+    "archive-extractor": {
+      "type": "builtin",
+      "name": "archive-extractor"
+    },
+    "support-bundle": {
+      "type": "builtin",
+      "name": "support-bundle"
+    },
+    "log-analyzer": {
+      "type": "builtin",
+      "name": "log-analyzer"
+    },
+    "ssh-server": {
+      "type": "builtin",
+      "name": "ssh-server",
+      "options": {
+        "config": {
+          "instances": {
+            "default": {
+              "name": "Default SSH Server",
+              "host": "192.168.1.100",
+              "port": 22,
+              "username": "admin",
+              "password": "password123",
+              "timeout": 30,
+              "description": "Default SSH server instance"
+            },
+            "production": {
+              "name": "Production Server",
+              "host": "prod.example.com",
+              "port": 22,
+              "username": "deploy",
+              "key_path": "/path/to/private_key.pem",
+              "timeout": 30,
+              "description": "Production server with key authentication"
+            }
+          },
+          "defaultInstance": "default",
+          "commonSettings": {
+            "maxRetries": 3,
+            "retryDelay": 5,
+            "logLevel": "info",
+            "userAgent": "MCPHost-SSH-Client/1.0"
+          }
+        }
+      }
+    }
+  },
+  "globalSettings": {
+    "artifactory": {
+      "defaultTimeout": 30,
+      "maxConcurrentRequests": 10,
+      "enableLogging": true,
+      "logFile": "./artifactory.log"
+    }
+  }
+}

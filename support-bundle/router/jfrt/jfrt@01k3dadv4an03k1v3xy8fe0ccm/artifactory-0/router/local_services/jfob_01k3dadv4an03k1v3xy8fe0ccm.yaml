@@ -1,0 +1,15 @@
+endpoints:
+    - excludedpaths: []
+      paths:
+        - match: /observability/(.*)
+          replace: /$1
+      port: 8036
+      protocol: 1
+healthcheckendpoint:
+    path: /api/v1/system/readiness
+    port: 8036
+nodeid: artifactory-0
+nodestatusendpoint: null
+revision: 7b08fd95a3
+serviceid: jfob@01k3dadv4an03k1v3xy8fe0ccm
+version: 2.9.2

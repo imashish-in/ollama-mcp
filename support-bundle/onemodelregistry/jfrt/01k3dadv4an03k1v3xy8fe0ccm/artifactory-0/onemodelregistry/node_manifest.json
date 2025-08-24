@@ -1,0 +1,11 @@
+{
+	"service_type": "jfomr",
+	"microservice_name": "onemodelregistry",
+	"microservice_version": "1.52.3 (revision: 23c2496433, build date: 2025-08-14T15:07:16Z)",
+	"service_id": "jfomr@01k3dadp7e688m028tztv9160g",
+	"node_id": "artifactory-0",
+	"bundle_info": {
+		"id": "firstSupportBundle-1756020385110",
+		"name": "firstSupportBundle"
+	}
+}

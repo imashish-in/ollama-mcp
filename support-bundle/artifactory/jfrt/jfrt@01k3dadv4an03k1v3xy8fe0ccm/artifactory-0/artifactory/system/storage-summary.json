@@ -1,0 +1,59 @@
+{
+  "binariesSummary" : {
+    "binariesCount" : "0",
+    "binariesSize" : "0 bytes",
+    "artifactsSize" : "0 bytes",
+    "optimization" : "N/A",
+    "itemsCount" : "0",
+    "artifactsCount" : "0"
+  },
+  "fileStoreSummary" : {
+    "storageType" : "user-chain",
+    "storageDirectory" : "/opt/jfrog/artifactory/var/data/artifactory/filestore",
+    "totalSpace" : "250.92 GB",
+    "usedSpace" : "27.06 GB (10.79%)",
+    "freeSpace" : "223.86 GB (89.21%)"
+  },
+  "repositoriesSummaryList" : [ {
+    "repoKey" : "example-repo-local",
+    "repoType" : "LOCAL",
+    "foldersCount" : 0,
+    "filesCount" : 0,
+    "usedSpace" : "0 bytes",
+    "usedSpaceInBytes" : 0,
+    "itemsCount" : 0,
+    "packageType" : "Generic",
+    "projectKey" : "default",
+    "percentage" : "N/A"
+  }, {
+    "repoKey" : "auto-trashcan",
+    "repoType" : "NA",
+    "foldersCount" : 0,
+    "filesCount" : 0,
+    "usedSpace" : "0 bytes",
+    "usedSpaceInBytes" : 0,
+    "itemsCount" : 0,
+    "packageType" : "NA",
+    "projectKey" : "default",
+    "percentage" : "N/A"
+  }, {
+    "repoKey" : "artifactory-build-info",
+    "repoType" : "LOCAL",
+    "foldersCount" : 0,
+    "filesCount" : 0,
+    "usedSpace" : "0 bytes",
+    "usedSpaceInBytes" : 0,
+    "itemsCount" : 0,
+    "packageType" : "BuildInfo",
+    "projectKey" : "default",
+    "percentage" : "N/A"
+  }, {
+    "repoKey" : "TOTAL",
+    "repoType" : "NA",
+    "foldersCount" : 0,
+    "filesCount" : 0,
+    "usedSpace" : "0 bytes",
+    "usedSpaceInBytes" : 0,
+    "itemsCount" : 0
+  } ]
+}

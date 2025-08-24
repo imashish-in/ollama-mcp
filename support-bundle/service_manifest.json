@@ -1,0 +1,68 @@
+{
+  "service_type" : "jfrt",
+  "service_id" : "jfrt@01k3dadv4an03k1v3xy8fe0ccm",
+  "status" : "success",
+  "microservices" : {
+    "artifactory" : {
+      "artifactory-0" : "success"
+    },
+    "onemodelregistry" : {
+      "artifactory-0" : "success"
+    },
+    "metadata" : {
+      "artifactory-0" : "success"
+    },
+    "router" : {
+      "artifactory-0" : "success"
+    },
+    "access" : {
+      "artifactory-0" : "success"
+    },
+    "evidence" : {
+      "artifactory-0" : "success"
+    },
+    "topology" : {
+      "artifactory-0" : "success"
+    },
+    "jfconfig" : {
+      "artifactory-0" : "success"
+    },
+    "jfconnect" : {
+      "artifactory-0" : "success"
+    },
+    "event" : {
+      "artifactory-0" : "success"
+    },
+    "observability" : {
+      "artifactory-0" : "success"
+    },
+    "frontend" : {
+      "artifactory-0" : "success"
+    }
+  },
+  "bundle_info" : {
+    "name" : "firstSupportBundle",
+    "description" : "",
+    "id" : "firstSupportBundle-1756020385110",
+    "parameters" : {
+      "configuration" : true,
+      "system" : true,
+      "collect_slow_queries_from_database" : false,
+      "scrub_ips" : false,
+      "scrub_user_names" : false,
+      "logs" : {
+        "include" : true,
+        "scrub_ips" : false,
+        "scrub_user_names" : false,
+        "start_date" : "2025-08-24",
+        "end_date" : "2025-08-24"
+      },
+      "thread_dump" : {
+        "count" : 1,
+        "interval" : 3000
+      }
+    },
+    "created" : "2025-08-24T07:26:25Z",
+    "status" : "success"
+  }
+}

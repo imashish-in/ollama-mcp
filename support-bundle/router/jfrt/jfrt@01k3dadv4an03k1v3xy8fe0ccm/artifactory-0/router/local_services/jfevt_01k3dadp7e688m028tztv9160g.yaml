@@ -1,0 +1,21 @@
+endpoints:
+    - excludedpaths: []
+      paths:
+        - match: /event/(.*)
+          replace: /$1
+      port: 8061
+      protocol: 1
+    - excludedpaths: []
+      paths:
+        - match: /com\.jfrog\.event\..*
+          replace: ""
+      port: 8062
+      protocol: 2
+healthcheckendpoint:
+    path: /api/v1/system/readiness
+    port: 8061
+nodeid: artifactory-0
+nodestatusendpoint: null
+revision: c5c69d8ce7
+serviceid: jfevt@01k3dadp7e688m028tztv9160g
+version: 7.183.2

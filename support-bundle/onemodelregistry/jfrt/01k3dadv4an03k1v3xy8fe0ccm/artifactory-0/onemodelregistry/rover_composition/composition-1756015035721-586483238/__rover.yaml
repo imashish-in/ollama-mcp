@@ -1,0 +1,11 @@
+# Configuration for Apollo Federation
+federation_version: =2.11.0
+subgraphs:
+  jfomr:
+    routing_url: "http://localhost:8046/onemodel/api/v1/onemodel/graphql"
+    schema:
+      file: "jfomr.graphqls"
+  jfevd:
+    routing_url: "http://localhost:8046/evidence/api/v1/onemodel/graphql"
+    schema:
+      file: "jfevd.graphqls"

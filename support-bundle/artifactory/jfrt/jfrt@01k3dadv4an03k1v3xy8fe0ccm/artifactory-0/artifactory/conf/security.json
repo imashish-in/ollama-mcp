@@ -1,0 +1,55 @@
+{
+  "version" : "v10",
+  "groups" : [ {
+    "groupName" : "readers",
+    "description" : "A group for read-only users",
+    "newUserDefault" : true,
+    "realm" : "internal",
+    "adminPrivileges" : false,
+    "policyViewer" : false,
+    "policyManager" : false,
+    "watchManager" : false,
+    "reportsManager" : false
+  } ],
+  "acls" : [ {
+    "lastUpdated" : 0,
+    "accessIdentifier" : "Anything_artifact",
+    "permissionTarget" : {
+      "name" : "Anything",
+      "includes" : [ "**" ],
+      "excludes" : [ ],
+      "repoKeys" : [ "ANY" ]
+    },
+    "aces" : [ {
+      "principal" : "readers",
+      "group" : true,
+      "mask" : 1
+    } ]
+  }, {
+    "lastUpdated" : 0,
+    "accessIdentifier" : "Any Remote_artifact",
+    "permissionTarget" : {
+      "name" : "Any Remote",
+      "includes" : [ "**" ],
+      "excludes" : [ ],
+      "repoKeys" : [ "ANY REMOTE" ]
+    },
+    "aces" : [ ]
+  } ],
+  "buildAcls" : [ {
+    "lastUpdated" : 0,
+    "accessIdentifier" : "Anything_build",
+    "permissionTarget" : {
+      "name" : "Anything",
+      "includes" : [ "**" ],
+      "excludes" : [ ],
+      "repoKeys" : [ "artifactory-build-info" ]
+    },
+    "aces" : [ {
+      "principal" : "readers",
+      "group" : true,
+      "mask" : 1
+    } ]
+  } ],
+  "releaseBundleAcls" : [ ]
+}

@@ -1,0 +1,12 @@
+{
+  "service_type": "jfrt@01k3dadv4an03k1v3xy8fe0ccm",
+  "microservice_name": "frontend",
+  "microservice_version": "1.247.15",
+  "service_id": "jffe@01k3dadp7e688m028tztv9160g",
+  "node_id": "artifactory-0",
+  "bundle_info": {
+    "id": "undefined_firstSupportBundle-1756020385110",
+    "created": "2025-08-24T07:26:25.311Z",
+    "status": "success"
+  }
+}

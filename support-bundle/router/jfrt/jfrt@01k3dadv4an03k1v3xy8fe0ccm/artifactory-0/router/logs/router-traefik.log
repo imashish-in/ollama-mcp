@@ -1,0 +1,6 @@
+2025-08-24T05:57:08.711Z [jfrou] [INFO ] [                ] [logger.go:58                  ] [main                ] [] - Starting provider aggregator *aggregator.ProviderAggregator
+2025-08-24T05:57:08.712Z [jfrou] [INFO ] [                ] [logger.go:58                  ] [main                ] [] - Starting provider *file.Provider
+2025-08-24T05:57:08.714Z [jfrou] [INFO ] [                ] [logger.go:58                  ] [main                ] [] - Starting provider *traefik.Provider
+2025-08-24T05:57:08.715Z [jfrou] [INFO ] [                ] [logger.go:58                  ] [main                ] [] - Starting provider *templates.UnhealthyNodeConfProvider
+2025-08-24T05:57:08.716Z [jfrou] [INFO ] [                ] [logger.go:58                  ] [main                ] [] - Starting provider *templates.ExternalRoutesProvider
+2025-08-24T05:57:08.716Z [jfrou] [INFO ] [                ] [logger.go:58                  ] [main                ] [] - Starting provider *templates.ExternalTraefikTLSConfProvider

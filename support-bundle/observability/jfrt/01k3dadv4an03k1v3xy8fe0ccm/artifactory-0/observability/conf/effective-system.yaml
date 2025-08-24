@@ -1,0 +1,200 @@
+access:
+    metrics:
+        enabled: false
+        exclude: []
+        intervalsecs: 0
+artifactory:
+    metrics:
+        enabled: false
+        exclude: []
+        intervalsecs: 0
+event:
+    metrics:
+        enabled: false
+        exclude: []
+        intervalsecs: 0
+evidence:
+    metrics:
+        enabled: false
+        exclude: []
+        intervalsecs: 0
+frontend:
+    metrics:
+        enabled: false
+        exclude: []
+        intervalsecs: 0
+integration:
+    metrics:
+        enabled: false
+        exclude: []
+        intervalsecs: 0
+jfconnect:
+    metrics:
+        enabled: false
+        exclude: []
+        intervalsecs: 0
+jflink:
+    metrics:
+        enabled: false
+        exclude: []
+        intervalsecs: 0
+metadata:
+    metrics:
+        enabled: false
+        exclude: []
+        intervalsecs: 0
+missioncontrol:
+    metrics:
+        enabled: false
+        exclude: []
+        intervalsecs: 0
+observability:
+    accessclient:
+        jointimeoutmillis: 30000
+        jointimeoutmins: 5
+        pingtimeoutmins: 5
+        tokencache:
+            timeoutsecs: 60
+    artclient:
+        artifactorytoken: ""
+        artifactoryurl: ""
+        enableexternaljpd: false
+        ismultitenant: false
+        timeoutsecs: 0
+        uploadretry: 0
+    consumption:
+        allow: '*'
+        allowedfilesizebytes: 1073741824
+        logsdir: ""
+        pollingintervalsecs: 60
+    filebeat:
+        elasticsearch:
+            password: '*****'
+            url: ""
+            username: ""
+        enabled: false
+        filebeatbinpath: ""
+        filebeatconfigpath: ""
+        keepfiles: ""
+        loglevel: ""
+        logpath: ""
+        pidfile: /tmp/filebeat.pid
+    grpcport: 8037
+    httpport: 8036
+    logformat: ""
+    logging:
+        application:
+            caller: false
+            console: true
+            filepath: observability-service.log
+            format: jftext
+            level: info
+            packages: {}
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        consolelog:
+            format: jftext
+        metrics:
+            console: false
+            filepath: observability-metrics.log
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        request:
+            console: false
+            filepath: observability-request.log
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        requestout:
+            console: false
+            filepath: ""
+            rotation:
+                compress: false
+                keeplastdecompressed: 0
+                maxagedays: 0
+                maxfiles: 0
+                maxsizemb: 0
+    maxconcurrentshippingjob: 2
+    maxconcurrentsplittingjob: 2
+    metrics:
+        enabled: false
+        exclude: []
+        intervalsecs: 10
+        tokenverification:
+            accessurl: ""
+            retrybackoffinitialintervalmillis: 500
+            retrybackoffmaxelapsedtimemillis: 0
+            retrybackoffmaxintervalmillis: 3600000
+            revocableexpirythresholdseconds: -1
+    multitenantenabled: false
+    productname: ""
+    profiling:
+        enabled: false
+    shipping:
+        allow: request,audit
+        allowedfilesizebytes: 1073741824
+        logsdir: ""
+        pollingintervalsecs: 60
+        uploaddirectory: ""
+    supportbundle:
+        aggregationtimeoutmins: 60
+    tenantshealthservicecheck:
+        enabled: false
+        flowintervalsecs: 120
+        workers: 10
+router:
+    entrypoints:
+        internalport: 8046
+shared:
+    logging:
+        consolelog:
+            format: ""
+        enablejsonconsolelogappenders: false
+    multitenant:
+        cellid: ""
+        enabled: false
+        tenantregistryclient:
+            cacert: ""
+            cacheexpirationsecs: 21600
+            clientcert: ""
+            clientcertkey: ""
+            dialtimeoutsecs: 10
+            endpoints:
+                - localhost:2379
+            password: '*****'
+            pingcacheexpirationsecs: 15
+            pingtimeoutsecs: 1
+            requesttimeoutsecs: 30
+            username: ""
+    newrelic:
+        appname: ""
+        distributedtracerenabled: true
+        enabled: false
+        enabledebuglog: false
+        licensekey: ""
+    node:
+        id: artifactory-0
+        ip: 10.1.0.7
+    runtime:
+        issaas: false
+    security:
+        bootstrapkeysreadtimeoutsecs: 120
+        exposeapplicationheaders: false
+    system:
+        technicalservername: ""
+worker:
+    metrics:
+        enabled: false
+        exclude: []
+        intervalsecs: 0

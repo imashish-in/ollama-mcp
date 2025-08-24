@@ -21,6 +21,9 @@ const (
 	artifactoryMaxTimeout     = 120 * time.Second
 )
 
+// Global configuration for Artifactory server
+var globalArtifactoryConfig *ArtifactoryConfig
+
 // ArtifactoryHealthResponse represents the response from Artifactory health check
 type ArtifactoryHealthResponse struct {
 	Router struct {
@@ -143,9 +146,26 @@ type ArtifactoryCreateRepository struct {
 	CustomProperties             map[string]string `json:"customProperties,omitempty"`
 }
 
+// ArtifactoryServer represents an Artifactory MCP server with configuration
+type ArtifactoryServer struct {
+	*server.MCPServer
+	config *ArtifactoryConfig
+}
+
 // NewArtifactoryServer creates a new Artifactory MCP server
-func NewArtifactoryServer() (*server.MCPServer, error) {
+func NewArtifactoryServer(options map[string]any) (*server.MCPServer, error) {
+	// Load configuration from options
+	config, err := LoadArtifactoryConfig(options)
+	if err != nil {
+		return nil, fmt.Errorf("failed to load Artifactory configuration: %v", err)
+	}
+	
+	// Create the server
 	s := server.NewMCPServer("artifactory-server", "1.0.0", server.WithToolCapabilities(true))
+	
+	// Store configuration in server context for use by tools
+	// We'll use a global variable for now since MCP server doesn't have context storage
+	globalArtifactoryConfig = config
 
 	// Register the healthcheck tool
 	healthcheckTool := mcp.NewTool("artifactory_healthcheck",
@@ -171,21 +191,24 @@ func NewArtifactoryServer() (*server.MCPServer, error) {
 
 	// Register the repositories tool
 	repositoriesTool := mcp.NewTool("artifactory_get_repositories",
-		mcp.WithDescription("Get a list of all repositories in an Artifactory instance using the /artifactory/api/repositories endpoint. Defaults to localhost with admin credentials if no parameters provided."),
+		mcp.WithDescription("Get a list of all repositories in an Artifactory instance using the /artifactory/api/repositories endpoint. Uses configuration from local.json if available."),
+		mcp.WithString("instance",
+			mcp.Description("Artifactory instance name from configuration (e.g., 'default', 'staging', 'production'). If not provided, uses default instance."),
+		),
 		mcp.WithString("base_url",
-			mcp.Description("The base URL of the Artifactory instance (e.g., http://localhost, https://artifactory.example.com). Defaults to http://localhost if not provided."),
+			mcp.Description("The base URL of the Artifactory instance (e.g., http://localhost, https://artifactory.example.com). Overrides configuration if provided."),
 		),
 		mcp.WithString("username",
-			mcp.Description("Username for authentication (optional, defaults to 'admin')"),
+			mcp.Description("Username for authentication. Overrides configuration if provided."),
 		),
 		mcp.WithString("password",
-			mcp.Description("Password for authentication (optional, defaults to 'B@55w0rd')"),
+			mcp.Description("Password for authentication. Overrides configuration if provided."),
 		),
 		mcp.WithString("api_key",
-			mcp.Description("API key for authentication (alternative to username/password)"),
+			mcp.Description("API key for authentication (alternative to username/password). Overrides configuration if provided."),
 		),
 		mcp.WithNumber("timeout",
-			mcp.Description("Optional timeout in seconds (max 120)"),
+			mcp.Description("Optional timeout in seconds (max 120). Overrides configuration if provided."),
 			mcp.Min(0),
 			mcp.Max(120),
 		),
@@ -275,52 +298,6 @@ func NewArtifactoryServer() (*server.MCPServer, error) {
 		),
 	)
 
-	// Register the permission group management tool
-	permissionGroupTool := mcp.NewTool("artifactory_manage_permission_group",
-		mcp.WithDescription("Create or update a permission group in Artifactory with users, permissions, and repository access. Defaults to localhost with admin credentials if no parameters provided."),
-		mcp.WithString("base_url",
-			mcp.Description("The base URL of the Artifactory instance (e.g., http://localhost, https://artifactory.example.com). Defaults to http://localhost if not provided."),
-		),
-		mcp.WithString("username",
-			mcp.Description("Username for authentication (optional, defaults to 'admin')"),
-		),
-		mcp.WithString("password",
-			mcp.Description("Password for authentication (optional, defaults to 'B@55w0rd')"),
-		),
-		mcp.WithString("api_key",
-			mcp.Description("API key for authentication (alternative to username/password)"),
-		),
-		mcp.WithString("group_name",
-			mcp.Description("The name of the permission group to create or update (required)"),
-		),
-		mcp.WithString("group_description",
-			mcp.Description("Description of the permission group (optional)"),
-		),
-		mcp.WithString("users",
-			mcp.Description("Comma-separated list of usernames to add to the group (optional)"),
-		),
-		mcp.WithString("repositories",
-			mcp.Description("Comma-separated list of repository names to grant access to (optional)"),
-		),
-		mcp.WithString("privileges",
-			mcp.Description("Comma-separated list of privileges (READ, WRITE, DELETE, ANNOTATE, DEPLOY, etc.) (optional, defaults to READ)"),
-		),
-		mcp.WithBoolean("auto_join",
-			mcp.Description("Whether users can automatically join this group (optional, defaults to false)"),
-		),
-		mcp.WithBoolean("admin_privileges",
-			mcp.Description("Whether the group has admin privileges (optional, defaults to false)"),
-		),
-		mcp.WithString("realm",
-			mcp.Description("The realm for the group (optional, defaults to 'internal')"),
-		),
-		mcp.WithNumber("timeout",
-			mcp.Description("Optional timeout in seconds (max 120)"),
-			mcp.Min(0),
-			mcp.Max(120),
-		),
-	)
-
 	// Register the repository creation tool
 	createRepositoryTool := mcp.NewTool("artifactory_create_repository",
 		mcp.WithDescription("Create a new repository in Artifactory. Supports LOCAL, REMOTE, and VIRTUAL repository types. Defaults to localhost with admin credentials if no parameters provided."),
@@ -402,7 +379,7 @@ func NewArtifactoryServer() (*server.MCPServer, error) {
 	s.AddTool(usersTool, executeArtifactoryGetUsers)
 	s.AddTool(createUserTool, executeArtifactoryCreateUser)
 	s.AddTool(repositorySizesTool, executeArtifactoryGetRepositorySizes)
-	s.AddTool(permissionGroupTool, executeArtifactoryManagePermissionGroup)
+
 	s.AddTool(createRepositoryTool, executeArtifactoryCreateRepository)
 
 	return s, nil
@@ -539,17 +516,46 @@ func executeArtifactoryHealthcheck(ctx context.Context, request mcp.CallToolRequ
 	}, nil
 }
 
+// getArtifactoryInstanceConfig gets the configuration for a specific instance
+func getArtifactoryInstanceConfig(instanceName string) (*ArtifactoryInstanceConfig, error) {
+	if globalArtifactoryConfig == nil {
+		return nil, fmt.Errorf("Artifactory configuration not loaded")
+	}
+	
+	return globalArtifactoryConfig.GetInstanceConfig(instanceName)
+}
+
 // executeArtifactoryGetRepositories handles the repositories tool execution
 func executeArtifactoryGetRepositories(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, error) {
-	// Extract parameters with localhost default
-	baseURL := request.GetString("base_url", "http://localhost")
-
-	username := request.GetString("username", "admin")
-	password := request.GetString("password", "B@55w0rd")
-	apiKey := request.GetString("api_key", "")
+	// Get instance name from request (default to empty for default instance)
+	instanceName := request.GetString("instance", "")
+	
+	// Get configuration for the instance
+	instanceConfig, err := getArtifactoryInstanceConfig(instanceName)
+	if err != nil {
+		return mcp.NewToolResultError(fmt.Sprintf("failed to get Artifactory configuration: %v", err)), nil
+	}
+	
+	// Use configuration values, with fallback to request parameters
+	baseURL := request.GetString("base_url", instanceConfig.URL)
+	username, password, apiKey := instanceConfig.GetCredentials()
+	
+	// Override with request parameters if provided
+	if requestURL := request.GetString("base_url", ""); requestURL != "" {
+		baseURL = requestURL
+	}
+	if requestUsername := request.GetString("username", ""); requestUsername != "" {
+		username = requestUsername
+	}
+	if requestPassword := request.GetString("password", ""); requestPassword != "" {
+		password = requestPassword
+	}
+	if requestAPIKey := request.GetString("api_key", ""); requestAPIKey != "" {
+		apiKey = requestAPIKey
+	}
 
 	// Parse timeout (optional)
-	timeout := artifactoryDefaultTimeout
+	timeout := time.Duration(instanceConfig.Timeout) * time.Second
 	if timeoutSec := request.GetFloat("timeout", 0); timeoutSec > 0 {
 		timeoutDuration := time.Duration(timeoutSec) * time.Second
 		if timeoutDuration > artifactoryMaxTimeout {
@@ -1279,255 +1285,6 @@ func executeArtifactoryCreateRepository(ctx context.Context, request mcp.CallToo
 			"repositories":          repo.Repositories,
 			"defaultDeploymentRepo": repo.DefaultDeploymentRepo,
 		}
-	}
-
-	resultJSON, err := json.Marshal(result)
-	if err != nil {
-		return mcp.NewToolResultError(fmt.Sprintf("failed to marshal result: %v", err)), nil
-	}
-
-	return &mcp.CallToolResult{
-		Content: []mcp.Content{
-			mcp.TextContent{
-				Type: "text",
-				Text: string(resultJSON),
-			},
-		},
-	}, nil
-}
-
-// executeArtifactoryManagePermissionGroup handles the permission group management tool execution
-func executeArtifactoryManagePermissionGroup(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, error) {
-	// Extract parameters with localhost default
-	baseURL := request.GetString("base_url", "http://localhost")
-	username := request.GetString("username", "admin")
-	password := request.GetString("password", "B@55w0rd")
-	apiKey := request.GetString("api_key", "")
-
-	// Extract group parameters
-	groupName := request.GetString("group_name", "")
-	if groupName == "" {
-		return mcp.NewToolResultError("group_name is required"), nil
-	}
-
-	groupDescription := request.GetString("group_description", "")
-	usersStr := request.GetString("users", "")
-	repositoriesStr := request.GetString("repositories", "")
-	privilegesStr := request.GetString("privileges", "READ")
-	autoJoin := request.GetBool("auto_join", false)
-	adminPrivileges := request.GetBool("admin_privileges", false)
-	realm := request.GetString("realm", "internal")
-
-	// Parse timeout (optional)
-	timeout := artifactoryDefaultTimeout
-	if timeoutSec := request.GetFloat("timeout", 0); timeoutSec > 0 {
-		timeoutDuration := time.Duration(timeoutSec) * time.Second
-		if timeoutDuration > artifactoryMaxTimeout {
-			timeout = artifactoryMaxTimeout
-		} else {
-			timeout = timeoutDuration
-		}
-	}
-
-	// Validate and construct the base URL
-	parsedURL, err := url.Parse(baseURL)
-	if err != nil {
-		return mcp.NewToolResultError(fmt.Sprintf("invalid base URL: %v", err)), nil
-	}
-
-	// Ensure URL has a scheme
-	if parsedURL.Scheme == "" {
-		baseURL = "http://" + baseURL
-		parsedURL, err = url.Parse(baseURL)
-		if err != nil {
-			return mcp.NewToolResultError(fmt.Sprintf("invalid URL after adding http: %v", err)), nil
-		}
-	}
-
-	// Only allow HTTP and HTTPS
-	if parsedURL.Scheme != "http" && parsedURL.Scheme != "https" {
-		return mcp.NewToolResultError("URL must use http:// or https://"), nil
-	}
-
-	// Create HTTP client with timeout
-	client := &http.Client{
-		Timeout: timeout,
-	}
-
-	// Step 1: Create or update the group
-	group := ArtifactoryGroup{
-		Name:            groupName,
-		Description:     groupDescription,
-		AutoJoin:        autoJoin,
-		AdminPrivileges: adminPrivileges,
-		Realm:           realm,
-		UsersNames:      []string{},
-	}
-
-	// Parse users if provided
-	if usersStr != "" {
-		users := strings.Split(usersStr, ",")
-		for _, user := range users {
-			user = strings.TrimSpace(user)
-			if user != "" {
-				group.UsersNames = append(group.UsersNames, user)
-			}
-		}
-	}
-
-	// Create group JSON
-	groupJSON, err := json.Marshal(group)
-	if err != nil {
-		return mcp.NewToolResultError(fmt.Sprintf("failed to marshal group data: %v", err)), nil
-	}
-
-	// Create group request
-	groupURL := fmt.Sprintf("%s/artifactory/api/security/groups/%s", baseURL, groupName)
-	groupReq, err := http.NewRequestWithContext(ctx, "PUT", groupURL, bytes.NewBuffer(groupJSON))
-	if err != nil {
-		return mcp.NewToolResultError(fmt.Sprintf("failed to create group request: %v", err)), nil
-	}
-
-	// Set authentication headers
-	if apiKey != "" {
-		groupReq.Header.Set("X-JFrog-Art-Api", apiKey)
-	} else if username != "" && password != "" {
-		groupReq.SetBasicAuth(username, password)
-	}
-
-	// Set headers
-	groupReq.Header.Set("User-Agent", "MCP-Artifactory-Group/1.0")
-	groupReq.Header.Set("Accept", "application/json")
-	groupReq.Header.Set("Content-Type", "application/json")
-
-	// Execute group request
-	groupResp, err := client.Do(groupReq)
-	if err != nil {
-		return mcp.NewToolResultError(fmt.Sprintf("failed to create/update group: %v", err)), nil
-	}
-	defer groupResp.Body.Close()
-
-	// Check group creation status
-	if groupResp.StatusCode != http.StatusOK && groupResp.StatusCode != http.StatusCreated {
-		bodyBytes, _ := io.ReadAll(groupResp.Body)
-		return mcp.NewToolResultError(fmt.Sprintf("failed to create/update group: status %d, response: %s", groupResp.StatusCode, string(bodyBytes))), nil
-	}
-
-	// Step 2: Create permission target (always create one)
-	// Parse repositories and privileges
-	var repositories []string
-	if repositoriesStr != "" {
-		repositories = strings.Split(repositoriesStr, ",")
-		// Trim whitespace
-		for i, repo := range repositories {
-			repositories[i] = strings.TrimSpace(repo)
-		}
-	}
-
-	privileges := strings.Split(privilegesStr, ",")
-	// Trim whitespace
-	for i, priv := range privileges {
-		privileges[i] = strings.TrimSpace(priv)
-	}
-
-	// Create permission
-	permission := ArtifactoryPermission{
-		Name: fmt.Sprintf("%s-permission", groupName),
-		Principals: struct {
-			Users  map[string][]string `json:"users,omitempty"`
-			Groups map[string][]string `json:"groups,omitempty"`
-		}{
-			Groups: map[string][]string{
-				groupName: privileges,
-			},
-		},
-	}
-
-	// Set repositories
-	if len(repositories) > 0 {
-		permission.Repo.Repositories = repositories
-	} else {
-		// Use "ANY" for all repositories
-		permission.Repo.Repositories = []string{"ANY"}
-	}
-
-	// Set actions for the group
-	permission.Repo.Actions.Groups = map[string][]string{
-		groupName: privileges,
-	}
-
-	// Create permission JSON
-	permissionJSON, err := json.Marshal(permission)
-	if err != nil {
-		return mcp.NewToolResultError(fmt.Sprintf("failed to marshal permission data: %v", err)), nil
-	}
-
-	// Create permission request
-	permissionURL := fmt.Sprintf("%s/artifactory/api/security/permissions/%s", baseURL, permission.Name)
-	permissionReq, err := http.NewRequestWithContext(ctx, "PUT", permissionURL, bytes.NewBuffer(permissionJSON))
-	if err != nil {
-		return mcp.NewToolResultError(fmt.Sprintf("failed to create permission request: %v", err)), nil
-	}
-
-	// Set authentication headers
-	if apiKey != "" {
-		permissionReq.Header.Set("X-JFrog-Art-Api", apiKey)
-	} else if username != "" && password != "" {
-		permissionReq.SetBasicAuth(username, password)
-	}
-
-	// Set headers
-	permissionReq.Header.Set("User-Agent", "MCP-Artifactory-Permission/1.0")
-	permissionReq.Header.Set("Accept", "application/json")
-	permissionReq.Header.Set("Content-Type", "application/json")
-
-	// Execute permission request
-	permissionResp, err := client.Do(permissionReq)
-	if err != nil {
-		return mcp.NewToolResultError(fmt.Sprintf("failed to create permission: %v", err)), nil
-	}
-	defer permissionResp.Body.Close()
-
-	// Check permission creation status
-	if permissionResp.StatusCode != http.StatusOK && permissionResp.StatusCode != http.StatusCreated {
-		bodyBytes, _ := io.ReadAll(permissionResp.Body)
-		return mcp.NewToolResultError(fmt.Sprintf("failed to create permission: status %d, response: %s", permissionResp.StatusCode, string(bodyBytes))), nil
-	}
-
-	// Return success result
-	result := map[string]interface{}{
-		"group": map[string]interface{}{
-			"name":            groupName,
-			"description":     groupDescription,
-			"autoJoin":        autoJoin,
-			"adminPrivileges": adminPrivileges,
-			"realm":           realm,
-			"users":           group.UsersNames,
-		},
-		"permission": map[string]interface{}{
-			"created":    true,
-			"name":       fmt.Sprintf("%s-permission", groupName),
-			"repository": permission.Repo,
-			"repositories": func() []string {
-				if repositoriesStr == "" {
-					return []string{}
-				}
-				repos := strings.Split(repositoriesStr, ",")
-				for i, repo := range repos {
-					repos[i] = strings.TrimSpace(repo)
-				}
-				return repos
-			}(),
-			"privileges": func() []string {
-				privs := strings.Split(privilegesStr, ",")
-				for i, priv := range privs {
-					privs[i] = strings.TrimSpace(priv)
-				}
-				return privs
-			}(),
-		},
-		"url":       fmt.Sprintf("%s/artifactory/api/security/groups/%s", baseURL, groupName),
-		"timestamp": time.Now().Format(time.RFC3339),
 	}
 
 	resultJSON, err := json.Marshal(result)

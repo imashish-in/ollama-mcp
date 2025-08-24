@@ -1,0 +1,219 @@
+accessclient:
+    jointimeout: 5m0s
+    url: http://localhost:8046/access
+api:
+    loglongqueries: false
+    logquerieslongerthan: 6s
+    maxdbconnectionsperquery: 5
+    maxfileperversion: 1000
+    maxfiltersize: 50
+    maxpackagesbyids: 10
+    maxquerycycles: 2
+    maxquerydepth: 15
+    maxquerylength: 16384
+    maxretries: 20
+    pagination:
+        maxpagesize: 200
+    requeststimeout: 3m0s
+asyncconverter:
+    batchinterval: 2s
+    batchintervalidle: 1m0s
+    dbactiontimeout: 2m0s
+    enabled: true
+    filesdropfilenameindextask:
+        batchtimeout: 0s
+        enabled: false
+    fulltextindextask:
+        batchtimeout: 10m0s
+        completed: false
+        enabled: true
+    ginindextask:
+        batchtimeout: 10m0s
+        completed: false
+        enabled: true
+    orphanfilestask:
+        batchsize: 5000
+        batchtimeout: 10m0s
+        enabled: false
+        interval: 1h0m0s
+    orphanrepostask:
+        batchsize: 1000
+        batchtimeout: 10m0s
+        enabled: false
+        interval: 24h0m0s
+    orphanversionstask:
+        batchsize: 100
+        batchtimeout: 10m0s
+        enabled: true
+        interval: 48h0m0s
+        queryduration: 48h0m0s
+    reindexpkgidtask:
+        batchtimeout: 10m0s
+        enabled: true
+    reorderprereleaseversionstask:
+        batchsize: 100
+        batchtimeout: 10m0s
+        enabled: true
+    stalebatchthreshold: 3h0m0s
+    valuecolumnstonullabletask:
+        batchtimeout: 10m0s
+        enabled: true
+    verreposleadfilepathindextask:
+        batchtimeout: 10m0s
+        enabled: true
+    versionbasemodelcompletetask:
+        batchsize: 100
+        batchtimeout: 10m0s
+        enabled: true
+    versionsbasemodelcompleteindextask:
+        batchtimeout: 10m0s
+        enabled: true
+    versionsgctask:
+        batchsize: 100
+        batchtimeout: 10m0s
+        enabled: true
+        interval: 24h0m0s
+        lastediteddelay: 10m0s
+    versionspackageidordinalindexestask:
+        batchtimeout: 30m0s
+        enabled: true
+    workercount: 1
+    workersmaxsleeptime: 6h0m0s
+database:
+    allowfulltextsearch: true
+    allowfulltextsearchformssql: false
+    allownonpostgresql: false
+    disableparallelselect: true
+    disablepreparedstatementcache: false
+    enablelogforpostgres: false
+    kerberosauth: false
+    maxidleconnections: 10
+    maxopenconnections: 80
+    metrics:
+        enabled: false
+        maxqueriestotrack: 5
+    migrationlockretryintervalsecs: 60
+    password: '*****'
+    querytimeoutsecs: 1800
+    secretsmanageralias: ""
+    slowqueriesthreshold: 5s
+    type: 5
+    url: jdbc:postgresql://artifactory-postgresql:5432/artifactory
+    username: artifactory
+    waitforconnectiontimeout: 15s
+extrajavaopts: |
+    -Dartifactory.graceful.shutdown.max.request.duration.millis=30000 -Dartifactory.access.client.max.connections=50
+ha:
+    maxstaleheartbeat: 24h0m0s
+healthcheck:
+    intervalsecs: 15
+jfconnect:
+    enabled: false
+keys:
+    readattempts: 120
+    readintervalduration: 1s
+listenaddr: localhost
+logging:
+    application:
+        console: true
+        filepath: metadata-service.log
+        level: info
+        packages: {}
+        rotation:
+            compress: true
+            intervalseconds: 0
+            keeplastdecompressed: 1
+            maxagedays: 365
+            maxfiles: 10
+            maxsizemb: 25
+    consolelog:
+        format: jftext
+    enablejsonconsolelogappenders: false
+    metrics:
+        console: false
+        filepath: metadata-metrics.log
+        rotation:
+            compress: true
+            intervalseconds: 0
+            keeplastdecompressed: 1
+            maxagedays: 365
+            maxfiles: 10
+            maxsizemb: 25
+    request:
+        console: false
+        filepath: metadata-request.log
+        rotation:
+            compress: true
+            intervalseconds: 0
+            keeplastdecompressed: 1
+            maxagedays: 365
+            maxfiles: 10
+            maxsizemb: 25
+    usagemetrics:
+        console: false
+        enabled: true
+        filepath: metadata-consumption-usage.log
+        refreshrateintervalmin: 359
+        rotation:
+            compress: true
+            intervalseconds: 21600
+            keeplastdecompressed: 1
+            maxagedays: 365
+            maxfiles: 10
+            maxsizemb: 25
+metrics:
+    enabled: true
+    exclude: []
+    interval: 10s
+newrelic:
+    appname: ""
+    disableerrorlog: true
+    distributedtracerenabled: true
+    enabled: false
+    enabledebuglog: false
+    labels: ""
+    licensekey: ""
+node:
+    id: artifactory-0
+onemodel:
+    debug: false
+    enabled: false
+    graphql:
+        compatibilityfilterenabled: false
+        querycachesize: 0
+        queryparsertokenlimit: 0
+permissionfilter:
+    maximumcountfetches: 20
+    maximumprojectrepostofilter: 200
+port: 8086
+probes:
+    liveness:
+        failonlongfailingreadiness:
+            enabled: false
+            failuredurationsecs: 60
+profiling:
+    enabled: true
+    port: 6066
+    servertimeoutsecs: 30
+router:
+    port: 8046
+security:
+    bootstrapkeysreadtimeoutsecs: 120
+    disableswaggerui: false
+    exposeapplicationheaders: false
+sharedlogging:
+    consolelog:
+        format: jftext
+    enablejsonconsolelogappenders: false
+stats:
+    packagecountcachetimeout: 5m0s
+subscriptiontype: ""
+supportbundle:
+    aggregationtimeout: 1h0m0s
+tokencache:
+    timeout: 1m0s
+writelevelguardedfields:
+    packagefieldnames:
+        - Licenses
+    versionfieldnames:
+        - Licenses

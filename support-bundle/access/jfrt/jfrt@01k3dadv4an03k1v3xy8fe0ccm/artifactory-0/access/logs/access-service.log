@@ -1,0 +1,371 @@
+2025-08-24T05:56:59.536Z [jfac ] [INFO ] [6b5a300fefe7aef7] [licationContextInitializer:166] [main                ] - Access (jfac) service initialization started. Version: 7.147.12 Revision: 84712900 PID: 2988 Home: /opt/jfrog/artifactory FIPS Mode: none
+2025-08-24T05:56:59.555Z [jfac ] [INFO ] [6b5a300fefe7aef7] [j.a.m.ConfigMigrationRunner:77] [main                ] - EnvironmentConfig (version 12) is up to date, nothing to migrate
+2025-08-24T05:56:59.561Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.a.AccessApplication:53    ] [main                ] - Starting AccessApplication v7.147.12 using Java 21.0.7 with PID 2988 (/opt/jfrog/artifactory/app/access/tomcat/webapps/access/WEB-INF/lib/access-application-7.147.12.jar started by artifactory in /opt/jfrog/artifactory)
+2025-08-24T05:56:59.561Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.a.AccessApplication:658   ] [main                ] - The following 1 profile is active: "production"
+2025-08-24T05:57:02.546Z [jfac ] [INFO ] [6b5a300fefe7aef7] [IdToBigIntAddBcryptPassword:50] [main                ] - Found 0 rows in the access users table, will be re-inserted after table migration.
+2025-08-24T05:57:02.630Z [jfac ] [INFO ] [6b5a300fefe7aef7] [ractV3_7__LowercaseAllUsers:34] [main                ] - Found 0 rows in the access users table.
+2025-08-24T05:57:02.631Z [jfac ] [INFO ] [6b5a300fefe7aef7] [ractV3_7__LowercaseAllUsers:46] [main                ] - 0 results will be updated
+2025-08-24T05:57:02.632Z [jfac ] [INFO ] [6b5a300fefe7aef7] [ractV3_7__LowercaseAllUsers:50] [main                ] - Lowercase user migration finished successfully.
+2025-08-24T05:57:02.651Z [jfac ] [INFO ] [6b5a300fefe7aef7] [V3_11__DedupPermissionNames:36] [main                ] - Found 0 rows in the access permissions table.
+2025-08-24T05:57:02.652Z [jfac ] [INFO ] [6b5a300fefe7aef7] [V3_11__DedupPermissionNames:48] [main                ] - 0 results will be updated
+2025-08-24T05:57:02.652Z [jfac ] [INFO ] [6b5a300fefe7aef7] [V3_11__DedupPermissionNames:52] [main                ] - Permission with counter migration finished successfully.
+2025-08-24T05:57:02.683Z [jfac ] [INFO ] [6b5a300fefe7aef7] [_16__AddUserNameTypeToToken:45] [main                ] - Adding username column to access_tokens table
+2025-08-24T05:57:02.687Z [jfac ] [INFO ] [6b5a300fefe7aef7] [_16__AddUserNameTypeToToken:73] [main                ] - Finished adding username column to access_tokens table
+2025-08-24T05:57:02.696Z [jfac ] [INFO ] [6b5a300fefe7aef7] [_UpdatePermissionCustomData:88] [main                ] - found 0 rows in the access permissions table before migration
+2025-08-24T05:57:02.697Z [jfac ] [INFO ] [6b5a300fefe7aef7] [UpdatePermissionCustomData:104] [main                ] - converting 0 access permissions
+2025-08-24T05:57:02.698Z [jfac ] [INFO ] [6b5a300fefe7aef7] [UpdatePermissionCustomData:112] [main                ] - converting 0 xray permissions
+2025-08-24T05:57:02.699Z [jfac ] [INFO ] [6b5a300fefe7aef7] [UpdatePermissionCustomData:120] [main                ] - converting 0 distribution permissions
+2025-08-24T05:57:02.699Z [jfac ] [INFO ] [6b5a300fefe7aef7] [UpdatePermissionCustomData:132] [main                ] - converting 0 mission control permissions
+2025-08-24T05:57:02.699Z [jfac ] [INFO ] [6b5a300fefe7aef7] [UpdatePermissionCustomData:139] [main                ] - 0 artifactory permissions unchanged
+2025-08-24T05:57:02.705Z [jfac ] [INFO ] [6b5a300fefe7aef7] [stractV4_1__RenameDbJoinKey:41] [main                ] - Join key db rename migration started.
+2025-08-24T05:57:02.706Z [jfac ] [INFO ] [6b5a300fefe7aef7] [stractV4_1__RenameDbJoinKey:47] [main                ] - join.key not persisted in db, nothing to migrate
+2025-08-24T05:57:02.744Z [jfac ] [INFO ] [6b5a300fefe7aef7] [actV4_11__TlsMinimalVersion:38] [main                ] - TLS minimal allowed version migration started.
+2025-08-24T05:57:02.745Z [jfac ] [INFO ] [6b5a300fefe7aef7] [actV4_11__TlsMinimalVersion:44] [main                ] - Access configuration not persisted in db, nothing to migrate.
+2025-08-24T05:57:02.747Z [jfac ] [INFO ] [6b5a300fefe7aef7] [DefaultProjectConfiguration:52] [main                ] - Rename `global` project configuration to `default` start.
+2025-08-24T05:57:02.748Z [jfac ] [INFO ] [6b5a300fefe7aef7] [DefaultProjectConfiguration:55] [main                ] - global config not persisted in db, nothing to migrate
+2025-08-24T05:57:02.752Z [jfac ] [INFO ] [6b5a300fefe7aef7] [tConfigurationDefaultValues:43] [main                ] - Set default values to `default` project.
+2025-08-24T05:57:02.754Z [jfac ] [INFO ] [6b5a300fefe7aef7] [tConfigurationDefaultValues:46] [main                ] - global config not persisted in db, nothing to migrate
+2025-08-24T05:57:02.756Z [jfac ] [INFO ] [6b5a300fefe7aef7] [ctV4_15__ProjectRolesAction:91] [main                ] - Convert role actions
+2025-08-24T05:57:02.763Z [jfac ] [INFO ] [6b5a300fefe7aef7] [17__ProjectUsersToLowerCase:48] [main                ] - Convert project users to lower case.
+2025-08-24T05:57:02.767Z [jfac ] [INFO ] [6b5a300fefe7aef7] [_ProjectRolesAdvancedAction:55] [main                ] - Convert role actions
+2025-08-24T05:57:02.768Z [jfac ] [INFO ] [6b5a300fefe7aef7] [.j.a.s.d.m.ProjectsMigrator:87] [main                ] - Convert role actions
+2025-08-24T05:57:02.773Z [jfac ] [INFO ] [6b5a300fefe7aef7] [__ProjectResourceDefaultEnv:48] [main                ] - Convert role actions
+2025-08-24T05:57:02.776Z [jfac ] [INFO ] [6b5a300fefe7aef7] [_20__DefaultRoleEnvironment:46] [main                ] - Convert role actions
+2025-08-24T05:57:02.778Z [jfac ] [INFO ] [6b5a300fefe7aef7] [stractV4_21__PasswordPolicy:44] [main                ] - Access config Password policy migration started.
+2025-08-24T05:57:02.778Z [jfac ] [INFO ] [6b5a300fefe7aef7] [stractV4_21__PasswordPolicy:50] [main                ] - Access configuration not persisted in db, nothing to migrate.
+2025-08-24T05:57:02.781Z [jfac ] [INFO ] [6b5a300fefe7aef7] [ProjectRolesPipelinesAction:27] [main                ] - Convert role actions
+2025-08-24T05:57:02.782Z [jfac ] [INFO ] [6b5a300fefe7aef7] [.j.a.s.d.m.ProjectsMigrator:87] [main                ] - Convert role actions
+2025-08-24T05:57:02.785Z [jfac ] [INFO ] [6b5a300fefe7aef7] [ctV4_24__ProjectRolesPerEnv:17] [main                ] - Convert role actions
+2025-08-24T05:57:02.786Z [jfac ] [INFO ] [6b5a300fefe7aef7] [.j.a.s.d.m.ProjectsMigrator:87] [main                ] - Convert role actions
+2025-08-24T05:57:02.788Z [jfac ] [INFO ] [6b5a300fefe7aef7] [ctV4_25__AddGlobalRolesMask:43] [main                ] - Converting roles add mask with default
+2025-08-24T05:57:02.789Z [jfac ] [INFO ] [6b5a300fefe7aef7] [ctV4_25__AddGlobalRolesMask:52] [main                ] - Config roles.v2.global.configuration wasn't found on DB, skipping converter
+2025-08-24T05:57:02.791Z [jfac ] [INFO ] [6b5a300fefe7aef7] [6__CovertProjectAdminToRole:49] [main                ] - Converts project admin privileges to action.
+2025-08-24T05:57:02.794Z [jfac ] [INFO ] [6b5a300fefe7aef7] [__ProjectReleaseManagerRole:15] [main                ] - Convert releaser role
+2025-08-24T05:57:02.795Z [jfac ] [INFO ] [6b5a300fefe7aef7] [.j.a.s.d.m.ProjectsMigrator:87] [main                ] - Convert role actions
+2025-08-24T05:57:02.798Z [jfac ] [INFO ] [6b5a300fefe7aef7] [rojectStorageQuotaSoftLimit:50] [main                ] - Convert project storage quota.
+2025-08-24T05:57:02.804Z [jfac ] [INFO ] [6b5a300fefe7aef7] [13_0_1__ProjectResourcesMap:55] [main                ] - Convert project storage quota.
+2025-08-24T05:57:02.807Z [jfac ] [INFO ] [6b5a300fefe7aef7] [jectKeyInsteadOfProjectName:52] [main                ] - Convert project name to project key
+2025-08-24T05:57:02.811Z [jfac ] [INFO ] [6b5a300fefe7aef7] [jectAdminCanDoDefaultValues:57] [main                ] - Add project admin can do values
+2025-08-24T05:57:02.828Z [jfac ] [INFO ] [6b5a300fefe7aef7] [_ProjectSecurityManagerRole:47] [main                ] - Convert global roles
+2025-08-24T05:57:02.832Z [jfac ] [INFO ] [6b5a300fefe7aef7] [__RemoveXrayAdminPrivileges:51] [main                ] - Convert global roles
+2025-08-24T05:57:02.859Z [jfac ] [INFO ] [6b5a300fefe7aef7] [9_0_0__AddCheckDBPrimaryKey:22] [main                ] - Convert CheckDB Primary key
+2025-08-24T05:57:02.862Z [jfac ] [INFO ] [6b5a300fefe7aef7] [9_0_0__AddCheckDBPrimaryKey:44] [main                ] - querying SELECT * FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE CONSTRAINT_NAME='access_db_check_pk'
+2025-08-24T05:57:02.884Z [jfac ] [INFO ] [6b5a300fefe7aef7] [0_1_0__ReadPolicyRoleAction:42] [main                ] - Migrate readPolicy action
+2025-08-24T05:57:02.927Z [jfac ] [INFO ] [6b5a300fefe7aef7] [nEntitiesFromDefaultProject:44] [main                ] - Remove non admin entities from projects configuration.
+2025-08-24T05:57:02.931Z [jfac ] [INFO ] [6b5a300fefe7aef7] [_AddPermissionActionIndexes:26] [main                ] - Started adding permission action indexes
+2025-08-24T05:57:02.933Z [jfac ] [INFO ] [6b5a300fefe7aef7] [_AddPermissionActionIndexes:54] [main                ] - Creating index access_perm_act_user_id_idx
+2025-08-24T05:57:02.935Z [jfac ] [INFO ] [6b5a300fefe7aef7] [_AddPermissionActionIndexes:54] [main                ] - Creating index access_perm_act_group_id_idx
+2025-08-24T05:57:02.936Z [jfac ] [INFO ] [6b5a300fefe7aef7] [_AddPermissionActionIndexes:30] [main                ] - Done adding permission action indexes
+2025-08-24T05:57:02.979Z [jfac ] [INFO ] [6b5a300fefe7aef7] [PermissionsV2DataMigration:122] [main                ] - Migrate permissions V2
+2025-08-24T05:57:02.991Z [jfac ] [INFO ] [6b5a300fefe7aef7] [PermissionsV2DataMigration:210] [main                ] - Migration in progress: Found 0 rows in the access permissions table before migration
+2025-08-24T05:57:02.993Z [jfac ] [INFO ] [6b5a300fefe7aef7] [PermissionsV2DataMigration:213] [main                ] - Migration in progress: Found 0 rows in the access permissions actions table before migration
+2025-08-24T05:57:02.994Z [jfac ] [INFO ] [6b5a300fefe7aef7] [PermissionsV2DataMigration:217] [main                ] - Migration in progress: Found 0 rows in the access permissions custom data table before migration
+2025-08-24T05:57:02.996Z [jfac ] [INFO ] [6b5a300fefe7aef7] [PermissionsV2DataMigration:225] [main                ] - Migration in progress: Assembled 0 legacy Permissions before migration
+2025-08-24T05:57:02.997Z [jfac ] [INFO ] [6b5a300fefe7aef7] [PermissionsV2DataMigration:229] [main                ] - Migration in progress: Converted 0 legacy Permissions to V2. Separating the Permission V2 full model to DB models
+2025-08-24T05:57:02.998Z [jfac ] [INFO ] [6b5a300fefe7aef7] [PermissionsV2DataMigration:237] [main                ] - Migration in progress: Permissions V2 full model was seperated to DB models, starting generating legacy permissions mappers
+2025-08-24T05:57:02.998Z [jfac ] [INFO ] [6b5a300fefe7aef7] [PermissionsV2DataMigration:241] [main                ] - Migration in progress: Permissions V2 DB models are ready to be inserted to the relevant tables. Rows that will be inserted - dbPermissionsV2 [0] dbPermissionActionsV2 [0] dbPermissionTargetsV2[0] dbPermissionsMapper [0]
+2025-08-24T05:57:02.998Z [jfac ] [INFO ] [6b5a300fefe7aef7] [PermissionsV2DataMigration:248] [main                ] - Migration in progress: Inserting Permissions V2 DB models to the DB - dbPermissionsV2 [0] dbPermissionActionsV2 [0] dbPermissionTargetsV2[0]
+2025-08-24T05:57:03.000Z [jfac ] [INFO ] [6b5a300fefe7aef7] [PermissionsV2DataMigration:253] [main                ] - Migration in progress: Permissions V2 DB models were inserted to the DB, inserting the permissions name mappers - dbPermissionsMapper [0]
+2025-08-24T05:57:03.000Z [jfac ] [INFO ] [6b5a300fefe7aef7] [PermissionsV2DataMigration:266] [main                ] - Migration Summary: Conversion of 0 legacy permissions to 0 v2 permissions succeeded in 0 seconds
+2025-08-24T05:57:03.062Z [jfac ] [INFO ] [6b5a300fefe7aef7] [ymousFromDefaultPermissions:52] [main                ] - Checking if to remove anonymous user from default permissions.
+2025-08-24T05:57:03.063Z [jfac ] [INFO ] [6b5a300fefe7aef7] [ymousFromDefaultPermissions:74] [main                ] - Could not get access config from database. Assuming anonymous access is disabled.
+2025-08-24T05:57:03.063Z [jfac ] [INFO ] [6b5a300fefe7aef7] [ymousFromDefaultPermissions:60] [main                ] - Anonymous access is disabled. Anonymous user will be removed from default permissions.
+2025-08-24T05:57:03.063Z [jfac ] [INFO ] [6b5a300fefe7aef7] [ymousFromDefaultPermissions:81] [main                ] - Could not find anonymous user. No changes have been made.
+2025-08-24T05:57:03.067Z [jfac ] [INFO ] [6b5a300fefe7aef7] [moveRouterServiceIdMappings:44] [main                ] - Migrating router service id mapping from federation
+2025-08-24T05:57:03.068Z [jfac ] [INFO ] [6b5a300fefe7aef7] [moveRouterServiceIdMappings:48] [main                ] - Access configuration not persisted in db, nothing to migrate.
+2025-08-24T05:57:03.090Z [jfac ] [INFO ] [6b5a300fefe7aef7] [0__MigrateProjectsOnceAgain:46] [main                ] - Migrating projects
+2025-08-24T05:57:03.095Z [jfac ] [WARN ] [6b5a300fefe7aef7] [7_108_2__MigrateGlobalRoles:49] [main                ] - Skipped roles migration, default project not found
+2025-08-24T05:57:03.106Z [jfac ] [INFO ] [6b5a300fefe7aef7] [igrateProjectRolesOnceAgain:68] [main                ] - No projects found, skipping migration
+2025-08-24T05:57:03.112Z [jfac ] [INFO ] [6b5a300fefe7aef7] [ionsToProjectAdminOnceAgain:38] [main                ] - Add destination actions to project admin role
+2025-08-24T05:57:03.112Z [jfac ] [WARN ] [6b5a300fefe7aef7] [ionsToProjectAdminOnceAgain:95] [main                ] - No Project Admin roles not found. Skipping destination actions update for Projects V2 roles.
+2025-08-24T05:57:03.124Z [jfac ] [INFO ] [6b5a300fefe7aef7] [RemoveDuplicatesV1Resources:44] [main                ] - Removing duplicate resources from projects.
+2025-08-24T05:57:03.138Z [jfac ] [INFO ] [6b5a300fefe7aef7] [_0__AddApplicationAdminRole:53] [main                ] - Add application admin role to all projects
+2025-08-24T05:57:03.141Z [jfac ] [WARN ] [6b5a300fefe7aef7] [0__AddApplicationAdminRole:143] [main                ] - Role with id 1 has no environment actions. Skipping application actions update for Projects V2 roles.
+2025-08-24T05:57:03.143Z [jfac ] [INFO ] [6b5a300fefe7aef7] [_AddMlActionsToProjectAdmin:61] [main                ] - Add ml actions to project admin role
+2025-08-24T05:57:03.144Z [jfac ] [WARN ] [6b5a300fefe7aef7] [AddMlActionsToProjectAdmin:138] [main                ] - No Project Admin roles not found. Skipping ml actions update for Projects V2 roles.
+2025-08-24T05:57:03.148Z [jfac ] [INFO ] [6b5a300fefe7aef7] [a.s.d.m.UsersAndGroupUtils:257] [main                ] - Could not find project id for project key `default`
+2025-08-24T05:57:03.150Z [jfac ] [INFO ] [6b5a300fefe7aef7] [a.s.d.m.UsersAndGroupUtils:257] [main                ] - Could not find project id for project key `default`
+2025-08-24T05:57:03.451Z [jfac ] [INFO ] [6b5a300fefe7aef7] [j.a.m.ConfigMigrationRunner:77] [main                ] - AccessConfigMigration (version 2) is up to date, nothing to migrate
+2025-08-24T05:57:03.455Z [jfac ] [INFO ] [6b5a300fefe7aef7] [alConfigurationServiceBase:123] [main                ] - Current configurations are the same as the new configurations, no need for an update. No action was taken.
+2025-08-24T05:57:03.458Z [jfac ] [INFO ] [6b5a300fefe7aef7] [alConfigurationServiceBase:127] [main                ] - Loading from Patch file /opt/jfrog/artifactory/var/etc/access/access.config.patch.yml finished successfully
+2025-08-24T05:57:03.460Z [jfac ] [INFO ] [6b5a300fefe7aef7] [j.a.m.ConfigMigrationRunner:77] [main                ] - AccessConfigMigration (version 2) is up to date, nothing to migrate
+2025-08-24T05:57:03.462Z [jfac ] [INFO ] [6b5a300fefe7aef7] [alConfigurationServiceBase:189] [main                ] - Current configurations are the same as the new configurations, no need for an update. No action was taken.
+2025-08-24T05:57:03.959Z [jfac ] [INFO ] [6b5a300fefe7aef7] [.s.s.s.ServiceConfigFactory:47] [main                ] - Initializing task scheduler with 9 threads
+2025-08-24T05:57:04.053Z [jfac ] [INFO ] [6b5a300fefe7aef7] [.s.j.j.JdbcSchedulerBuilder:36] [main                ] - Creating scheduler with configuration: threads=10, pollInterval=30s, heartbeat=300s enable-immediate-execution=false, table-name=access_tasks, name=artifactory-0
+2025-08-24T05:57:04.057Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.a.s.j.JobScheduler:91     ] [main                ] - Starting job scheduler
+2025-08-24T05:57:04.159Z [jfac ] [INFO ] [6b5a300fefe7aef7] [b.AccessServerBootstrapImpl:66] [main                ] - [ACCESS BOOTSTRAP] Starting JFrog Access bootstrap...
+2025-08-24T05:57:04.167Z [jfac ] [INFO ] [6b5a300fefe7aef7] [b.AccessServerBootstrapImpl:90] [main                ] - Creating new server entry for server: artifactory-0
+2025-08-24T05:57:04.361Z [jfac ] [INFO ] [6b5a300fefe7aef7] [b.AccessServerBootstrapImpl:83] [main                ] - [ACCESS BOOTSTRAP] JFrog Access bootstrap finished.
+2025-08-24T05:57:04.364Z [jfac ] [INFO ] [6b5a300fefe7aef7] [.s.j.JfConnectConfiguration:48] [main                ] - JFCON client for entitlements initialization...
+2025-08-24T05:57:04.368Z [jfac ] [INFO ] [6b5a300fefe7aef7] [h.AccessNodeIdProviderImpl:138] [main                ] - Service id initialized: jfac@01k3dadp7e688m028tztv9160g, for tenant: single_tenant
+2025-08-24T05:57:04.718Z [jfac ] [INFO ] [6b5a300fefe7aef7] [.s.j.JfConnectConfiguration:70] [main                ] - JFCON client for entitlements was initiated.
+2025-08-24T05:57:05.883Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.a.s.s.JoinKeyAccess:316   ] [main                ] - Cluster join: Join key loaded successfully (from: /opt/jfrog/artifactory/var/bootstrap/access/etc/security/join.key)
+2025-08-24T05:57:05.889Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.a.s.s.JoinKeyAccess:235   ] [main                ] - Cluster join: Removing bootstrap join key file: /opt/jfrog/artifactory/var/bootstrap/access/etc/security/join.key
+2025-08-24T05:57:05.890Z [jfac ] [WARN ] [6b5a300fefe7aef7] [o.j.a.s.s.JoinKeyAccess:154   ] [main                ] - Will be adding main key with kid 3676ec4d1cab0ce509a0f31cfc826c180dc66a430818bda477a812b4f311ee09 to the map
+2025-08-24T05:57:06.509Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.a.s.r.s.GrpcServerImpl:112] [main                ] - Starting gRPC Server on port 8045
+2025-08-24T05:57:06.661Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.a.s.r.s.GrpcServerImpl:148] [main                ] - gRPC Server started, listening on 8045
+2025-08-24T05:57:06.745Z [jfac ] [INFO ] [6b5a300fefe7aef7] [a.s.b.AccessServerRegistrar:74] [main                ] - [ACCESS BOOTSTRAP] Starting JFrog Access registrar...
+2025-08-24T05:57:06.756Z [jfac ] [INFO ] [6b5a300fefe7aef7] [stributedCallHomeServiceJob:37] [main                ] - Scheduling CallHomeServiceJob job with cron: 0 0 23 * * ?
+2025-08-24T05:57:06.805Z [jfac ] [INFO ] [512d7102c838e701] [a.c.RefreshableScheduledJob:53] [main                ] - Scheduling loadCertificates task to run every 30 seconds
+2025-08-24T05:57:06.808Z [jfac ] [INFO ] [512d7102c838e701] [dFederationEventsCleanUpJob:31] [main                ] - Scheduling FederationEventsCleanJob job with interval secs: 1209600
+2025-08-24T05:57:06.812Z [jfac ] [INFO ] [512d7102c838e701] [a.c.RefreshableScheduledJob:64] [main                ] - federationCleanupService task is disabled.
+2025-08-24T05:57:06.813Z [jfac ] [INFO ] [512d7102c838e701] [a.c.RefreshableScheduledJob:53] [main                ] - Scheduling heartbeat task to run every 5 seconds
+2025-08-24T05:57:06.815Z [jfac ] [INFO ] [512d7102c838e701] [a.c.RefreshableScheduledJob:53] [main                ] - Scheduling KeepAliveFederationServers task to run every 86400 seconds
+2025-08-24T05:57:06.818Z [jfac ] [INFO ] [                ] [.j.a.s.s.SystemScheduledJob:37] [main                ] - Scheduling Readiness task to run with 15000 milliseconds fixed delay
+2025-08-24T05:57:06.820Z [jfac ] [INFO ] [                ] [tedUnusedLicensesCleanupJob:58] [main                ] - Scheduling unusedLicensesCleanup job with interval: 86400
+2025-08-24T05:57:06.822Z [jfac ] [INFO ] [                ] [a.c.RefreshableScheduledJob:64] [main                ] - unusedLicensesCleanup task is disabled.
+2025-08-24T05:57:06.836Z [jfac ] [INFO ] [                ] [ributedStaleTokenCleanupJob:45] [main                ] - Scheduling StaleTokenCleanupJob job with interval: 3600
+2025-08-24T05:57:06.838Z [jfac ] [INFO ] [                ] [a.c.RefreshableScheduledJob:64] [main                ] - StaleTokenCleanupJob task is disabled.
+2025-08-24T05:57:06.839Z [jfac ] [INFO ] [                ] [ributedExpiredTokenCleanJob:22] [main                ] - Scheduling ExpiredTokenCleanJob job with cron: 0 0 0/1 * * ?
+2025-08-24T05:57:06.843Z [jfac ] [INFO ] [                ] [butedNotifyTokenExpiryTask:275] [main                ] - Task for notifying token expiry disabled
+2025-08-24T05:57:06.844Z [jfac ] [INFO ] [                ] [o.j.a.s.j.JobScheduler:146    ] [main                ] - Task NotifyTokenExpiryTask will be disabled since cron is disabled. Cron: -
+2025-08-24T05:57:06.845Z [jfac ] [INFO ] [                ] [o.j.a.s.j.JobScheduler:260    ] [jf-common-pool-1    ] - Task name: NotifyTokenExpiryTask is not scheduled.Nothing to remove
+2025-08-24T05:57:06.847Z [jfac ] [INFO ] [                ] [TokenExpiryWorkerNotifyTask:60] [main                ] - Scheduling BeforeTokenExpiryWorkerNotifyTask job with cron: 0 * * * * *
+2025-08-24T05:57:06.852Z [jfac ] [INFO ] [                ] [tributedEmailSentCleanupJob:25] [main                ] - Scheduling EmailSentCleanupJob job with interval secs: 86400
+2025-08-24T05:57:06.854Z [jfac ] [INFO ] [                ] [swordExpiryEmailReminderJob:56] [main                ] - Scheduling PasswordExpiryEmailReminderJob job with interval secs: 86400
+2025-08-24T05:57:06.857Z [jfac ] [INFO ] [                ] [a.c.RefreshableScheduledJob:64] [main                ] - EmailsLogCleanup task is disabled.
+2025-08-24T05:57:06.858Z [jfac ] [INFO ] [                ] [a.c.RefreshableScheduledJob:64] [main                ] - PasswordExpiryEmailReminder task is disabled.
+2025-08-24T05:57:07.343Z [jfac ] [INFO ] [                ] [o.j.a.AccessApplication:59    ] [main                ] - Started AccessApplication in 8.469 seconds (process running for 9.788)
+2025-08-24T05:57:07.348Z [jfac ] [INFO ] [                ] [s.d.u.AccessJdbcHelperImpl:168] [main                ] - Notifying tenants on DB migration completion
+2025-08-24T05:57:08.079Z [jfac ] [INFO ] [54a84f6a1b6adb1c] [o.j.a.s.s.JoinKeyAccess:174   ] [27.0.0.1-8040-exec-4] - Cluster join: Join keys resolved successfully
+2025-08-24T05:57:08.080Z [jfac ] [WARN ] [54a84f6a1b6adb1c] [o.j.a.s.s.JoinKeyAccess:189   ] [27.0.0.1-8040-exec-4] - Adding join key with kid: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 to additional join keys
+2025-08-24T05:57:08.125Z [jfac ] [INFO ] [54a84f6a1b6adb1c] [.j.a.s.s.r.JoinServiceImpl:109] [27.0.0.1-8040-exec-4] - Router join request: using external topology so skipping router NodeId and IP validation
+2025-08-24T05:57:08.530Z [jfac ] [INFO ] [54a84f6a1b6adb1c] [CertificateFileHandlerBase:200] [27.0.0.1-8040-exec-4] - [ACCESS BOOTSTRAP] Saved new root certificate at: /opt/jfrog/artifactory/var/etc/access/keys/root.crt
+2025-08-24T05:57:08.547Z [jfac ] [INFO ] [54a84f6a1b6adb1c] [.r.ServiceTokenProviderImpl:89] [27.0.0.1-8040-exec-4] - Cluster join: Successfully joined jfrou@01k3dadrcbtvwy2ktf3s9ehtjd with node id artifactory-0
+2025-08-24T05:57:08.667Z [jfac ] [INFO ] [54a84f6a1b6adb1c] [CertificateFileHandlerBase:200] [27.0.0.1-8040-exec-4] - [ACCESS BOOTSTRAP] Saved new ca certificate at: /opt/jfrog/artifactory/var/etc/access/keys/ca.crt
+2025-08-24T05:57:09.158Z [jfac ] [INFO ] [6b5a300fefe7aef7] [.AccessWithRouterRegistrar:124] [jf-common-pool-0    ] - Access Server successfully registered on Router on URL: http://localhost:8046
+2025-08-24T05:57:09.161Z [jfac ] [INFO ] [6b5a300fefe7aef7] [.s.b.AccessServerRegistrar:156] [jf-common-pool-0    ] - [ACCESS BOOTSTRAP] Updating server 'artifactory-0' private key finger print to: e0f6373a07bfdaee780cbc58dd6f8fdc1375e7fdfbac8f44a62f72a58948e9e6 ca private key finger print to: fad99fdcd970bacc479e7c5875aa304927324afe856317a4bdb971ba16c12263
+2025-08-24T05:57:09.186Z [jfac ] [INFO ] [efa1d2218f0b2773] [j.a.s.s.j.MTJFConfigWrapper:63] [jf-common-pool-0    ] - [JFConfig] Initializing
+2025-08-24T05:57:09.210Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-3    ] - Retry 1 Elapsed 21 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:09 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:09.314Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-4    ] - Retry 2 Elapsed 126 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:09 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:09.517Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-3    ] - Retry 3 Elapsed 329 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:09 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:09.919Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-4    ] - Retry 4 Elapsed 731 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:09 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:10.164Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-1    ] - Retry 1 Elapsed 1 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:10.723Z [jfac ] [ERROR] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:305      ] [jf-common-pool-1    ] - Last retry failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:10 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Not trying again (exceeded number of attempts (5))
+2025-08-24T05:57:10.830Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-2    ] - Retry 1 Elapsed 3 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:10 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:10.933Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-4    ] - Retry 2 Elapsed 106 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:10 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:11.037Z [jfac ] [INFO ] [42a488c734c8a2de] [.r.ServiceTokenProviderImpl:89] [27.0.0.1-8040-exec-8] - Cluster join: Successfully joined jfevd@01k3dadp7e688m028tztv9160g with node id artifactory-0
+2025-08-24T05:57:11.136Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-2    ] - Retry 3 Elapsed 309 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:11 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:11.270Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-3    ] - Retry 2 Elapsed 2.11 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:11.270Z [jfac ] [INFO ] [377c134d1bb9a2318fafce8e78d6881b] [.r.ServiceTokenProviderImpl:89] [27.0.0.1-8040-exec-1] - Cluster join: Successfully joined jfrt@01k3dadv4an03k1v3xy8fe0ccm with node id artifactory-0
+2025-08-24T05:57:11.390Z [jfac ] [INFO ] [7c2f1efe58b4b7d7] [.r.ServiceTokenProviderImpl:89] [27.0.0.1-8040-exec-7] - Cluster join: Successfully joined jfevt@01k3dadp7e688m028tztv9160g with node id artifactory-0
+2025-08-24T05:57:11.414Z [jfac ] [INFO ] [18952d3e02d3affc] [.r.ServiceTokenProviderImpl:89] [27.0.0.1-8040-exec-8] - Cluster join: Successfully joined jfmd@01k3dadr63xzjbxrqt9ej476by with node id artifactory-0
+2025-08-24T05:57:11.483Z [jfac ] [INFO ] [33a435ea12ba1ea1] [.r.ServiceTokenProviderImpl:89] [27.0.0.1-8040-exec-4] - Cluster join: Successfully joined jfcon@01k3dadp7e688m028tztv9160g with node id artifactory-0
+2025-08-24T05:57:11.500Z [jfac ] [INFO ] [0d9e2733e10f7320] [.r.ServiceTokenProviderImpl:89] [27.0.0.1-8040-exec-1] - Cluster join: Successfully joined jfomr@01k3dadp7e688m028tztv9160g with node id artifactory-0
+2025-08-24T05:57:11.544Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-3    ] - Retry 4 Elapsed 717 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:11 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:12.347Z [jfac ] [ERROR] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:305      ] [jf-common-pool-2    ] - Last retry failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:12 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Not trying again (exceeded number of attempts (5))
+2025-08-24T05:57:12.474Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-4    ] - Retry 3 Elapsed 3.32 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:12.551Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-1    ] - Retry 1 Elapsed 2 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:12 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:12.654Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-3    ] - Retry 2 Elapsed 105 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:12 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:12.859Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-1    ] - Retry 3 Elapsed 310 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:12 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:13.100Z [jfac ] [INFO ] [27949a78e1024a01] [.r.ServiceTokenProviderImpl:89] [27.0.0.1-8040-exec-6] - Cluster join: Successfully joined jfcfg@01k3dadp7e688m028tztv9160g with node id artifactory-0
+2025-08-24T05:57:13.263Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-4    ] - Retry 4 Elapsed 714 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:13 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:13.883Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-3    ] - Retry 4 Elapsed 4.72 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:14.066Z [jfac ] [ERROR] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:305      ] [jf-common-pool-1    ] - Last retry failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:14 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Not trying again (exceeded number of attempts (5))
+2025-08-24T05:57:14.471Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-2    ] - Retry 1 Elapsed 3 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:14 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:14.574Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-4    ] - Retry 2 Elapsed 106 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:14 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:14.777Z [jfac ] [WARN ] [efa1d2218f0b2773] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-3    ] - Retry 3 Elapsed 309 millis failed: Hard error while trying to reach peer node ''. Servers versions match? [localhost:8046]. Status code: UNIMPLEMENTED. HTTP status code 404
+invalid content-type: text/plain; charset=utf-8
+headers: Metadata(:status=404,content-type=text/plain; charset=utf-8,x-content-type-options=nosniff,date=Sun, 24 Aug 2025 05:57:14 GMT,content-length=19)
+DATA-----------------------------
+404 page not found
+. Trying again
+2025-08-24T05:57:15.292Z [jfac ] [INFO ] [efa1d2218f0b2773] [j.a.s.s.j.MTJFConfigWrapper:65] [jf-common-pool-0    ] - [JFConfig] Initialized
+2025-08-24T05:57:15.330Z [jfac ] [INFO ] [efa1d2218f0b2773] [FeatureAdoptionServiceImpl:148] [jf-common-pool-0    ] - FeatureAdoption Framework Service is already disabled
+2025-08-24T05:57:15.334Z [jfac ] [INFO ] [efa1d2218f0b2773] [o.j.j.c.JFConnectClientImpl:98] [jf-common-pool-0    ] - Initializing the JFConnect client, this action can block for more than [180000] millis
+2025-08-24T05:57:15.613Z [jfac ] [INFO ] [efa1d2218f0b2773] [.j.j.c.JFConnectClientImpl:107] [jf-common-pool-0    ] - JFConnect client initialized
+2025-08-24T05:57:15.621Z [jfac ] [INFO ] [efa1d2218f0b2773] [a.s.b.AccessServerRegistrar:86] [jf-common-pool-0    ] - [ACCESS BOOTSTRAP] JFrog Access registrar finished.
+2025-08-24T05:57:15.687Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-2    ] - Retry 5 Elapsed 6.53 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:16.081Z [jfac ] [INFO ] [29b1ee75490a119e] [o.j.m.MetricsHelper:64        ] [jf-access-grpc-9    ] - Initializing Metrics collector and logger for feature adoption...
+2025-08-24T05:57:16.082Z [jfac ] [INFO ] [29b1ee75490a119e] [FeatureAdoptionServiceImpl:140] [jf-access-grpc-9    ] - FeatureAdoption Framework service is started and is running in background...
+2025-08-24T05:57:16.093Z [jfac ] [INFO ] [                ] [FeatureAdoptionServiceImpl:130] [c-default-executor-1] - FeatureAdoption Framework Service is already running
+2025-08-24T05:57:16.115Z [jfac ] [INFO ] [377c134d1bb9a2318fafce8e78d6881b] [j.a.m.ConfigMigrationRunner:77] [27.0.0.1-8040-exec-4] - AccessConfigMigration (version 2) is up to date, nothing to migrate
+2025-08-24T05:57:16.291Z [jfac ] [INFO ] [377c134d1bb9a2318fafce8e78d6881b] [j.a.m.ConfigMigrationRunner:77] [27.0.0.1-8040-exec-1] - AccessConfigMigration (version 2) is up to date, nothing to migrate
+2025-08-24T05:57:16.887Z [jfac ] [INFO ] [21d45999b9aafbb9] [.r.ServiceTokenProviderImpl:89] [27.0.0.1-8040-exec-7] - Cluster join: Successfully joined jfob@01k3dadv4an03k1v3xy8fe0ccm with node id artifactory-0
+2025-08-24T05:57:16.969Z [jfac ] [INFO ] [377c134d1bb9a2318fafce8e78d6881b] [alConfigurationServiceBase:189] [7.0.0.1-8040-exec-10] - Current configurations are the same as the new configurations, no need for an update. No action was taken.
+2025-08-24T05:57:17.693Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-0    ] - Retry 6 Elapsed 8.53 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:19.706Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-2    ] - Retry 7 Elapsed 10.55 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:21.719Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-0    ] - Retry 8 Elapsed 12.56 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:23.734Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-2    ] - Retry 9 Elapsed 14.57 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:25.743Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-0    ] - Retry 10 Elapsed 16.58 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:27.753Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-2    ] - Retry 11 Elapsed 18.59 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:29.758Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-0    ] - Retry 12 Elapsed 20.6 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:31.767Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-2    ] - Retry 13 Elapsed 22.61 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:32.974Z [jfac ] [INFO ] [10f1d64f40be9bb6] [.r.ServiceTokenProviderImpl:89] [27.0.0.1-8040-exec-6] - Cluster join: Successfully joined jffe@01k3dadp7e688m028tztv9160g with node id artifactory-0
+2025-08-24T05:57:33.775Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-0    ] - Retry 14 Elapsed 24.62 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:35.784Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-2    ] - Retry 15 Elapsed 26.62 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:57:37.793Z [jfac ] [INFO ] [6b5a300fefe7aef7] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-0    ] - Retry 16 Elapsed 28.63 secs failed: Router readiness on URL http://localhost:8046/router/api/v1/system/readiness failed with error: Router readiness failed with status 503. Trying again
+2025-08-24T05:58:04.100Z [jfac ] [INFO ] [7ae4cf3e6705a057] [dFederationEventsCleanUpJob:38] [task-pool-6-thread-1] - Running clean up of outdated Federation events
+2025-08-24T05:58:04.100Z [jfac ] [INFO ] [afbe93bad2f7800f] [ributedStaleTokenCleanupJob:58] [task-pool-6-thread-3] - Starting Access job to remove stale nodes and join-admin-tokens on server: artifactory-0
+2025-08-24T05:58:04.103Z [jfac ] [INFO ] [7cd78961fd282771] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-6] - Running notify on token expiry task
+2025-08-24T05:59:04.104Z [jfac ] [INFO ] [ffddefd3e3fd5219] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-7] - Running notify on token expiry task
+2025-08-24T06:00:04.111Z [jfac ] [INFO ] [6753edec08fdefae] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-9] - Running notify on token expiry task
+2025-08-24T06:01:04.119Z [jfac ] [INFO ] [9a51b5339922768e] [TokenExpiryWorkerNotifyTask:80] [ask-pool-6-thread-10] - Running notify on token expiry task
+2025-08-24T06:01:54.134Z [jfac ] [INFO ] [3674e5f141f9412a] [j.a.m.ConfigMigrationRunner:77] [27.0.0.1-8040-exec-5] - AccessConfigMigration (version 2) is up to date, nothing to migrate
+2025-08-24T06:02:04.139Z [jfac ] [INFO ] [ccaf60683d725988] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-4] - Running notify on token expiry task
+2025-08-24T06:18:16.866Z [jfac ] [INFO ] [                ] [ffectedConfigStreamObserver:35] [resubscribe         ] - publishing full invalidation and attempting to resubscribe to affected configuration changes
+2025-08-24T06:18:16.879Z [jfac ] [INFO ] [                ] [.s.j.c.g.GrpcStreamObserver:92] [c-default-executor-2] - Stream cancelled
+2025-08-24T06:18:19.137Z [jfac ] [INFO ] [6401f2e9175b9c81] [o.j.a.s.s.c.s.HeartbeatJob:97 ] [jf-access-task8     ] - Refreshing server state after it was considered as stale by peers [last previous successful update 1756015352545]
+2025-08-24T06:18:19.154Z [jfac ] [INFO ] [6401f2e9175b9c81] [CertificateFileHandlerBase:167] [jf-access-task8     ] - Loading ca certificate from database.
+2025-08-24T06:18:19.385Z [jfac ] [INFO ] [6401f2e9175b9c81] [CertificateFileHandlerBase:200] [jf-access-task8     ] - [ACCESS BOOTSTRAP] Saved new ca certificate at: /opt/jfrog/artifactory/var/etc/access/keys/ca.crt
+2025-08-24T06:18:19.385Z [jfac ] [INFO ] [6401f2e9175b9c81] [CertificateFileHandlerBase:167] [jf-access-task8     ] - Loading root certificate from database.
+2025-08-24T06:18:19.444Z [jfac ] [INFO ] [6401f2e9175b9c81] [CertificateFileHandlerBase:200] [jf-access-task8     ] - [ACCESS BOOTSTRAP] Saved new root certificate at: /opt/jfrog/artifactory/var/etc/access/keys/root.crt
+2025-08-24T06:18:45.722Z [jfac ] [INFO ] [ebb103c4b0371c62] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-1] - Running notify on token expiry task
+2025-08-24T06:19:16.526Z [jfac ] [INFO ] [b601d3b43896e676] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-6] - Running notify on token expiry task
+2025-08-24T06:20:20.228Z [jfac ] [INFO ] [d5e4e61afab66872] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-2] - Running notify on token expiry task
+2025-08-24T06:21:20.232Z [jfac ] [INFO ] [f65d633f0cc533f5] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-3] - Running notify on token expiry task
+2025-08-24T06:22:20.238Z [jfac ] [INFO ] [e7be4168771b2bc1] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-5] - Running notify on token expiry task
+2025-08-24T06:23:20.242Z [jfac ] [INFO ] [e5a6765a5cc4ff92] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-7] - Running notify on token expiry task
+2025-08-24T06:24:20.249Z [jfac ] [INFO ] [6417270437605fcd] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-9] - Running notify on token expiry task
+2025-08-24T06:25:20.258Z [jfac ] [INFO ] [b895e8fc009357ce] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-8] - Running notify on token expiry task
+2025-08-24T06:26:20.270Z [jfac ] [INFO ] [5bcb4b38a91bd7ff] [TokenExpiryWorkerNotifyTask:80] [ask-pool-6-thread-10] - Running notify on token expiry task
+2025-08-24T06:27:20.276Z [jfac ] [INFO ] [c08f092ef56e77a0] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-4] - Running notify on token expiry task
+2025-08-24T06:28:20.285Z [jfac ] [INFO ] [d1ee1b57b5713f00] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-1] - Running notify on token expiry task
+2025-08-24T06:29:20.295Z [jfac ] [INFO ] [66d0003d983103ba] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-6] - Running notify on token expiry task
+2025-08-24T06:30:20.301Z [jfac ] [INFO ] [0764004f69b24fe9] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-2] - Running notify on token expiry task
+2025-08-24T06:31:20.302Z [jfac ] [INFO ] [6e94b0b57511d417] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-3] - Running notify on token expiry task
+2025-08-24T06:32:20.317Z [jfac ] [INFO ] [3a3148004c2d7089] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-5] - Running notify on token expiry task
+2025-08-24T06:33:20.320Z [jfac ] [INFO ] [162b4b1946dfb639] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-7] - Running notify on token expiry task
+2025-08-24T06:34:20.337Z [jfac ] [INFO ] [d246d6b4a8a14ecc] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-9] - Running notify on token expiry task
+2025-08-24T06:35:20.341Z [jfac ] [INFO ] [0da4725f55ee8ef3] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-8] - Running notify on token expiry task
+2025-08-24T06:36:20.353Z [jfac ] [INFO ] [08ed30e3fc968370] [TokenExpiryWorkerNotifyTask:80] [ask-pool-6-thread-10] - Running notify on token expiry task
+2025-08-24T06:37:20.361Z [jfac ] [INFO ] [c662980a1cf47d03] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-4] - Running notify on token expiry task
+2025-08-24T06:38:20.371Z [jfac ] [INFO ] [5bd5596566fa72e7] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-1] - Running notify on token expiry task
+2025-08-24T06:39:20.384Z [jfac ] [INFO ] [81bcc6da7a10cd57] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-6] - Running notify on token expiry task
+2025-08-24T06:40:20.386Z [jfac ] [INFO ] [ce03f44ca6320d97] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-2] - Running notify on token expiry task
+2025-08-24T06:41:20.389Z [jfac ] [INFO ] [7ae83f92fcb9618f] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-3] - Running notify on token expiry task
+2025-08-24T06:42:20.399Z [jfac ] [INFO ] [0bc8342095b4b851] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-5] - Running notify on token expiry task
+2025-08-24T06:43:20.413Z [jfac ] [INFO ] [822ba4866ecca856] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-7] - Running notify on token expiry task
+2025-08-24T06:44:20.414Z [jfac ] [INFO ] [6546c46dc0dc95f9] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-9] - Running notify on token expiry task
+2025-08-24T06:45:20.431Z [jfac ] [INFO ] [12b064c3d98cff07] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-8] - Running notify on token expiry task
+2025-08-24T06:46:20.471Z [jfac ] [INFO ] [f7e7cadc2666f300] [TokenExpiryWorkerNotifyTask:80] [ask-pool-6-thread-10] - Running notify on token expiry task
+2025-08-24T06:47:20.481Z [jfac ] [INFO ] [0dd41492ff26fd9e] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-4] - Running notify on token expiry task
+2025-08-24T06:48:20.485Z [jfac ] [INFO ] [c99647d60d1c836f] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-1] - Running notify on token expiry task
+2025-08-24T06:49:20.491Z [jfac ] [INFO ] [d0458342661b2db3] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-6] - Running notify on token expiry task
+2025-08-24T06:50:20.495Z [jfac ] [INFO ] [a0875a316cd9c1f3] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-2] - Running notify on token expiry task
+2025-08-24T06:51:20.505Z [jfac ] [INFO ] [b1508f8c8bbb685e] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-3] - Running notify on token expiry task
+2025-08-24T06:52:20.509Z [jfac ] [INFO ] [2dacca9d60442a1e] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-5] - Running notify on token expiry task
+2025-08-24T06:53:20.510Z [jfac ] [INFO ] [48a7cc283b0018b5] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-7] - Running notify on token expiry task
+2025-08-24T06:54:20.515Z [jfac ] [INFO ] [20b16b4ba41fe55d] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-9] - Running notify on token expiry task
+2025-08-24T06:55:20.520Z [jfac ] [INFO ] [0f5dc0d85148c9f3] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-8] - Running notify on token expiry task
+2025-08-24T06:56:20.526Z [jfac ] [INFO ] [aa2b47c75a0efb87] [TokenExpiryWorkerNotifyTask:80] [ask-pool-6-thread-10] - Running notify on token expiry task
+2025-08-24T06:57:20.535Z [jfac ] [INFO ] [9a3a4a76ab9071d2] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-4] - Running notify on token expiry task
+2025-08-24T06:58:20.545Z [jfac ] [INFO ] [8f37a673a4618203] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-1] - Running notify on token expiry task
+2025-08-24T06:58:20.545Z [jfac ] [INFO ] [31e143e967c92191] [ributedStaleTokenCleanupJob:58] [task-pool-6-thread-6] - Starting Access job to remove stale nodes and join-admin-tokens on server: artifactory-0
+2025-08-24T06:59:20.558Z [jfac ] [INFO ] [76abd1e8cb639e37] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-2] - Running notify on token expiry task
+2025-08-24T07:00:20.554Z [jfac ] [INFO ] [1bc289904569bbe9] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-3] - Running notify on token expiry task
+2025-08-24T07:01:20.571Z [jfac ] [INFO ] [57cec65a34ef4170] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-7] - Running notify on token expiry task
+2025-08-24T07:02:20.574Z [jfac ] [INFO ] [8ad7cae525f464e9] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-9] - Running notify on token expiry task
+2025-08-24T07:03:20.585Z [jfac ] [INFO ] [6142a9d095fc2ad1] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-8] - Running notify on token expiry task
+2025-08-24T07:04:20.590Z [jfac ] [INFO ] [41cde206c2bc373e] [TokenExpiryWorkerNotifyTask:80] [ask-pool-6-thread-10] - Running notify on token expiry task
+2025-08-24T07:05:20.595Z [jfac ] [INFO ] [1da2ba7684ceb763] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-4] - Running notify on token expiry task
+2025-08-24T07:06:20.610Z [jfac ] [INFO ] [1a62caaa10998eef] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-1] - Running notify on token expiry task
+2025-08-24T07:07:20.618Z [jfac ] [INFO ] [64392c6ae67a606d] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-6] - Running notify on token expiry task
+2025-08-24T07:08:20.619Z [jfac ] [INFO ] [81c14b9ece6503d9] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-2] - Running notify on token expiry task
+2025-08-24T07:09:20.630Z [jfac ] [INFO ] [32f1c03eaf46d23d] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-5] - Running notify on token expiry task
+2025-08-24T07:10:20.635Z [jfac ] [INFO ] [fb797ee8f9fe38bb] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-3] - Running notify on token expiry task
+2025-08-24T07:11:20.644Z [jfac ] [INFO ] [1e3447ebe4893844] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-7] - Running notify on token expiry task
+2025-08-24T07:12:20.648Z [jfac ] [INFO ] [23a06ae186912c1a] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-9] - Running notify on token expiry task
+2025-08-24T07:13:20.658Z [jfac ] [INFO ] [16ac7b584563d2ac] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-8] - Running notify on token expiry task
+2025-08-24T07:14:20.667Z [jfac ] [INFO ] [3801fb00cecaf1f0] [TokenExpiryWorkerNotifyTask:80] [ask-pool-6-thread-10] - Running notify on token expiry task
+2025-08-24T07:15:20.675Z [jfac ] [INFO ] [c8fc02b772ffb232] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-4] - Running notify on token expiry task
+2025-08-24T07:16:20.708Z [jfac ] [INFO ] [1da291aaa47f2391] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-1] - Running notify on token expiry task
+2025-08-24T07:17:20.725Z [jfac ] [INFO ] [0dad425e53b82423] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-6] - Running notify on token expiry task
+2025-08-24T07:17:40.718Z [jfac ] [INFO ] [6fae7e52e049cbdf] [s.m.m.t.TokenPayloadMapper:170] [27.0.0.1-8040-exec-3] - Creating keys for user: 'admin'
+2025-08-24T07:18:20.747Z [jfac ] [INFO ] [51ac03667100cc63] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-2] - Running notify on token expiry task
+2025-08-24T07:19:20.748Z [jfac ] [INFO ] [7c20fd971b4c909b] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-5] - Running notify on token expiry task
+2025-08-24T07:20:20.760Z [jfac ] [INFO ] [1ce74ed20b4b1da8] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-3] - Running notify on token expiry task
+2025-08-24T07:21:20.765Z [jfac ] [INFO ] [ffd5df4cfd3a9bdd] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-7] - Running notify on token expiry task
+2025-08-24T07:22:20.777Z [jfac ] [INFO ] [5f7fa1de16edff87] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-9] - Running notify on token expiry task
+2025-08-24T07:23:20.799Z [jfac ] [INFO ] [5325872fafa1c7b3] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-8] - Running notify on token expiry task
+2025-08-24T07:24:20.830Z [jfac ] [INFO ] [4e93b339372dc6ce] [TokenExpiryWorkerNotifyTask:80] [ask-pool-6-thread-10] - Running notify on token expiry task
+2025-08-24T07:25:20.835Z [jfac ] [INFO ] [0ef98e22349c7fe5] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-4] - Running notify on token expiry task
+2025-08-24T07:26:20.840Z [jfac ] [INFO ] [1a335d715bb4ecea] [TokenExpiryWorkerNotifyTask:80] [task-pool-6-thread-1] - Running notify on token expiry task
+2025-08-24T07:26:25.457Z [jfac ] [INFO ] [5714fb0404ab2aa5] [.s.SupportBundleSubResource:46] [27.0.0.1-8040-exec-3] - Start collecting access support bundle
+2025-08-24T07:26:25.464Z [jfac ] [INFO ] [5714fb0404ab2aa5] [s.SupportBundleServiceImpl:179] [27.0.0.1-8040-exec-3] - Starting collecting support bundle
+2025-08-24T07:26:25.481Z [jfac ] [INFO ] [5714fb0404ab2aa5] [o.j.s.c.c.c.LogsCollector:49  ] [27.0.0.1-8040-exec-3] - Starting logs collection ...

@@ -1,0 +1,105 @@
+
+[accessLog]
+  format = "json"
+
+  [accessLog.fields]
+    defaultMode = "drop"
+
+    [accessLog.fields.headers]
+      defaultMode = "drop"
+
+      [accessLog.fields.headers.names]
+        Uber-Trace-Id = "keep"
+        User-Agent = "keep"
+        X-B3-Traceid = "keep"
+
+    [accessLog.fields.names]
+      clientaddr = "keep"
+      downstreamcontentsize = "keep"
+      downstreamstatus = "keep"
+      duration = "keep"
+      requestmethod = "keep"
+      requestpath = "keep"
+      serviceaddr = "keep"
+      startutc = "keep"
+
+[api]
+
+[entryPoints]
+
+  [entryPoints.api]
+    address = "localhost:8049"
+
+    [entryPoints.api.forwardedHeaders]
+      insecure = true
+
+    [entryPoints.api.http2]
+      maxConcurrentStreams = 250
+
+    [entryPoints.api.transport]
+
+      [entryPoints.api.transport.lifeCycle]
+        graceTimeOut = "10s"
+        requestAcceptGraceTimeout = "10s"
+
+      [entryPoints.api.transport.respondingTimeouts]
+        idleTimeout = "3m0s"
+
+  [entryPoints.external]
+    address = ":8082"
+
+    [entryPoints.external.forwardedHeaders]
+      insecure = true
+
+    [entryPoints.external.http2]
+      maxConcurrentStreams = 500
+
+    [entryPoints.external.transport]
+
+      [entryPoints.external.transport.lifeCycle]
+        graceTimeOut = "10s"
+
+      [entryPoints.external.transport.respondingTimeouts]
+        idleTimeout = "3m0s"
+
+  [entryPoints.internal]
+    address = "localhost:8046"
+
+    [entryPoints.internal.forwardedHeaders]
+      insecure = true
+
+    [entryPoints.internal.http2]
+      maxConcurrentStreams = 500
+
+    [entryPoints.internal.transport]
+
+      [entryPoints.internal.transport.lifeCycle]
+        graceTimeOut = "10s"
+        requestAcceptGraceTimeout = "10s"
+
+      [entryPoints.internal.transport.respondingTimeouts]
+        idleTimeout = "3m0s"
+
+[global]
+
+[ping]
+  entryPoint = "api"
+
+[providers]
+  providersThrottleDuration = "2s"
+
+  [providers.file]
+    directory = "/opt/jfrog/router/var/data/router/traefik/routes"
+    watch = true
+
+[serversTransport]
+  maxIdleConnsPerHost = 200
+  rootCAs = ["/opt/jfrog/router/var/data/router/keys/trusted/access-root-ca.crt"]
+
+[tracing]
+  serviceName = "jfrog-router"
+
+  [tracing.jaeger]
+    propagation = "jaeger"
+    samplingType = "const"
+    traceContextHeaderName = "uber-trace-id"

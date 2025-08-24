@@ -1,0 +1,193 @@
+2025-08-24T05:56:31.368Z [jfcon] [INFO ] [33a435ea12ba1ea1] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 5 seconds with 2m0s timeout [startup]
+2025-08-24T05:56:36.374Z [jfcon] [INFO ] [33a435ea12ba1ea1] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 10 seconds with 2m0s timeout [startup]
+2025-08-24T05:56:41.381Z [jfcon] [INFO ] [33a435ea12ba1ea1] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 15 seconds with 2m0s timeout [startup]
+2025-08-24T05:56:46.390Z [jfcon] [INFO ] [33a435ea12ba1ea1] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 20 seconds with 2m0s timeout [startup]
+2025-08-24T05:56:51.394Z [jfcon] [INFO ] [33a435ea12ba1ea1] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 25 seconds with 2m0s timeout [startup]
+2025-08-24T05:56:56.404Z [jfcon] [INFO ] [33a435ea12ba1ea1] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 30 seconds with 2m0s timeout [startup]
+2025-08-24T05:57:01.411Z [jfcon] [INFO ] [33a435ea12ba1ea1] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 35 seconds with 2m0s timeout [startup]
+2025-08-24T05:57:10.425Z [jfcon] [INFO ] [33a435ea12ba1ea1] [access_thin_client.go:112     ] [main                ] [                ] - Cluster join: Retry 5: Service registry Ping failed, will retry. Error: failed to ping access, response status: 404 Not Found (returned 404) [startup]
+2025-08-24T05:57:11.444Z [jfcon] [INFO ] [33a435ea12ba1ea1] [bootstrap.go:181              ] [main                ] [                ] - JFConnect Service ID: jfcon@01k3dadp7e688m028tztv9160g [startup]
+2025-08-24T05:57:11.445Z [jfcon] [INFO ] [33a435ea12ba1ea1] [bootstrap.go:182              ] [main                ] [                ] - JFConnect Node ID   : artifactory-0 [startup]
+2025-08-24T05:57:11.445Z [jfcon] [INFO ] [33a435ea12ba1ea1] [bootstrap.go:183              ] [main                ] [                ] - JFConnect Node IP   : 10.1.0.7 [startup]
+2025-08-24T05:57:11.486Z [jfcon] [INFO ] [33a435ea12ba1ea1] [join_executor.go:178          ] [main                ] [                ] - Cluster join: Successfully joined the cluster [access_client]
+2025-08-24T05:57:11.486Z [jfcon] [INFO ] [33a435ea12ba1ea1] [join_executor.go:190          ] [main                ] [                ] - Cluster join: executing Router register at: localhost:8046 for service id jfcon@01k3dadp7e688m028tztv9160g [access_client]
+2025-08-24T05:57:11.497Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_storage.go:46    ] [main                ] [                ] - EnforcementOn value is forced to the value 'false' [entitlements_storage]
+2025-08-24T05:57:11.508Z [jfcon] [INFO ] [33a435ea12ba1ea1] [dedicated_grpc_connection.go:2] [main                ] [                ] - Creating a new dedicated gRPC connection for localhost:8046 [access_client]
+2025-08-24T05:57:15.571Z [jfcon] [INFO ] [33a435ea12ba1ea1] [platform_config_stream.go:49  ] [main                ] [                ] - Starting Platform Config stream connect goroutine [access_client]
+2025-08-24T05:57:15.572Z [jfcon] [INFO ] [33a435ea12ba1ea1] [platform_config_stream.go:62  ] [main                ] [                ] - Connecting to Platform Config stream [access_client]
+2025-08-24T05:57:15.581Z [jfcon] [INFO ] [33a435ea12ba1ea1] [backoffice_metric_logger.go:81] [main                ] [                ] - Initializing BackOfficeMetricsService with usageDir: /opt/jfrog/artifactory/var/data/jfconnect/usage [backoffice_metrics_logger]
+2025-08-24T05:57:15.581Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:149   ] [main                ] [                ] - Registering listener for license/registration_token change [entitlement_service]
+2025-08-24T05:57:15.584Z [jfcon] [INFO ] [33a435ea12ba1ea1] [application.go:248            ] [main                ] [                ] - JFConnect (jfcon) service initialization completed in 49.226 seconds. HTTP server listening on 127.0.0.1:8030. GRPC server listening on 127.0.0.1:8035.  [application]
+2025-08-24T05:57:15.584Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:276   ] [main                ] [                ] - Starting synced actions loop [entitlement_service]
+2025-08-24T05:57:15.584Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:287   ] [main                ] [                ] - Finished synced actions loop [entitlement_service]
+2025-08-24T05:57:15.584Z [jfcon] [INFO ] [33a435ea12ba1ea1] [usage_service.go:141          ] [main                ] [                ] - Scheduling usage flow job with interval 5m40s [usage_service]
+2025-08-24T05:57:15.585Z [jfcon] [INFO ] [33a435ea12ba1ea1] [archival_service.go:117       ] [main                ] [                ] - Scheduling archival flow job with interval 4m20s [archival_service]
+2025-08-24T05:57:15.609Z [jfcon] [WARN ] [2addd27a7bd8a078] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T05:57:15.686Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:133   ] [main                ] [                ] - Running synced action 'register'  [entitlement_service]
+2025-08-24T05:57:15.686Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:298   ] [main                ] [                ] - Synced action 'register' triggered - acquiring lock [entitlement_service]
+2025-08-24T05:57:15.692Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:319   ] [main                ] [                ] - Synced action 'register' - executing [entitlement_service]
+2025-08-24T05:57:16.333Z [jfcon] [INFO ] [33a435ea12ba1ea1] [platform_config_stream.go:105 ] [main                ] [                ] - Starting Platform Config stream Recv loop [access_client]
+2025-08-24T05:57:16.333Z [jfcon] [INFO ] [33a435ea12ba1ea1] [platform_config_stream.go:137 ] [main                ] [                ] - Starting Platform Config checkKeepAlive [access_client]
+2025-08-24T05:57:16.333Z [jfcon] [INFO ] [33a435ea12ba1ea1] [proxy_config_update_listener.g] [main                ] [                ] - Proxy configservice updated [proxy_config_update_listener]
+2025-08-24T05:57:16.333Z [jfcon] [INFO ] [33a435ea12ba1ea1] [proxy_config_update_listener.g] [main                ] [                ] - Proxy configservice updated [proxy_config_update_listener]
+2025-08-24T05:57:16.343Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:180   ] [main                ] [                ] - Event received FullInvalidation. Invoking reset entitlements [entitlement_service]
+2025-08-24T05:57:16.343Z [jfcon] [INFO ] [33a435ea12ba1ea1] [proxy_config_update_listener.g] [main                ] [                ] - Proxy config unchanged, skipping reset [proxy_config_update_listener]
+2025-08-24T05:57:16.343Z [jfcon] [INFO ] [33a435ea12ba1ea1] [proxy_config_update_listener.g] [main                ] [                ] - Proxy config unchanged, skipping reset [proxy_config_update_listener]
+2025-08-24T05:57:16.343Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:256   ] [main                ] [                ] - Resetting entitlements service [entitlement_service]
+2025-08-24T05:57:16.343Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:262   ] [main                ] [                ] - Stopping timer [entitlement_service]
+2025-08-24T05:57:16.444Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:133   ] [main                ] [                ] - Running synced action 'reset'  [entitlement_service]
+2025-08-24T05:57:16.444Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:298   ] [main                ] [                ] - Synced action 'reset' triggered - acquiring lock [entitlement_service]
+2025-08-24T05:57:16.447Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:319   ] [main                ] [                ] - Synced action 'reset' - executing [entitlement_service]
+2025-08-24T05:57:16.447Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:339   ] [main                ] [                ] - Synced action 'reset' - finished execution [entitlement_service]
+2025-08-24T05:57:16.467Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:133   ] [main                ] [                ] - Running synced action 'register'  [entitlement_service]
+2025-08-24T05:57:16.467Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:298   ] [main                ] [                ] - Synced action 'register' triggered - acquiring lock [entitlement_service]
+2025-08-24T05:57:16.470Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:319   ] [main                ] [                ] - Synced action 'register' - executing [entitlement_service]
+2025-08-24T05:57:16.470Z [jfcon] [ERROR] [33a435ea12ba1ea1] [entitlements_service.go:357   ] [main                ] [                ] - Synced action 'register' - encountered unrecoverable error, entitlement service stopped until restart or license update. cause: empty registration payload [entitlement_service]
+2025-08-24T05:57:16.567Z [jfcon] [WARN ] [6bdb24ac27c9701f] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T05:57:16.906Z [jfcon] [INFO ] [33a435ea12ba1ea1] [proxy_config_update_listener.g] [main                ] [                ] - Proxy configservice updated [proxy_config_update_listener]
+2025-08-24T05:57:16.914Z [jfcon] [INFO ] [33a435ea12ba1ea1] [proxy_config_update_listener.g] [main                ] [                ] - Proxy config unchanged, skipping reset [proxy_config_update_listener]
+2025-08-24T05:57:17.009Z [jfcon] [INFO ] [33a435ea12ba1ea1] [proxy_config_update_listener.g] [main                ] [                ] - Proxy configservice updated [proxy_config_update_listener]
+2025-08-24T05:57:17.017Z [jfcon] [INFO ] [33a435ea12ba1ea1] [proxy_config_update_listener.g] [main                ] [                ] - Proxy config unchanged, skipping reset [proxy_config_update_listener]
+2025-08-24T05:57:45.620Z [jfcon] [WARN ] [1ae36ac278fbea42] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T05:57:46.574Z [jfcon] [WARN ] [407de0566f3bac46] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T05:58:15.618Z [jfcon] [WARN ] [7b2a73b08def14c5] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T05:58:16.571Z [jfcon] [WARN ] [46e4fb9c8cc27271] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T05:58:45.617Z [jfcon] [WARN ] [4794725baa7cf421] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T05:58:46.572Z [jfcon] [WARN ] [63cfc85c7ee15beb] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T05:59:15.619Z [jfcon] [WARN ] [21b9b202d645e60a] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T05:59:16.575Z [jfcon] [WARN ] [15d214c5b28a2799] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T05:59:45.619Z [jfcon] [WARN ] [18ffa449c6db266c] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T05:59:46.574Z [jfcon] [WARN ] [28b2b68afb06631a] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T06:00:15.617Z [jfcon] [WARN ] [746b48752af6efcc] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T06:00:16.576Z [jfcon] [WARN ] [59a235f437a351f4] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T06:00:45.617Z [jfcon] [WARN ] [0032cf3cf0a7d433] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T06:00:46.578Z [jfcon] [WARN ] [6e14742ae610636f] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T06:01:15.619Z [jfcon] [WARN ] [638dbf105ccdfc0e] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T06:01:16.574Z [jfcon] [WARN ] [5910a497f000ce43] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T06:01:20.997Z [jfcon] [WARN ] [19d0c6da61253996] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T06:01:35.626Z [jfcon] [WARN ] [33a435ea12ba1ea1] [archival_service.go:183       ] [main                ] [                ] - Usage repo don't exist, skipping archival execution for the day [archival_service]
+2025-08-24T06:01:45.616Z [jfcon] [WARN ] [148bc8ed2e03a79b] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T06:01:46.576Z [jfcon] [WARN ] [0026f2d433abed14] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T06:01:51.004Z [jfcon] [WARN ] [19d0c6da61253996] [entitlements_grpc_handler.go:7] [main                ] [                ] - Error checking if jpd is Saas: jpd ID is not found, jpd is not registered [entitlement_grpc_handler]
+2025-08-24T06:01:54.211Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:180   ] [main                ] [                ] - Event received Licenses. Invoking reset entitlements [entitlement_service]
+2025-08-24T06:01:54.212Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:256   ] [main                ] [                ] - Resetting entitlements service [entitlement_service]
+2025-08-24T06:01:54.212Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:262   ] [main                ] [                ] - Stopping timer [entitlement_service]
+2025-08-24T06:01:54.253Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:180   ] [main                ] [                ] - Event received Licenses. Invoking reset entitlements [entitlement_service]
+2025-08-24T06:01:54.253Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:256   ] [main                ] [                ] - Resetting entitlements service [entitlement_service]
+2025-08-24T06:01:54.254Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:262   ] [main                ] [                ] - Stopping timer [entitlement_service]
+2025-08-24T06:01:54.354Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:133   ] [main                ] [                ] - Running synced action 'reset'  [entitlement_service]
+2025-08-24T06:01:54.354Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:298   ] [main                ] [                ] - Synced action 'reset' triggered - acquiring lock [entitlement_service]
+2025-08-24T06:01:54.357Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:319   ] [main                ] [                ] - Synced action 'reset' - executing [entitlement_service]
+2025-08-24T06:01:54.358Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:339   ] [main                ] [                ] - Synced action 'reset' - finished execution [entitlement_service]
+2025-08-24T06:01:54.368Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:133   ] [main                ] [                ] - Running synced action 'register'  [entitlement_service]
+2025-08-24T06:01:54.368Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:298   ] [main                ] [                ] - Synced action 'register' triggered - acquiring lock [entitlement_service]
+2025-08-24T06:01:54.370Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:319   ] [main                ] [                ] - Synced action 'register' - executing [entitlement_service]
+2025-08-24T06:01:54.376Z [jfcon] [INFO ] [33a435ea12ba1ea1] [register_synced_action.go:150 ] [main                ] [                ] - Register synced action: request JpdId: , TechnicalServerName:  [entitlement_service]
+2025-08-24T06:01:54.927Z [jfcon] [INFO ] [33a435ea12ba1ea1] [register_synced_action.go:173 ] [main                ] [                ] - Register synced action: response JpdId: 5c61dc65-d9bf-46c0-9b19-d5608b225a6f [entitlement_service]
+2025-08-24T06:01:54.927Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:339   ] [main                ] [                ] - Synced action 'register' - finished execution [entitlement_service]
+2025-08-24T06:01:54.927Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:382   ] [main                ] [                ] - [JFrog Entitlement Server]: Registration successful. [entitlement_service]
+2025-08-24T06:01:54.939Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:133   ] [main                ] [                ] - Running synced action 'authenticate'  [entitlement_service]
+2025-08-24T06:01:54.939Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:298   ] [main                ] [                ] - Synced action 'authenticate' triggered - acquiring lock [entitlement_service]
+2025-08-24T06:01:54.942Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:319   ] [main                ] [                ] - Synced action 'authenticate' - executing [entitlement_service]
+2025-08-24T06:01:54.942Z [jfcon] [INFO ] [33a435ea12ba1ea1] [authenticate_synced_action.go:] [main                ] [                ] - Authenticating with JFrog Entitlements Service for JPD ID: 5c61dc65-d9bf-46c0-9b19-d5608b225a6f [entitlement_service]
+2025-08-24T06:01:55.000Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:339   ] [main                ] [                ] - Synced action 'authenticate' - finished execution [entitlement_service]
+2025-08-24T06:01:55.015Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:133   ] [main                ] [                ] - Running synced action 'fetch entitlements'  [entitlement_service]
+2025-08-24T06:01:55.015Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:298   ] [main                ] [                ] - Synced action 'fetch entitlements' triggered - acquiring lock [entitlement_service]
+2025-08-24T06:01:55.018Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:319   ] [main                ] [                ] - Synced action 'fetch entitlements' - executing [entitlement_service]
+2025-08-24T06:01:55.027Z [jfcon] [INFO ] [33a435ea12ba1ea1] [fetch_entitlements_synced_acti] [main                ] [                ] - Fetching entitlements for JpdId: 5c61dc65-d9bf-46c0-9b19-d5608b225a6f [entitlement_service]
+2025-08-24T06:01:55.398Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_storage.go:87    ] [main                ] [                ] - Received entitlements update with changes: [
+name: live_logs	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: model_deployment_experiment_tracking	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: model_deployment_streaming	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: crowd	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: jfxr	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: ldap	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: topology_management	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: model_deployment_shadow	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: vuln_db	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: repository_replication	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: feature_store_batch	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: dashboard	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: alerting_monitoring	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: jfrt_db_upgrade	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: impact_analysis	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: catalog_public_data_ui	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: multipush_replication	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: vector_store	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: event_based_pull_replication	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: binary_provider_custom_endpoint	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: catalog_jfrog_data_ui	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: webhooks_retention	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: jfrog_ml	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: metadata_license_info	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: xray_git_integration	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: prompt_management	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: enhanced_vulnerabilities	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: scim	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: ml_base	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: worker_executions	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: jfrt	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: license_detection	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: model_library	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: mlusagemode_rechargeable	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: saml	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: model_deployment_batch	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: model_automations	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: ml_cache	 value: 5	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: xray_db_sync	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: oauth	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: model_analytics	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: federated_repository	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: malicious_packages	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: vault_integration	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: binary_provider_download_redirect	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: ml_credit	 value: 1000	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: mlmonthlycredit_threshold	 value: 1000	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: basic_scan	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: model_deployment_realtime	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: binary_provider_rsh	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: remediation_data	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: ha	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: model_build	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+name: plugin_execution	 value: 1	 trial: true	 expiry: 2025-09-24 06:00:24 +0000 UTC
+] [entitlements_storage]
+2025-08-24T06:01:55.416Z [jfcon] [INFO ] [33a435ea12ba1ea1] [fetch_entitlements_synced_acti] [main                ] [                ] - Setting next action to fetch entitlements with delay: 32m10s [entitlement_service]
+2025-08-24T06:01:55.416Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:339   ] [main                ] [                ] - Synced action 'fetch entitlements' - finished execution [entitlement_service]
+2025-08-24T06:18:17.040Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:180   ] [main                ] [                ] - Event received Licenses. Invoking reset entitlements [entitlement_service]
+2025-08-24T06:18:17.044Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:256   ] [main                ] [                ] - Resetting entitlements service [entitlement_service]
+2025-08-24T06:18:17.045Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:262   ] [main                ] [                ] - Stopping timer [entitlement_service]
+2025-08-24T06:18:17.147Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:133   ] [main                ] [                ] - Running synced action 'reset'  [entitlement_service]
+2025-08-24T06:18:17.147Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:298   ] [main                ] [                ] - Synced action 'reset' triggered - acquiring lock [entitlement_service]
+2025-08-24T06:18:17.156Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:319   ] [main                ] [                ] - Synced action 'reset' - executing [entitlement_service]
+2025-08-24T06:18:17.156Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:339   ] [main                ] [                ] - Synced action 'reset' - finished execution [entitlement_service]
+2025-08-24T06:18:17.225Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:133   ] [main                ] [                ] - Running synced action 'register'  [entitlement_service]
+2025-08-24T06:18:17.226Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:298   ] [main                ] [                ] - Synced action 'register' triggered - acquiring lock [entitlement_service]
+2025-08-24T06:18:17.273Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:133   ] [main                ] [                ] - Running synced action 'authenticate'  [entitlement_service]
+2025-08-24T06:18:17.274Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:298   ] [main                ] [                ] - Synced action 'authenticate' triggered - acquiring lock [entitlement_service]
+2025-08-24T06:18:17.283Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:133   ] [main                ] [                ] - Running synced action 'fetch entitlements'  [entitlement_service]
+2025-08-24T06:18:17.283Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:298   ] [main                ] [                ] - Synced action 'fetch entitlements' triggered - acquiring lock [entitlement_service]
+2025-08-24T06:18:17.289Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:319   ] [main                ] [                ] - Synced action 'fetch entitlements' - executing [entitlement_service]
+2025-08-24T06:18:17.300Z [jfcon] [INFO ] [33a435ea12ba1ea1] [fetch_entitlements_synced_acti] [main                ] [                ] - Fetching entitlements for JpdId: 5c61dc65-d9bf-46c0-9b19-d5608b225a6f [entitlement_service]
+2025-08-24T06:18:17.995Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_storage.go:89    ] [main                ] [                ] - Received entitlements update with no changes [entitlements_storage]
+2025-08-24T06:18:18.053Z [jfcon] [INFO ] [33a435ea12ba1ea1] [fetch_entitlements_synced_acti] [main                ] [                ] - Setting next action to fetch entitlements with delay: 9m10s [entitlement_service]
+2025-08-24T06:18:18.053Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:339   ] [main                ] [                ] - Synced action 'fetch entitlements' - finished execution [entitlement_service]
+2025-08-24T06:18:37.196Z [jfcon] [INFO ] [33a435ea12ba1ea1] [usage_service.go:255          ] [main                ] [                ] - Starting usage collection [usage_service]
+2025-08-24T06:18:37.928Z [jfcon] [INFO ] [33a435ea12ba1ea1] [usage_service.go:313          ] [main                ] [                ] - No more iteration as length of usages files 0 is less than max files 500  [usage_service]
+2025-08-24T06:18:37.929Z [jfcon] [INFO ] [33a435ea12ba1ea1] [usage_service.go:318          ] [main                ] [                ] - Finished usage collection [usage_service]
+2025-08-24T06:27:32.571Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:133   ] [main                ] [                ] - Running synced action 'fetch entitlements'  [entitlement_service]
+2025-08-24T06:27:32.572Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:298   ] [main                ] [                ] - Synced action 'fetch entitlements' triggered - acquiring lock [entitlement_service]
+2025-08-24T06:27:32.583Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:319   ] [main                ] [                ] - Synced action 'fetch entitlements' - executing [entitlement_service]
+2025-08-24T06:27:32.606Z [jfcon] [INFO ] [33a435ea12ba1ea1] [fetch_entitlements_synced_acti] [main                ] [                ] - Fetching entitlements for JpdId: 5c61dc65-d9bf-46c0-9b19-d5608b225a6f [entitlement_service]
+2025-08-24T06:27:33.358Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_storage.go:89    ] [main                ] [                ] - Received entitlements update with no changes [entitlements_storage]
+2025-08-24T06:27:33.374Z [jfcon] [INFO ] [33a435ea12ba1ea1] [fetch_entitlements_synced_acti] [main                ] [                ] - Setting next action to fetch entitlements with delay: 31m40s [entitlement_service]
+2025-08-24T06:27:33.374Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:339   ] [main                ] [                ] - Synced action 'fetch entitlements' - finished execution [entitlement_service]
+2025-08-24T06:40:46.254Z [jfcon] [WARN ] [33a435ea12ba1ea1] [project_cache_handler.go:236  ] [main                ] [                ] - Unexpected project entity update type UPSERT in project key '' update [access_client]
+2025-08-24T06:59:13.424Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:133   ] [main                ] [                ] - Running synced action 'fetch entitlements'  [entitlement_service]
+2025-08-24T06:59:13.425Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:298   ] [main                ] [                ] - Synced action 'fetch entitlements' triggered - acquiring lock [entitlement_service]
+2025-08-24T06:59:13.435Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:319   ] [main                ] [                ] - Synced action 'fetch entitlements' - executing [entitlement_service]
+2025-08-24T06:59:13.458Z [jfcon] [INFO ] [33a435ea12ba1ea1] [fetch_entitlements_synced_acti] [main                ] [                ] - Fetching entitlements for JpdId: 5c61dc65-d9bf-46c0-9b19-d5608b225a6f [entitlement_service]
+2025-08-24T06:59:14.059Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_storage.go:89    ] [main                ] [                ] - Received entitlements update with no changes [entitlements_storage]
+2025-08-24T06:59:14.074Z [jfcon] [INFO ] [33a435ea12ba1ea1] [fetch_entitlements_synced_acti] [main                ] [                ] - Setting next action to fetch entitlements with delay: 32m0s [entitlement_service]
+2025-08-24T06:59:14.074Z [jfcon] [INFO ] [33a435ea12ba1ea1] [entitlements_service.go:339   ] [main                ] [                ] - Synced action 'fetch entitlements' - finished execution [entitlement_service]
+2025-08-24T07:25:53.412Z [jfcon] [INFO ] [33a435ea12ba1ea1] [proxy_config_update_listener.g] [main                ] [                ] - Proxy configservice updated [proxy_config_update_listener]
+2025-08-24T07:25:53.428Z [jfcon] [INFO ] [33a435ea12ba1ea1] [proxy_config_update_listener.g] [main                ] [                ] - Proxy config unchanged, skipping reset [proxy_config_update_listener]

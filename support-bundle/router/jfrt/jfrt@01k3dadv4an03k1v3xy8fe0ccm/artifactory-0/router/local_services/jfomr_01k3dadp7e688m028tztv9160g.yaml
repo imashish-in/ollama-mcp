@@ -1,0 +1,21 @@
+endpoints:
+    - excludedpaths: []
+      paths:
+        - match: /onemodel/(.*)
+          replace: /$1
+      port: 8071
+      protocol: 1
+    - excludedpaths: []
+      paths:
+        - match: /com\.jfrog\.onemodelregistry\..*
+          replace: ""
+      port: 8072
+      protocol: 2
+healthcheckendpoint:
+    path: /api/v1/system/readiness
+    port: 8071
+nodeid: artifactory-0
+nodestatusendpoint: null
+revision: 23c2496433
+serviceid: jfomr@01k3dadp7e688m028tztv9160g
+version: 1.52.3

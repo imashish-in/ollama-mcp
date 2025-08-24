@@ -1,0 +1,131 @@
+{
+  "cpu": [
+    {
+      "model": "unknown",
+      "speed": 0,
+      "times": {
+        "user": 209730,
+        "nice": 0,
+        "sys": 69440,
+        "idle": 9979340,
+        "irq": 0
+      }
+    },
+    {
+      "model": "unknown",
+      "speed": 0,
+      "times": {
+        "user": 211220,
+        "nice": 0,
+        "sys": 65970,
+        "idle": 10082350,
+        "irq": 0
+      }
+    },
+    {
+      "model": "unknown",
+      "speed": 0,
+      "times": {
+        "user": 211550,
+        "nice": 0,
+        "sys": 65510,
+        "idle": 10107680,
+        "irq": 0
+      }
+    },
+    {
+      "model": "unknown",
+      "speed": 0,
+      "times": {
+        "user": 211100,
+        "nice": 0,
+        "sys": 64910,
+        "idle": 10113850,
+        "irq": 0
+      }
+    },
+    {
+      "model": "unknown",
+      "speed": 0,
+      "times": {
+        "user": 210310,
+        "nice": 0,
+        "sys": 65910,
+        "idle": 10115080,
+        "irq": 0
+      }
+    },
+    {
+      "model": "unknown",
+      "speed": 0,
+      "times": {
+        "user": 206390,
+        "nice": 0,
+        "sys": 64390,
+        "idle": 10121380,
+        "irq": 0
+      }
+    },
+    {
+      "model": "unknown",
+      "speed": 0,
+      "times": {
+        "user": 211590,
+        "nice": 0,
+        "sys": 65360,
+        "idle": 10115980,
+        "irq": 0
+      }
+    },
+    {
+      "model": "unknown",
+      "speed": 0,
+      "times": {
+        "user": 207080,
+        "nice": 0,
+        "sys": 64920,
+        "idle": 10120320,
+        "irq": 0
+      }
+    },
+    {
+      "model": "unknown",
+      "speed": 0,
+      "times": {
+        "user": 209080,
+        "nice": 0,
+        "sys": 65880,
+        "idle": 10118770,
+        "irq": 0
+      }
+    },
+    {
+      "model": "unknown",
+      "speed": 0,
+      "times": {
+        "user": 208530,
+        "nice": 0,
+        "sys": 65400,
+        "idle": 10119620,
+        "irq": 0
+      }
+    },
+    {
+      "model": "unknown",
+      "speed": 0,
+      "times": {
+        "user": 209350,
+        "nice": 0,
+        "sys": 64770,
+        "idle": 10119560,
+        "irq": 0
+      }
+    }
+  ],
+  "total_memory": 8217890816,
+  "process_memory": 6570700800,
+  "host": "artifactory-0",
+  "os_arch": "arm64",
+  "os_name": "linux",
+  "os_version": "6.10.14-linuxkit"
+}

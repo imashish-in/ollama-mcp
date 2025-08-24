@@ -1,0 +1,95 @@
+2025-08-24T05:56:27.752Z [jftpl] [INFO ] [                ] [plicationContextInitializer:82] [main                ] - topology (jftpl) service initialization started. Version: 1.105.1 Revision: 20501900 PID: 24 Home: /opt/jfrog/artifactory
+2025-08-24T05:56:27.754Z [jftpl] [INFO ] [                ] [plicationContextInitializer:38] [main                ] - Topology service deployment type: OnPrem
+2025-08-24T05:56:27.760Z [jftpl] [INFO ] [                ] [plicationContextInitializer:52] [main                ] - fips.mode (Default Value): none
+shared.database.driver (File): org.postgresql.Driver
+shared.database.password (Environment Variable: JF_SHARED_DATABASE_PASSWORD): *****
+shared.database.type (File): postgresql
+shared.database.url (File): jdbc:postgresql://artifactory-postgresql:5432/artifactory
+shared.database.username (File): artifactory
+shared.logging.enableJsonConsoleLogAppenders (Default Value): false
+shared.multiTenant.enabled (Default Value): false
+shared.node.id (Environment Variable: JF_SHARED_NODE_ID): artifactory-0
+shared.runtime.isSaas (Default Value): false
+shared.security.bootstrapKeysReadTimeoutSecs (Default Value): 120
+topology.accessClient.cache.tokens.expirySecs (Default Value): 120
+topology.accessClient.cache.tokens.size (Default Value): 1000
+topology.accessClient.connectionTimeoutSecs (Default Value): 5
+topology.accessClient.insecure (Default Value): false
+topology.accessClient.maxJoinRetries (Default Value): 90
+topology.accessClient.providerCacheTimeoutSecs (Default Value): 10800
+topology.accessClient.serverBypassMaxJoinRetries (Default Value): 5
+topology.accessClient.serverBypassUrl (Default Value): 
+topology.accessClient.socketTimeoutSecs (Default Value): 45
+topology.accessClient.versionCacheExpirationSecs (Default Value): 120
+topology.accessClient.waitJoinMillis (Default Value): 1000
+topology.cleanup.staleNodeInitialDelaySecs (Default Value): 3600
+topology.cleanup.staleNodeIntervalSecs (Default Value): 3600
+topology.cleanup.staleNodeThresholdSecs (Default Value): 604800
+topology.database.maxOpenConnections (File): 80
+topology.database.maxWait (Default Value): 30000
+topology.database.metrics.enabled (Default Value): false
+topology.database.migrationRetry.backoff (Default Value): 1.5
+topology.database.migrationRetry.initialDelayMillis (Default Value): 2000
+topology.database.migrationRetry.maxIntervalSecs (Default Value): 900
+topology.database.timeoutSecs (Default Value): 600
+topology.grpc.maxInboundMetadataSize (Default Value): 8192
+topology.grpc.port (Default Value): 8021
+topology.healthCheck.initialDelaySecs (Default Value): 15
+topology.healthCheck.intervalSecs (Default Value): 10
+topology.healthCheck.tenantCacheExpirationSecs (Default Value): 30
+topology.kubernetesFetcher.cacheTimeoutSecs (Default Value): 120
+topology.kubernetesFetcher.clientTimeoutSecs (Default Value): 10
+topology.kubernetesFetcher.enabled (Default Value): false
+topology.logging.requestFilter.enabled (Default Value): false
+topology.logging.requestFilter.grpc.ignoreDurationThresholdMillis (Default Value): 100
+topology.logging.requestFilter.grpc.ignorePaths (Default Value): 
+topology.logging.requestFilter.grpc.ignoreStatusCodes (Default Value): 
+topology.logging.requestFilter.http.ignoreDurationThresholdMillis (Default Value): 100
+topology.logging.requestFilter.http.ignorePaths (Default Value): 
+topology.logging.requestFilter.http.ignoreStatusCodes (Default Value): 
+topology.metrics.enabled (Default Value): false
+topology.metrics.exclude (Default Value): 
+topology.metrics.intervalSecs (Default Value): 60
+topology.metrics.logPeriodically (Default Value): true
+topology.metrics.numberServicesCacheTimeoutSecs (Default Value): 600
+topology.multiTenant.parallelMigrationsCount (Default Value): 0
+topology.newrelic.enabled (Default Value): false
+topology.newrelic.environment (Default Value): devel
+topology.newrelic.licenseKey (Default Value): *****
+topology.newrelic.logLevel (Default Value): off
+topology.newrelic.namespace (Default Value): devel
+topology.port (File): 8020
+topology.routerHost (Default Value): localhost
+topology.security.exposeApplicationHeaders (Default Value): false
+topology.tomcat.config (Default Value): 
+2025-08-24T05:56:28.797Z [jftpl] [INFO ] [                ] [c.j.t.s.l.RequestLogHelper:24 ] [main                ] - HttpRequestConfig: Config[filterPaths=[], filterStatusCodes=[], filterDurationThreshold=100]
+2025-08-24T05:56:28.799Z [jftpl] [INFO ] [                ] [c.j.t.s.l.RequestLogHelper:25 ] [main                ] - GrpcRequestConfig: Config[filterPaths=[], filterStatusCodes=[], filterDurationThreshold=100]
+2025-08-24T05:56:29.067Z [jftpl] [INFO ] [                ] [c.j.t.s.g.GrpcServer:44       ] [main                ] - Starting gRPC Server on port 8021
+2025-08-24T05:56:29.140Z [jftpl] [INFO ] [                ] [c.j.t.s.l.RequestLogHelper:24 ] [main                ] - HttpRequestConfig: Config[filterPaths=[], filterStatusCodes=[], filterDurationThreshold=100]
+2025-08-24T05:56:29.140Z [jftpl] [INFO ] [                ] [c.j.t.s.l.RequestLogHelper:25 ] [main                ] - GrpcRequestConfig: Config[filterPaths=[], filterStatusCodes=[], filterDurationThreshold=100]
+2025-08-24T05:56:29.212Z [jftpl] [INFO ] [                ] [c.j.t.s.g.GrpcServer:66       ] [main                ] - gRPC Server started, listening on 8021
+2025-08-24T05:56:29.214Z [jftpl] [INFO ] [                ] [c.j.t.s.m.MetricsService:47   ] [main                ] - Metrics Framework Service is disabled
+2025-08-24T05:56:29.728Z [jftpl] [INFO ] [                ] [c.j.t.s.c.FlywayFactory:62    ] [main                ] - Database migration started
+2025-08-24T05:56:29.740Z [jftpl] [INFO ] [                ] [c.j.t.s.c.FlywayFactory:70    ] [main                ] - Latest pending Flyway changelog: 1.2
+2025-08-24T05:56:29.746Z [jftpl] [INFO ] [                ] [c.j.t.s.c.FlywayFactory:73    ] [main                ] - Current Flyway changelog: none
+2025-08-24T05:56:29.746Z [jftpl] [INFO ] [                ] [c.j.t.s.c.FlywayFactory:75    ] [main                ] - Database migration in progress...
+2025-08-24T05:56:29.784Z [jftpl] [INFO ] [                ] [c.j.t.s.c.MigrationCallback:24] [main                ] - Applying changelog: 1.0 (Initial Schema)
+2025-08-24T05:56:29.791Z [jftpl] [INFO ] [                ] [c.j.t.s.c.MigrationCallback:25] [main                ] - Applied changelog: 1.0 (Initial Schema)
+2025-08-24T05:56:29.797Z [jftpl] [INFO ] [                ] [c.j.t.s.c.MigrationCallback:24] [main                ] - Applying changelog: 1.1 (Create ServiceId)
+2025-08-24T05:56:29.800Z [jftpl] [INFO ] [                ] [c.j.t.s.c.MigrationCallback:25] [main                ] - Applied changelog: 1.1 (Create ServiceId)
+2025-08-24T05:56:29.803Z [jftpl] [INFO ] [                ] [c.j.t.s.c.MigrationCallback:24] [main                ] - Applying changelog: 1.2 (Add Availability Zone id)
+2025-08-24T05:56:29.804Z [jftpl] [INFO ] [                ] [c.j.t.s.c.MigrationCallback:25] [main                ] - Applied changelog: 1.2 (Add Availability Zone id)
+2025-08-24T05:56:29.829Z [jftpl] [INFO ] [                ] [c.j.t.s.c.FlywayFactory:80    ] [main                ] - Current Flyway changelog: 1.2
+2025-08-24T05:56:29.829Z [jftpl] [INFO ] [                ] [c.j.t.s.c.FlywayFactory:82    ] [main                ] - Database migration done
+2025-08-24T05:56:29.830Z [jftpl] [INFO ] [                ] [t.s.TopologyStartupListener:42] [main                ] - topology (jftpl) service initialization completed in 3.068 seconds. Listening on port: 8020
+2025-08-24T05:56:44.226Z [jftpl] [INFO ] [0e7063b07af3b6c1] [c.j.t.s.s.HealthCheckRunner:37] [topology-scheduler-1] - Service node has become healthy
+2025-08-24T05:57:08.909Z [jftpl] [INFO ] [005e86f997838d18] [.TenantAccessClientProvider:95] [ttp-nio-8020-exec-10] - Scheduling Access join...
+2025-08-24T05:57:08.921Z [jftpl] [INFO ] [005e86f997838d18] [c.j.t.s.a.AccessJoiner:40     ] [jf-common-pool-0    ] - Beginning Access join...
+2025-08-24T05:57:09.929Z [jftpl] [WARN ] [005e86f997838d18] [viceNotReadyExceptionMapper:18] [ttp-nio-8020-exec-10] - Processing of request GET http://localhost:8020/topology/api/v1/topology failed: Timed out waiting for Access Join, please try again later
+2025-08-24T05:57:10.013Z [jftpl] [WARN ] [5e07c0c060135054] [enAuthenticationInterceptor:44] [c-default-executor-0] - Service is not ready: Timed out waiting for Access Join, please try again later
+2025-08-24T05:57:10.778Z [jftpl] [INFO ] [005e86f997838d18] [o.j.c.ExecutionUtils:289      ] [jf-common-pool-1    ] - Cluster join: Retry 5: Service registry ping failed, will retry. Error while trying to connect to service registry (status = 404). Please review router request log for additional information
+2025-08-24T05:57:11.802Z [jftpl] [INFO ] [005e86f997838d18] [.a.c.AccessClientBootstrap:180] [jf-common-pool-0    ] - Cluster join: Executing join on 'http://localhost:8046/access'
+2025-08-24T05:57:11.832Z [jftpl] [INFO ] [005e86f997838d18] [.a.c.AccessClientBootstrap:191] [jf-common-pool-0    ] - Cluster join: Successfully joined the cluster
+2025-08-24T05:57:11.833Z [jftpl] [INFO ] [005e86f997838d18] [c.j.t.s.a.AccessJoiner:50     ] [jf-common-pool-0    ] - Successfully joined Access
+2025-08-24T07:12:15.357Z [jftpl] [INFO ] [1486a7b50630b2d0] [.SingleTenantCleanupService:31] [topology-scheduler-1] - Cleaning up stale nodes
+2025-08-24T07:26:25.696Z [jftpl] [INFO ] [5714fb0404ab2aa5] [.s.s.s.SupportBundleService:68] [http-nio-8020-exec-4] - Starting collecting support bundle firstSupportBundle-1756020385110

@@ -1,0 +1,11 @@
+{
+	"service_type": "jfrt",
+	"microservice_name": "observability",
+	"microservice_version": "2.9.2 (revision: 7b08fd95a3, build date: 2025-08-18T10:13:58Z)",
+	"service_id": "jfob@01k3dadv4an03k1v3xy8fe0ccm",
+	"node_id": "artifactory-0",
+	"bundle_info": {
+		"id": "firstSupportBundle-1756020385110",
+		"name": "firstSupportBundle"
+	}
+}

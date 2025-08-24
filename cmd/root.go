@@ -304,6 +304,8 @@ func init() {
 
 	// Add subcommands
 	rootCmd.AddCommand(authCmd)
+	rootCmd.AddCommand(searchCmd)
+	rootCmd.AddCommand(artifactoryPermissionsCmd)
 }
 
 func runMCPHost(ctx context.Context) error {

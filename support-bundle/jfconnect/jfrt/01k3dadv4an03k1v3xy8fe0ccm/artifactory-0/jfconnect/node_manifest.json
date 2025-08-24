@@ -1,0 +1,11 @@
+{
+	"service_type": "jfrt",
+	"microservice_name": "jfconnect",
+	"microservice_version": "7.117.2 (revision: 9e986ed66e, build date: 2025-07-18T09:36:08Z)",
+	"service_id": "jfcon@01k3dadp7e688m028tztv9160g",
+	"node_id": "artifactory-0",
+	"bundle_info": {
+		"id": "firstSupportBundle-1756020385110",
+		"name": "firstSupportBundle"
+	}
+}

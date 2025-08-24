@@ -1,0 +1,208 @@
+access:
+    http:
+        port: 8040
+router:
+    automemlimitratio: 0.9
+    availabilityzoneoptimization:
+        loggingintervalsecs: 600
+    encryptsystemconfig: true
+    entrypoints:
+        enableshutdownapi: false
+        externalhost: ""
+        externalmaxconcurrentstreams: 500
+        externalport: 8082
+        grpcport: 8047
+        hotpathlogenabled: true
+        internalmaxconcurrentstreams: 500
+        internalport: 8046
+        traefikapiport: 8049
+    httpclient:
+        requesttimeoutsecs: 30
+    lifecycle:
+        shutdown:
+            entrypointsgracetimeout: 10s
+            externalentrypointsrequestacceptgracetimeout: 0s
+            internaljobsgracetimeout: 7s
+    logging:
+        application:
+            caller: false
+            console: true
+            filepath: router-service.log
+            format: jftext
+            level: info
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 0
+                maxfiles: 10
+                maxsizemb: 25
+        consolelog:
+            format: jftext
+        request:
+            filepath: router-request.log
+            forwardedforlogging:
+                enabled: false
+                header: X-Forwarded-For
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 0
+                maxfiles: 10
+                maxsizemb: 100
+            tokenidloggingenabled: false
+            verbose: false
+        traefik:
+            caller: false
+            console: false
+            filepath: router-traefik.log
+            format: jftext
+            level: info
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 0
+                maxfiles: 10
+                maxsizemb: 25
+    masterkeyremoval:
+        heartbeatcount: 3
+        intervalsecs: 60
+        timeoutsecs: 600
+    metrics:
+        excludetenantheaderfromlabels: false
+        tokenverification:
+            accessurl: ""
+            revocableexpirythresholdseconds: -1
+    mtls:
+        configcacheerrorexpirationsecs: 15
+        configcacheexpirationsecs: 600
+    multitenant:
+        cacheexpirysecs: 86400
+        cachegcperiodsecs: 600
+        canary: ""
+        localservice:
+            grpc:
+                excludedpaths: []
+                paths: []
+                port: 0
+            http:
+                excludedpaths: []
+                paths: []
+                port: 0
+            servicetype: ""
+        localservices: {}
+        services: {}
+        tenantid: ""
+        tlsselfsigned:
+            dnss: []
+            enabled: false
+            ips: []
+            subject: ""
+        transport:
+            idleconntimeoutsecs: 5
+            insecureskipverify: true
+    probes:
+        liveness:
+            failonlongfailingreadiness:
+                enabled: true
+                failuredurationsecs: 60
+        readiness:
+            externaltopologyaccessfailthreshold: 10
+    profiling:
+        enabled: false
+        pprofserverport: 6060
+        pprofservertimeoutseconds: 21600
+    proxy:
+        httpsurl: ""
+        httpurl: ""
+        ignoredhosts: []
+    ratelimit:
+        average: 0
+        burst: 0
+        periodmillis: 0
+    ratelimits: {}
+    redirectunknownpathtoartifactoryenabled: false
+    retry:
+        enabled: false
+        enabledonunavailable: true
+    security:
+        ciphersuites: TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,TLS_AES_128_GCM_SHA256,TLS_AES_256_GCM_SHA384,TLS_CHACHA20_POLY1305_SHA256,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
+    serviceregistry:
+        accessurl: http://localhost:8040/access
+        insecure: false
+        requesttimeout: 15s
+        skipjoinconnectivitytest: false
+        topologyservicetokenexpirysecs: 7200
+        topologyurl: http://localhost:8020/topology
+        url: ""
+        usetopologyservice: false
+    supportbundle:
+        aggregationtimeout: 1h0m0s
+    topology:
+        external:
+            allowh2c: true
+            healthrequesttimeoutsecs: 5
+            protocolfindercachesecs: 600
+            refresh:
+                interval: 3s
+                maxstaleheartbeat: 30s
+            skipipcheck: false
+        local:
+            enablenodestatusbroadcast: true
+            enableunhealthyonservicedown: true
+            healthcheck:
+                healthythreshold: 2
+                interval: 5s
+                requesttimeout: 5s
+                unhealthythreshold: 2
+            ignorepersistedservices: false
+            requiredservicetypes:
+                - jfrt
+                - jfac
+                - jfob
+                - jfmd
+                - jfevt
+                - jffe
+                - jfcon
+                - jfcfg
+                - jfevd
+                - jftpl
+                - jfomr
+shared:
+    jfrogurl: ""
+    logging:
+        consolelog:
+            format: shared.logging.consoleLog.format
+        enablejsonconsolelogappenders: false
+    multitenant:
+        cellid: ""
+        enabled: false
+        keyprefix: ""
+        tenantregistryclient:
+            cacert: ""
+            cacheexpirationsecs: 21600
+            clientcert: ""
+            clientcertkey: ""
+            dialtimeoutsecs: 10
+            endpoints: []
+            password: '*****'
+            requesttimeoutsecs: 30
+            username: ""
+    newrelic:
+        appname: ""
+        distributedtracerenabled: true
+        enabled: false
+        enabledebuglog: false
+        licensekey: ""
+    node:
+        availabilityzoneid: ""
+        id: artifactory-0
+        ip: 10.1.0.7
+        port: 0
+        tlsenabled: false
+    security:
+        bootstrapkeysreadtimeoutsecs: 300
+        masterkeyexternal: false
+topology:
+    grpc:
+        port: 8021
+    port: 8020

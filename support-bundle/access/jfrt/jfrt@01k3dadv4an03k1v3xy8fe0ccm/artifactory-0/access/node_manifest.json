@@ -1,0 +1,14 @@
+{
+  "service_type" : "jfrt",
+  "microservice_name" : "access",
+  "microservice_version" : "7.147.12 (revision: 84712900, build date: LOCAL)",
+  "service_id" : "jfac@01k3dadp7e688m028tztv9160g",
+  "node_id" : "artifactory-0",
+  "bundle_info" : {
+    "id" : "firstSupportBundle-1756020385110",
+    "name" : "firstSupportBundle",
+    "description" : "",
+    "created" : "2025-08-24T07:26:25Z",
+    "status" : "success"
+  }
+}

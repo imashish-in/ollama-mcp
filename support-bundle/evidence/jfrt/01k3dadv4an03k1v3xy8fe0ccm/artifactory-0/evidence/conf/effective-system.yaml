@@ -1,0 +1,138 @@
+evidence:
+    access:
+        bypass:
+            accessurl: ""
+            retrybackoffinitialintervalmillis: 500
+            retrybackoffmaxelapsedtimemillis: 0
+            retrybackoffmaxintervalmillis: 3600000
+            revocableexpirythresholdseconds: -1
+        jointimeoutmillis: 180000
+        pingtimeoutmillis: 120000
+    api:
+        maxfiltersize: 50
+        maxpagesize: 200
+        maxquerydepth: 20
+    caching:
+        license:
+            capacity: 100
+            expirationsecs: 300
+        publickeys:
+            capacity: 500
+            expirationsecs: 14400
+    database:
+        disableparallelselect: true
+        enablelogforpostgres: false
+        kerberosauth: false
+        maxidleconnections: 10
+        maxopenconnections: 100
+        maxrecordslimit: 1000
+        metrics:
+            enabled: false
+            maxqueriestotrack: 5
+        migrationlockretryintervalsecs: 60
+        password: '*****'
+        querytimeoutsecs: 1800
+        type: postgresql
+        url: jdbc:postgresql://artifactory-postgresql:5432/artifactory
+        username: artifactory
+        waitforconnectiontimeoutsecs: 15
+    graphql:
+        playground: true
+        releasebundleartifactswithevidencebulksize: 1000
+    grpcport: 0
+    httpport: 8051
+    jfconnect:
+        establishconnectiontimeoutmillis: 3000
+        fetchintervalmillis: 30000
+        requesttimeoutmillis: 30000
+        retryconnectionintervalmillis: 1000
+        tokenexpiryminutes: 1440
+    logging:
+        application:
+            caller: false
+            console: true
+            filepath: evidence-service.log
+            format: jftext
+            level: info
+            packages: {}
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        consolelog:
+            format: jftext
+        metrics:
+            console: false
+            filepath: evidence-metrics.log
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        request:
+            console: false
+            filepath: evidence-request.log
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+    metrics:
+        backoffice:
+            enabled: true
+        enabled: false
+        exclude: []
+        intervalmillis: 10000000000
+        logperiodically: false
+        triggers:
+            enabled: true
+            intervalmillis: 20000
+            limit: 1000000
+    profiling:
+        enabled: false
+    supportbundle:
+        aggregationtimeoutmillis: 3600000
+onemodel:
+    graphql:
+        compatibilityfilterenabled: false
+        querycachesize: 0
+        queryparsertokenlimit: 0
+router:
+    entrypoints:
+        internalport: 8046
+shared:
+    logging:
+        consolelog:
+            format: ""
+        enablejsonconsolelogappenders: false
+    multitenant:
+        cellid: ""
+        enabled: false
+        tenantregistryclient:
+            cacert: ""
+            cacheexpirationsecs: 21600
+            clientcert: ""
+            clientcertkey: ""
+            dialtimeoutsecs: 10
+            endpoints: []
+            password: '*****'
+            pingcacheexpirationsecs: 15
+            pingtimeoutsecs: 1
+            requesttimeoutsecs: 30
+            username: ""
+    newrelic:
+        appname: ""
+        distributedtracerenabled: true
+        enabled: false
+        enabledebuglog: false
+        licensekey: ""
+    node:
+        id: artifactory-0
+        ip: 10.1.0.7
+    security:
+        bootstrapkeysreadtimeoutsecs: 120
+        exposeapplicationheaders: false

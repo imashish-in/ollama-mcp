@@ -1,0 +1,46 @@
+# This template is used to create routing rules for Traefik
+# References: https://doc.traefik.io/traefik/reference/dynamic-configuration/file/
+#             https://doc.traefik.io/traefik/routing/routers
+#             https://doc.traefik.io/traefik/routing/services
+
+[http.routers]
+
+  [http.routers.jfac_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-internal]
+    entryPoints = ["internal"]
+    service = "local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-0"
+    priority = 723
+    rule = "PathPrefix(`/com.jfrog.access.`)"
+
+  [http.routers.jfac_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-external]
+    entryPoints = ["external"]
+    service = "local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-0"
+    priority = 723
+    rule = "PathPrefix(`/com.jfrog.access.`)"
+    middlewares = ["hotPath","mtls"]
+
+  [http.routers.jfac_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule0-internal]
+    entryPoints = ["internal"]
+    service = "local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-1"
+    priority = 709
+    rule = "PathPrefix(`/access/`)"
+
+  [http.routers.jfac_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule0-external]
+    entryPoints = ["external"]
+    service = "local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-1"
+    priority = 709
+    rule = "PathPrefix(`/access/`)"
+    middlewares = ["hotPath","mtls"]
+
+[http.services]
+
+  [http.services.local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-0.loadBalancer]
+    passHostHeader = false
+
+    [[http.services.local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-0.loadBalancer.servers]]
+      url = "h2c://localhost:8045"
+
+  [http.services.local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-1.loadBalancer]
+    passHostHeader = false
+
+    [[http.services.local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-1.loadBalancer.servers]]
+      url = "http://localhost:8040"

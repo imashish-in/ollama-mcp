@@ -1,0 +1,203 @@
+2025-08-24T05:56:26.235Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [bootstrap.go:56               ] [main                ] [                ] - Effective configuration:
+access.database.maxOpenConnections (File): 80
+access.extraJavaOpts (File): -XX:InitialRAMPercentage=20 -XX:MaxRAMPercentage=70
+
+access.tomcat.connector.extraConfig (File): acceptCount="100"
+access.tomcat.connector.maxThreads (File): 50
+access.tomcat.connector.sendReasonPhrase (File): false
+artifactory.database.maxOpenConnections (File): 80
+artifactory.tomcat.connector.extraConfig (File): acceptCount="400"
+artifactory.tomcat.connector.maxThreads (File): 200
+artifactory.tomcat.connector.sendReasonPhrase (File): false
+artifactory.tomcat.maintenanceConnector.port (File): 8091
+artifactory.user (Environment Variable: JF_ARTIFACTORY_USER): artifactory
+event.accessClient.joinTimeout (Default Value): 5m
+event.accessClient.pingTimeout (Default Value): 5m
+event.artifactoryClient.request.timeout (Default Value): 5s
+event.baseUrlCache.interval (Default Value): 5m
+event.customWebhooks.enabled (Default Value): true
+event.customWebhooks.maxIdleConnections (Default Value): 100
+event.customWebhooks.maxIdleConnectionsPerHost (Default Value): 100
+event.customWebhooks.retryCount (Default Value): 5
+event.customWebhooks.retryWaitMillis (Default Value): 10000
+event.customWebhooks.sizeLimits.headersMaxCount (Default Value): 50
+event.customWebhooks.sizeLimits.headersMaxSizeBytes (Default Value): 5120
+event.customWebhooks.sizeLimits.payloadMaxSizeBytes (Default Value): 51200
+event.customWebhooks.sizeLimits.secretsMaxCount (Default Value): 50
+event.customWebhooks.sizeLimits.secretsMaxSizeBytes (Default Value): 5120
+event.customWebhooks.timeoutMillis (Default Value): 30000
+event.customWebhooks.tlsInsecure (Default Value): false
+event.domainCache.interval (Default Value): 5m
+event.grpcPort (Default Value): 8062
+event.listenAddr (Default Value): localhost
+event.logging.application.caller (Default Value): false
+event.logging.application.console (Default Value): true
+event.logging.application.filePath (Default Value): event-service.log
+event.logging.application.format (Default Value): jftext
+event.logging.application.level (Default Value): info
+event.logging.application.rotation.compress (Default Value): true
+event.logging.application.rotation.keepLastDecompressed (Default Value): 1
+event.logging.application.rotation.maxAgeDays (Default Value): 365
+event.logging.application.rotation.maxFiles (Default Value): 10
+event.logging.application.rotation.maxSizeMb (Default Value): 25
+event.logging.consoleLog.format (Default Value): jftext
+event.logging.metrics.console (Default Value): false
+event.logging.metrics.filePath (Default Value): event-metrics.log
+event.logging.metrics.rotation.compress (Default Value): true
+event.logging.metrics.rotation.keepLastDecompressed (Default Value): 1
+event.logging.metrics.rotation.maxAgeDays (Default Value): 365
+event.logging.metrics.rotation.maxFiles (Default Value): 10
+event.logging.metrics.rotation.maxSizeMb (Default Value): 25
+event.logging.outgoingRequest.console (Default Value): false
+event.logging.outgoingRequest.filePath (Default Value): event-webhook-request-out.log
+event.logging.outgoingRequest.rotation.compress (Default Value): true
+event.logging.outgoingRequest.rotation.keepLastDecompressed (Default Value): 1
+event.logging.outgoingRequest.rotation.maxAgeDays (Default Value): 365
+event.logging.outgoingRequest.rotation.maxFiles (Default Value): 10
+event.logging.outgoingRequest.rotation.maxSizeMb (Default Value): 25
+event.logging.request.console (Default Value): false
+event.logging.request.filePath (Default Value): event-request.log
+event.logging.request.rotation.compress (Default Value): true
+event.logging.request.rotation.keepLastDecompressed (Default Value): 1
+event.logging.request.rotation.maxAgeDays (Default Value): 365
+event.logging.request.rotation.maxFiles (Default Value): 10
+event.logging.request.rotation.maxSizeMb (Default Value): 25
+event.logging.troubleshooting.console (Default Value): false
+event.logging.troubleshooting.filePath (Default Value): event-troubleshooting.log
+event.logging.troubleshooting.rotation.compress (Default Value): true
+event.logging.troubleshooting.rotation.keepLastDecompressed (Default Value): 1
+event.logging.troubleshooting.rotation.maxAgeDays (Default Value): 365
+event.logging.troubleshooting.rotation.maxFiles (Default Value): 10
+event.logging.troubleshooting.rotation.maxSizeMb (Default Value): 25
+event.metrics.enabled (Default Value): false
+event.metrics.exclude (Default Value): []
+event.metrics.interval (Default Value): 10s
+event.metrics.logPeriodically (Default Value): true
+event.metrics.tokenVerification.accessUrl (Default Value): 
+event.metrics.tokenVerification.retryBackoffInitialIntervalMillis (Default Value): 500
+event.metrics.tokenVerification.retryBackoffMaxElapsedTimeMillis (Default Value): 0
+event.metrics.tokenVerification.retryBackoffMaxIntervalMillis (Default Value): 3600000
+event.metrics.tokenVerification.revocableExpiryThresholdSeconds (Default Value): -1
+event.metrics.triggers.enabled (Default Value): true
+event.metrics.triggers.intervalMillis (Default Value): 20000
+event.metrics.triggers.limit (Default Value): 1000000
+event.port (Default Value): 8061
+event.profiling.enabled (Default Value): false
+event.proxyCache.interval (Default Value): 5m
+event.rateLimit.burstSize (Default Value): 10000
+event.rateLimit.frequency (Default Value): 1000
+event.rateLimit.maxConcurrentHandlers (Default Value): 50000
+event.security.blacklist.enabled (Default Value): true
+event.security.blacklist.timeoutMillis (Default Value): 5000
+event.shutdownWaitForRouterTimeoutSecs (Default Value): 10
+event.supportBundle.aggregationTimeout (Default Value): 1h
+event.tokenCache.timeout (Default Value): 1m
+event.troubleshooting.enabled (Default Value): false
+event.troubleshooting.keepAliveIntervalMillis (Default Value): 10000
+event.troubleshooting.redis.addresses (Default Value): []
+event.troubleshooting.redis.blockTimeoutMillis (Default Value): 0
+event.troubleshooting.redis.cleanupIntervalMillis (Default Value): 30000
+event.troubleshooting.redis.dialTimeoutMillis (Default Value): 0
+event.troubleshooting.redis.password (Default Value): *****
+event.troubleshooting.redis.readTimeoutMillis (Default Value): 0
+event.troubleshooting.redis.serverType (Default Value): single
+event.troubleshooting.redis.streamBatchSize (Default Value): 1000
+event.troubleshooting.redis.streamMaxLen (Default Value): 10000
+event.troubleshooting.redis.tlsEnabled (Default Value): false
+event.troubleshooting.redis.tlsInsecure (Default Value): false
+event.troubleshooting.redis.username (Default Value): 
+event.troubleshooting.redis.writeTimeoutMillis (Default Value): 0
+event.troubleshooting.storageType (Default Value): log
+event.troubleshooting.streamIdSuffix (Default Value): troubleshooting
+event.webhooks.maxIdleConnections (Default Value): 100
+event.webhooks.maxIdleConnectionsPerHost (Default Value): 100
+event.webhooks.retryCount (Default Value): 5
+event.webhooks.retryWait (Default Value): 10s
+event.webhooks.sizeLimits.headersMaxCount (Default Value): 50
+event.webhooks.sizeLimits.headersMaxSizeBytes (Default Value): 5120
+event.webhooks.timeout (Default Value): 30s
+event.webhooks.tlsInsecure (Default Value): false
+event.webhooks.urlStrictPolicy (Default Value): true
+evidence.enabled (File): true
+frontend.session.timeMinutes (File): 30
+jfconfig.database.maxOpenConnections (File): 80
+jfconfig.enabled (File): true
+jfconfig.extraJavaOpts (File): -XX:+UseStringDeduplication -XX:+UseG1GC -XX:InitialRAMPercentage=20 -XX:MaxRAMPercentage=70
+
+jfconfig.port (File): 8010
+jfconnect.enabled (File): true
+metadata.database.maxOpenConnections (File): 80
+onemodel.enabled (File): true
+product.data.internal (Environment Variable: JF_PRODUCT_DATA_INTERNAL): /var/opt/jfrog/artifactory
+product.home (Environment Variable: JF_PRODUCT_HOME): /opt/jfrog/artifactory
+router.entrypoints.internalPort (Default Value): 8046
+router.serviceRegistry.insecure (File): false
+rtfs.enabled (File): false
+shared.database.allowNonPostgresql (File): false
+shared.database.driver (File): org.postgresql.Driver
+shared.database.type (File): postgresql
+shared.database.url (File): jdbc:postgresql://artifactory-postgresql:5432/artifactory
+shared.database.username (File): artifactory
+shared.extraJavaOpts (File): -Dartifactory.graceful.shutdown.max.request.duration.millis=30000 -Dartifactory.access.client.max.connections=50
+
+shared.logging.consoleLog.enabled (File): false
+shared.multiTenant.cellId (Default Value): 
+shared.multiTenant.enabled (Default Value): false
+shared.multiTenant.tenantRegistryClient.caCert (Default Value): 
+shared.multiTenant.tenantRegistryClient.cacheExpirationSecs (Default Value): 21600
+shared.multiTenant.tenantRegistryClient.clientCert (Default Value): 
+shared.multiTenant.tenantRegistryClient.clientCertKey (Default Value): *****
+shared.multiTenant.tenantRegistryClient.dialTimeoutSecs (Default Value): 10
+shared.multiTenant.tenantRegistryClient.endpoints (Default Value): 
+shared.multiTenant.tenantRegistryClient.pingCacheExpirationSecs (Default Value): 15
+shared.multiTenant.tenantRegistryClient.pingTimeoutSecs (Default Value): 1
+shared.multiTenant.tenantRegistryClient.requestTimeoutSecs (Default Value): 30
+shared.newrelic.appName (Default Value): 
+shared.newrelic.distributedTracerEnabled (Default Value): true
+shared.newrelic.enableDebugLog (Default Value): false
+shared.newrelic.enabled (Default Value): false
+shared.newrelic.licenseKey (Default Value): *****
+shared.node.id (Environment Variable: JF_SHARED_NODE_ID): artifactory-0
+shared.node.ip (Default Value): 10.1.0.7
+shared.openTelemetry.distributedTracerEnabled (Default Value): true
+shared.openTelemetry.enabled (Default Value): false
+shared.openTelemetry.endpoint (Default Value): 
+shared.openTelemetry.exportPace (Default Value): 0s
+shared.openTelemetry.labels (Default Value): 
+shared.openTelemetry.metricsEnabled (Default Value): false
+shared.openTelemetry.serviceName (Default Value): jfevt
+shared.openTelemetry.token (Default Value): *****
+shared.openTelemetry.useGrpcExporters (Default Value): true
+shared.restrictedmode.enabled (Environment Variable: JF_SHARED_RESTRICTEDMODE_ENABLED): true
+shared.security.ExposeApplicationHeaders (Default Value): false
+shared.security.bootstrapKeysReadTimeoutSecs (Default Value): 120
+shared.security.joinKeyFile (Default Value): etc/security/join.key
+shared.security.masterKeyFile (Default Value): etc/security/master.key
+topology.database.maxOpenConnections (File): 80
+topology.enabled (File): true
+topology.extraJavaOpts (File): -XX:InitialRAMPercentage=20 -XX:MaxRAMPercentage=70
+
+topology.port (File): 8020 [startup]
+2025-08-24T05:56:31.244Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 5 seconds with 2m0s timeout [startup]
+2025-08-24T05:56:36.256Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 10 seconds with 2m0s timeout [startup]
+2025-08-24T05:56:41.270Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 15 seconds with 2m0s timeout [startup]
+2025-08-24T05:56:46.281Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 20 seconds with 2m0s timeout [startup]
+2025-08-24T05:56:51.290Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 25 seconds with 2m0s timeout [startup]
+2025-08-24T05:56:56.300Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 30 seconds with 2m0s timeout [startup]
+2025-08-24T05:57:01.308Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 35 seconds with 2m0s timeout [startup]
+2025-08-24T05:57:10.324Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [access_thin_client.go:101     ] [main                ] [                ] - Cluster join: Retry 5: Service registry ping failed, will retry. Error: Failed to ping access, response status: 404 Not Found (returned 404) [startup]
+2025-08-24T05:57:11.337Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [bootstrap.go:146              ] [main                ] [                ] - JFrog Event Service ID: jfevt@01k3dadp7e688m028tztv9160g [startup]
+2025-08-24T05:57:11.337Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [bootstrap.go:147              ] [main                ] [                ] - JFrog Event Node ID   : artifactory-0 [startup]
+2025-08-24T05:57:11.337Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [bootstrap.go:148              ] [main                ] [                ] - JFrog Event Node IP   : 10.1.0.7 [startup]
+2025-08-24T05:57:11.356Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [trusted.go:41                 ] [main                ] [                ] - System cert pool contents were loaded as trusted CAs for TLS communication [subscriptions]
+2025-08-24T05:57:11.356Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [trusted.go:24                 ] [main                ] [                ] - No certificate to be loaded as trusted CAs found in [] [subscriptions]
+2025-08-24T05:57:11.356Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [trusted.go:41                 ] [main                ] [                ] - System cert pool contents were loaded as trusted CAs for TLS communication [subscriptions]
+2025-08-24T05:57:11.356Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [trusted.go:24                 ] [main                ] [                ] - No certificate to be loaded as trusted CAs found in [] [subscriptions]
+2025-08-24T05:57:11.392Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [join_executor.go:178          ] [main                ] [                ] - Cluster join: Successfully joined the cluster [access_client]
+2025-08-24T05:57:11.392Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [join_executor.go:190          ] [main                ] [                ] - Cluster join: executing Router register at: localhost:8046 for service id jfevt@01k3dadp7e688m028tztv9160g [access_client]
+2025-08-24T05:57:11.399Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [application.go:200            ] [main                ] [                ] - JFrog Event (jfevt) service initialization completed in 45.168 seconds. HTTP server listening on 127.0.0.1:8061. GRPC server listening on 127.0.0.1:8062. [application]
+2025-08-24T05:57:11.400Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [trusted.go:41                 ] [main                ] [                ] - System cert pool contents were loaded as trusted CAs for TLS communication [events]
+2025-08-24T05:57:11.400Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [trusted.go:24                 ] [main                ] [                ] - No certificate to be loaded as trusted CAs found in [] [events]
+2025-08-24T05:57:11.400Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [trusted.go:41                 ] [main                ] [                ] - System cert pool contents were loaded as trusted CAs for TLS communication [events]
+2025-08-24T05:57:11.400Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [trusted.go:24                 ] [main                ] [                ] - No certificate to be loaded as trusted CAs found in [] [events]
+2025-08-24T07:26:25.413Z [jfevt] [INFO ] [7c2f1efe58b4b7d7] [dedicated_grpc_connection.go:2] [main                ] [                ] - Creating a new dedicated gRPC connection for localhost:8046 [access_client]

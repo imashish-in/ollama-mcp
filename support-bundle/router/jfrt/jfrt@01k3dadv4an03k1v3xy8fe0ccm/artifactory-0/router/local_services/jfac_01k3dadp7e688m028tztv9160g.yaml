@@ -1,0 +1,21 @@
+endpoints:
+    - excludedpaths: []
+      paths:
+        - match: /com\.jfrog\.access\..*
+          replace: ""
+      port: 8045
+      protocol: 2
+    - excludedpaths: []
+      paths:
+        - match: access/.*
+          replace: ""
+      port: 8040
+      protocol: 1
+healthcheckendpoint:
+    path: /access/api/v1/system/readiness
+    port: 8040
+nodeid: artifactory-0
+nodestatusendpoint: null
+revision: "84712900"
+serviceid: jfac@01k3dadp7e688m028tztv9160g
+version: 7.147.12

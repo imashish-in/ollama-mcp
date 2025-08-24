@@ -1,0 +1,173 @@
+jfconnect:
+    accessclient:
+        jointimeoutmillis: 30000
+        jointimeoutmins: 5
+        maxinboundmessagesize: 4194304
+        pingtimeoutmins: 5
+        tokencache:
+            timeoutsecs: 60
+        usesharedgrpcchannel: false
+    airgap:
+        enabled: false
+    apikeyusage:
+        request:
+            timeoutsecs: 120
+        usersdataexpirymins: 240
+    archival:
+        enabled: true
+        maxconcurrentarchivaljob: 20
+    artifactoryclient:
+        archival:
+            retryattempts: 3
+            retrydelaymillis: 1000
+            workers: 3
+        request:
+            timeoutsecs: 120
+        usage:
+            downloadattempts: 3
+            retentionrelativepaths:
+                - type/usage/status/success/days/7
+                - type/usage/status/failure/days/420
+                - type/usage/status/pending/days/420
+                - type/metrics/status/success/days/0
+                - type/metrics/status/failure/days/0
+                - type/metrics/status/pending/days/10
+            retrydelaymillis: 1000
+            workers: 3
+    demoenv:
+        technicalservername: a0mliopqvnokr
+    entitlements:
+        enforcementalwaysoff: true
+        maxconcurrentjesrequests: 100
+        request:
+            timeoutsecs: 30
+    grpcport: 8035
+    httpport: 8030
+    listenaddr: localhost
+    logging:
+        application:
+            caller: false
+            console: true
+            filepath: jfconnect-service.log
+            format: jftext
+            level: info
+            packages: {}
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        consolelog:
+            format: jftext
+        metrics:
+            console: false
+            filepath: jfconnect-metrics.log
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        request:
+            console: false
+            filepath: jfconnect-request.log
+            filter: false
+            processingtimeinmillis: 100
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        requestout:
+            console: false
+            filepath: jfconnect-request-out.log
+            filter: false
+            processingtimeinmillis: 0
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+    metrics:
+        enabled: false
+        exclude: []
+        intervalsecs: 10
+        tokenverification:
+            accessurl: ""
+            retrybackoffinitialintervalmillis: 500
+            retrybackoffmaxelapsedtimemillis: 0
+            retrybackoffmaxintervalmillis: 3600000
+            revocableexpirythresholdseconds: -1
+    myjfrogsso:
+        enabled: false
+        request:
+            timeoutsecs: 30
+    poc:
+        skipvalidation: false
+    profiler:
+        enabled: false
+    profiling:
+        enabled: false
+    proxy:
+        host: ""
+        password: '*****'
+        port: 0
+        username: ""
+    supportbundle:
+        aggregationtimeoutmins: 60
+    tenantshealthcheckservice:
+        enabled: false
+        flowintervalsecs: 120
+        workers: 10
+    usage:
+        enabled: true
+        file:
+            retrydelaymillis: 1000
+            uploadattempts: 3
+            workers: 3
+        maxconcurrentusagejob: 20
+        request:
+            timeoutsecs: 30
+router:
+    entrypoints:
+        internalport: 8046
+shared:
+    logging:
+        consolelog:
+            format: ""
+        enablejsonconsolelogappenders: false
+    multitenant:
+        cellid: ""
+        enabled: false
+        tenantregistryclient:
+            cacert: ""
+            cacheexpirationsecs: 21600
+            clientcert: ""
+            clientcertkey: ""
+            dialtimeoutsecs: 10
+            endpoints: []
+            password: '*****'
+            pingcacheexpirationsecs: 15
+            pingtimeoutsecs: 1
+            requesttimeoutsecs: 30
+            username: ""
+    newrelic:
+        appname: ""
+        distributedtracerenabled: true
+        enabled: false
+        enabledebuglog: false
+        licensekey: ""
+    node:
+        id: artifactory-0
+        ip: 10.1.0.7
+    runtime:
+        issaas: false
+    security:
+        bootstrapkeysreadtimeoutsecs: 120
+        exposeapplicationheaders: false
+    system:
+        cloudenv: ""
+        technicalservername: ""

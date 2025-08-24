@@ -43,6 +43,10 @@ func NewRegistry() *Registry {
 	r.registerFetchServer()
 	r.registerHTTPServer()
 	r.registerArtifactoryServer()
+	r.registerSupportBundleServer()
+	r.registerArchiveExtractorServer()
+	r.registerLogAnalyzerServer()
+	r.registerSSHServer()
 
 	return r
 }
@@ -163,10 +167,62 @@ func (r *Registry) registerHTTPServer() {
 // registerArtifactoryServer registers the Artifactory server
 func (r *Registry) registerArtifactoryServer() {
 	r.servers["artifactory"] = func(options map[string]any, model model.ToolCallingChatModel) (*BuiltinServerWrapper, error) {
-		// Create the Artifactory server
-		server, err := NewArtifactoryServer()
+		// Create the Artifactory server with configuration
+		server, err := NewArtifactoryServer(options)
 		if err != nil {
 			return nil, fmt.Errorf("failed to create Artifactory server: %v", err)
+		}
+
+		return &BuiltinServerWrapper{server: server}, nil
+	}
+}
+
+// registerSupportBundleServer registers the Support Bundle server
+func (r *Registry) registerSupportBundleServer() {
+	r.servers["support-bundle"] = func(options map[string]any, model model.ToolCallingChatModel) (*BuiltinServerWrapper, error) {
+		// Create the Support Bundle server
+		server, err := NewSupportBundleServer()
+		if err != nil {
+			return nil, fmt.Errorf("failed to create Support Bundle server: %v", err)
+		}
+
+		return &BuiltinServerWrapper{server: server}, nil
+	}
+}
+
+// registerArchiveExtractorServer registers the Archive Extractor server
+func (r *Registry) registerArchiveExtractorServer() {
+	r.servers["archive-extractor"] = func(options map[string]any, model model.ToolCallingChatModel) (*BuiltinServerWrapper, error) {
+		// Create the Archive Extractor server
+		server, err := NewArchiveExtractorServer()
+		if err != nil {
+			return nil, fmt.Errorf("failed to create Archive Extractor server: %v", err)
+		}
+
+		return &BuiltinServerWrapper{server: server}, nil
+	}
+}
+
+// registerLogAnalyzerServer registers the Log Analyzer server
+func (r *Registry) registerLogAnalyzerServer() {
+	r.servers["log-analyzer"] = func(options map[string]any, model model.ToolCallingChatModel) (*BuiltinServerWrapper, error) {
+		// Create the Log Analyzer server
+		server, err := NewLogAnalyzerServer()
+		if err != nil {
+			return nil, fmt.Errorf("failed to create Log Analyzer server: %v", err)
+		}
+
+		return &BuiltinServerWrapper{server: server}, nil
+	}
+}
+
+// registerSSHServer registers the SSH server
+func (r *Registry) registerSSHServer() {
+	r.servers["ssh-server"] = func(options map[string]any, model model.ToolCallingChatModel) (*BuiltinServerWrapper, error) {
+		// Create the SSH server with configuration
+		server, err := NewSSHServer(options)
+		if err != nil {
+			return nil, fmt.Errorf("failed to create SSH server: %v", err)
 		}
 
 		return &BuiltinServerWrapper{server: server}, nil

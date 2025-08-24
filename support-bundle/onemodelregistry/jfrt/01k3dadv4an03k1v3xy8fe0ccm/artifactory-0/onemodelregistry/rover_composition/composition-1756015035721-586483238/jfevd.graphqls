@@ -1,0 +1,331 @@
+# #############################################
+# Source: common/onemodel-sdk.graphqls
+# #############################################
+"""
+Executable directive to specify the date format to use for Date fields in the query response
+"""
+directive @dateFormat(format: DateFormat! = ISO8601) on FIELD
+
+"""
+Schema directive, used to specify the owner of an entity type. This directive must be used on all entity types, only by the owner of the entity, not by subgraph providers which extend the entity.
+Used for both documenting ownership and enforcing having a single owner.
+"""
+directive @owner(
+  """
+  JFrog product which is the owner of the type
+  """
+  product: String!
+) on SCALAR | OBJECT | INTERFACE | UNION | ENUM | INPUT_OBJECT
+
+"""
+Schema directive, used to mark a type or a field as experimental, i.e. not part of the contract and can be removed / changed at any time.
+"""
+directive @experimental(
+  """
+  Optional comment on the experimental schema item
+  """
+  comment: String
+) on SCALAR | OBJECT | FIELD_DEFINITION | ARGUMENT_DEFINITION | INTERFACE | UNION | ENUM | ENUM_VALUE | INPUT_OBJECT | INPUT_FIELD_DEFINITION
+
+"""
+Supported date formats for Date fields
+"""
+enum DateFormat @owner(product: "onemodel") {
+  """
+  ISO-8601 - e.g. 1994-11-05T13:15:30.972Z
+  """
+  ISO8601
+  """
+  ISO-8601-Date - e.g. 1994-11-05
+  """
+  ISO8601_DATE_ONLY
+  """
+  e.g. 05 Nov 1994
+  """
+  DD_MMM_YYYY
+}
+
+"""
+Possible directions in which to order a sorted list of items when provided an `orderBy` argument
+"""
+enum SortOrderDirection @owner(product: "onemodel") {
+  """
+  Ascending order
+  """
+  ASC
+  """
+  Descending order
+  """
+  DESC
+}
+
+"""
+Date type, string value, supports the @dateFormat directive, by default follows the [ISO-8601 standard](https://www.w3.org/TR/NOTE-datetime) with millisecond precision and timezone. For example: "1994-11-05T13:15:30.972Z"
+"""
+scalar Date @owner(product: "onemodel")
+
+"""
+Unified Resource Identifier type, string value, follows the [RFC-3986](https://datatracker.ietf.org/doc/html/rfc3986) standard
+"""
+scalar URI @owner(product: "onemodel")
+
+"""
+[Relay Cursor](https://relay.dev/graphql/connections.htm#sec-Cursor) type, an obfuscated string value representing a position during pagination.
+"""
+scalar Cursor @owner(product: "onemodel")
+
+"""
+Digest type, string value, in the format: "<alg>:<digest>"
+Example:
+sha256:68e656b251e67e8358bef8483ab0d51c6619f3e7a1a9f0e75838d41ff368f728
+"""
+scalar Digest @owner(product: "onemodel")
+
+"""
+SHA-256 string formatted as HEX value (lowercase).
+Matches regular expression: "^[a-f0-9]{64}$".
+
+Example: "7ab0a6527f661c55b02b29fbb3b7d2a7313215c1140337b0cd980d06c3975a14" (SHA-256 of "JFrog")
+"""
+scalar Sha256 @owner(product: "onemodel")
+
+"""
+Arbitrary JSON object.
+"""
+scalar JSON @owner(product: "onemodel")
+
+"""
+Page information, part of results pagination, as defined by [Relay PageInfo](https://relay.dev/graphql/connections.htm#sec-undefined.PageInfo) value object type
+"""
+type PageInfo @shareable @owner(product: "onemodel") {
+  """
+  When paginating forwards, are there more items?
+  """
+  hasNextPage: Boolean!
+  """
+  When paginating backwards, are there more items?
+  """
+  hasPreviousPage: Boolean!
+  """
+  The cursor of the first item in the page.
+  Used to continue when paginating backwards (to use with `before`)
+  """
+  startCursor: Cursor
+  """
+  The cursor of the last item in the page.
+  Used to continue when paginating forwards (to use with `after`)
+  """
+  endCursor: Cursor
+}
+
+extend schema
+@link(url: "https://specs.apollo.dev/federation/v2.9", import: ["@key", "@shareable", "@composeDirective"])
+@link(url: "https://jfrog.com/onemodel/v1.0", import: ["@owner", "@experimental"])
+@composeDirective(name: "@owner")
+@composeDirective(name: "@experimental")
+
+
+
+# #############################################
+# Source: evidence.graphqls
+# #############################################
+extend type Query {
+  evidence: EvidenceQueries!
+}
+
+"""
+Queries for getting evidence.
+"""
+type EvidenceQueries @owner(product: "jfevd") {
+  """
+  Get an evidence by its repository key, path, name, and optional sha256.
+  """
+  getEvidence(repositoryKey: String!, path: String!, name: String!, sha256: Sha256): Evidence @goField(forceResolver: true)
+  """
+  Search for evidence based on the provided where clause. Where clause consists of repository key, optional path, optional name, and optional sha256.
+  """
+  searchEvidence(where: EvidenceWhereInput!, first: Int, after: Cursor): EvidenceConnection @goField(forceResolver: true)
+}
+
+"""
+Where clause for searching evidence of subjects that match the given input.
+"""
+input EvidenceWhereInput @owner(product: "jfevd") {
+  hasSubjectWith: EvidenceSubjectWhereInput!
+}
+
+"""
+The desired subjects parameters to search for evidence.
+"""
+input EvidenceSubjectWhereInput @owner(product: "jfevd") {
+  repositoryKey: String!
+  path: String
+  name: String
+  sha256: Sha256
+}
+
+"""
+Connection for evidence. Allows pagination over the evidence.
+"""
+type EvidenceConnection @owner(product: "jfevd") {
+  edges: [EvidenceEdge!]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+"""
+Edge for evidence with its cursor in the paginated evidence.
+"""
+type EvidenceEdge @owner(product: "jfevd") {
+  node: Evidence!
+  cursor: Cursor
+}
+
+"""
+Evidence represents an artifact (subject) evidence.
+"""
+type Evidence @owner(product: "jfevd") {
+  downloadPath: String
+  name: String
+  sha256: Sha256
+  repositoryKey: String @deprecated(reason: "Moved to 'subject.repositoryKey'")
+  path: String @deprecated(reason: "This field caused a confusion regarding what it represents. To reach the evidence of an artifact (i.e. for deletion), please do the following concatenation: subject.Path + '/' + subject.Name + '/' + evidence.Name")
+  subject: EvidenceSubject @experimental(comment: "The subject field is under development and may change in future versions.")
+  predicateCategory: String
+  predicateType: String
+  predicateSlug: String
+  predicate: JSON @goField(forceResolver: true)
+  createdAt: Date
+  createdBy: String
+  verified: Boolean
+  signingKey: EvidenceSigningKey
+  providerId: String
+}
+
+"""
+Evidence subject.
+"""
+type EvidenceSubject @owner(product: "jfevd") {
+  repositoryKey: String
+  path: String
+  name: String
+  sha256: Sha256
+}
+
+"""
+Evidence signing key represents the signing key used to sign the evidence.
+"""
+type EvidenceSigningKey @owner(product: "jfevd") {
+  alias: String
+}
+
+
+# #############################################
+# Source: directives.graphqls
+# #############################################
+"""
+Built-in directive of gqlgen, that make it a little easier to manage wiring.
+
+This directive is automatically registered to skip_runtime.
+Any directives registered as skip_runtime will not be exposed during introspection
+and are used during code generation only.
+"""
+directive @goField(
+  forceResolver: Boolean
+  name: String
+  omittable: Boolean
+) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+
+
+
+# #############################################
+# Source: lifecycle.graphqls
+# #############################################
+extend type Query {
+  releaseBundleVersion: ReleaseBundleVersionQueries!
+}
+
+"""
+Queries for getting release bundle versions.
+"""
+type ReleaseBundleVersionQueries @owner(product: "jfevd") {
+  """
+  Get a release bundle version by its repository key, project key, name, and version.
+  If both repository key and project key are not provided, then repository key release-bundles-v2 will be used.
+  If project key is provided, but not the repository key, then repository key <project-key>-release-bundles-v2 will be used.
+  If both repository key and project key are provided, the given repository key will be used and the given project key will be ignored.
+  """
+  getVersion(repositoryKey: String, projectKey: String, name: String!, version: String!): ReleaseBundleVersion @goField(forceResolver: true)
+}
+
+"""
+Release bundle version represents a version of a release bundle.
+"""
+type ReleaseBundleVersion @owner(product: "jfevd") {
+  createdBy: String
+  createdAt: Date
+  artifactsConnection(first: Int, after: Cursor, where: ReleaseBundleVersionArtifactsWhereInput): ReleaseBundleVersionArtifactConnection @goField(forceResolver: true)
+  evidenceConnection(first: Int, after: Cursor): EvidenceConnection @goField(forceResolver: true)
+  fromBuilds: [ReleaseBundleVersionBuild!]
+}
+
+"""
+Release bundle version build represents a build that a release bundle version was created from.
+"""
+type ReleaseBundleVersionBuild @owner(product: "jfevd") {
+  name: String
+  number: String
+  startedAt: Date
+  repositoryKey: String
+  evidenceConnection(first: Int, after: Cursor): EvidenceConnection @goField(forceResolver: true)
+}
+
+"""
+Connection for release bundle version artifacts. Allows pagination over the artifacts.
+"""
+type ReleaseBundleVersionArtifactConnection @owner(product: "jfevd") {
+  edges: [ReleaseBundleVersionArtifactEdge!]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+"""
+Edge for release bundle version artifact with its cursor in the paginated artifacts.
+"""
+type ReleaseBundleVersionArtifactEdge @owner(product: "jfevd") {
+  node: ReleaseBundleVersionArtifact!
+  cursor: Cursor
+}
+
+"""
+Release bundle version artifact represents an artifact of a release bundle version.
+"""
+type ReleaseBundleVersionArtifact @owner(product: "jfevd") {
+  path: String
+  name: String
+  sha256: String
+  sourceRepositoryPath: String
+  packageType: String
+  packageName: String
+  packageVersion: String
+  size: Int
+  properties: [ReleaseBundleVersionArtifactProperty!]
+  evidenceConnection(first: Int, after: Cursor): EvidenceConnection @goField(forceResolver: true)
+}
+
+"""
+Property of a release bundle version artifact.
+"""
+type ReleaseBundleVersionArtifactProperty @owner(product: "jfevd") {
+  key: String
+  values: [String]
+}
+
+"""
+Defines filtering criteria for querying artifacts based on specified predicates.
+"""
+input ReleaseBundleVersionArtifactsWhereInput {
+  hasEvidence: Boolean
+}
+
+

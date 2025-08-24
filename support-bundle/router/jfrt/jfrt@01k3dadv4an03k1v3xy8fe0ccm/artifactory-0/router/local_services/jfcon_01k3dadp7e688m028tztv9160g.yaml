@@ -1,0 +1,21 @@
+endpoints:
+    - excludedpaths: []
+      paths:
+        - match: /jfconnect/(.*)
+          replace: /$1
+      port: 8030
+      protocol: 1
+    - excludedpaths: []
+      paths:
+        - match: /com\.jfrog\.jfconnect\..*
+          replace: ""
+      port: 8035
+      protocol: 2
+healthcheckendpoint:
+    path: /api/v1/system/readiness
+    port: 8030
+nodeid: artifactory-0
+nodestatusendpoint: null
+revision: 9e986ed66e
+serviceid: jfcon@01k3dadp7e688m028tztv9160g
+version: 7.117.2

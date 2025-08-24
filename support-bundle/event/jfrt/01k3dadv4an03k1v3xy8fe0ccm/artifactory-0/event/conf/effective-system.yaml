@@ -1,0 +1,204 @@
+event:
+    accessclient:
+        jointimeout: 5m0s
+        jointimeoutmillis: 300000
+        pingtimeout: 5m0s
+        pingtimeoutmillis: 300000
+        tokencachetimeout: 0s
+    artifactoryclient:
+        request:
+            timeout: 5s
+            timeoutmillis: 5000
+    baseurlcache:
+        interval: 5m0s
+        intervalmillis: 300000
+    customwebhooks:
+        enabled: true
+        maxidleconnections: 100
+        maxidleconnectionsperhost: 100
+        retrycount: 5
+        retrywaitmillis: 10000
+        sizelimits:
+            headersmaxcount: 50
+            headersmaxsizebytes: 5120
+            payloadmaxsizebytes: 51200
+            secretsmaxcount: 50
+            secretsmaxsizebytes: 5120
+        timeoutmillis: 30000
+        tlsinsecure: false
+    domaincache:
+        interval: 5m0s
+        intervalmillis: 300000
+    grpcport: 8062
+    listenaddr: localhost
+    logging:
+        application:
+            caller: false
+            console: true
+            filepath: event-service.log
+            format: jftext
+            level: info
+            packages: {}
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        consolelog:
+            format: jftext
+        metrics:
+            console: false
+            filepath: event-metrics.log
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        outgoingrequest:
+            console: false
+            filepath: event-webhook-request-out.log
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        request:
+            console: false
+            filepath: event-request.log
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        troubleshooting:
+            console: false
+            filepath: event-troubleshooting.log
+            rotation:
+                compress: true
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+    metrics:
+        enabled: false
+        exclude: []
+        interval: 10s
+        intervalmillis: 10000
+        logperiodically: true
+        tokenverification:
+            accessurl: ""
+            retrybackoffinitialintervalmillis: 500
+            retrybackoffmaxelapsedtimemillis: 0
+            retrybackoffmaxintervalmillis: 3600000
+            revocableexpirythresholdseconds: -1
+        triggers:
+            enabled: true
+            intervalmillis: 20000
+            limit: 1000000
+    port: 8061
+    profiling:
+        enabled: false
+    proxycache:
+        interval: 5m0s
+        intervalmillis: 300000
+    ratelimit:
+        burstsize: 10000
+        frequency: 1000
+        maxconcurrenthandlers: 50000
+    security:
+        blacklist:
+            enabled: true
+            timeoutmillis: 5000
+    shutdownwaitforroutertimeoutsecs: 10
+    supportbundle:
+        aggregationtimeout: 1h0m0s
+        aggregationtimeoutmillis: 3600000
+    tokencache:
+        timeout: 1m0s
+        timeoutmillis: 60000
+    troubleshooting:
+        enabled: false
+        keepaliveintervalmillis: 10000
+        redis:
+            addresses: []
+            blocktimeoutmillis: 0
+            cleanupintervalmillis: 30000
+            dialtimeoutmillis: 0
+            password: '*****'
+            readtimeoutmillis: 0
+            servertype: single
+            streambatchsize: 1000
+            streammaxlen: 10000
+            tlsenabled: false
+            tlsinsecure: false
+            username: ""
+            writetimeoutmillis: 0
+        storagetype: log
+        streamidsuffix: troubleshooting
+    webhooks:
+        maxidleconnections: 100
+        maxidleconnectionsperhost: 100
+        retrycount: 5
+        retrywait: 10s
+        retrywaitmillis: 10000
+        sizelimits:
+            headersmaxcount: 50
+            headersmaxsizebytes: 5120
+        timeout: 30s
+        timeoutmillis: 30000
+        tlsinsecure: false
+        urlstrictpolicy: true
+router:
+    entrypoints:
+        internalport: 8046
+shared:
+    cache:
+        params: ""
+        url: ""
+    logging:
+        consolelog:
+            format: ""
+        enablejsonconsolelogappenders: false
+    multitenant:
+        cellid: ""
+        enabled: false
+        tenantregistryclient:
+            cacert: ""
+            cacheexpirationsecs: 21600
+            clientcert: ""
+            clientcertkey: ""
+            dialtimeoutsecs: 10
+            endpoints: []
+            password: '*****'
+            pingcacheexpirationsecs: 15
+            pingtimeoutsecs: 1
+            requesttimeoutsecs: 30
+            username: ""
+    newrelic:
+        appname: ""
+        distributedtracerenabled: true
+        enabled: false
+        enabledebuglog: false
+        licensekey: ""
+    node:
+        id: artifactory-0
+        ip: 10.1.0.7
+    opentelemetry:
+        distributedtracerenabled: true
+        enabled: false
+        endpoint: ""
+        exportpace: 0s
+        labels: ""
+        metricsenabled: false
+        servicename: jfevt
+        token: ""
+        usegrpcexporters: true
+    security:
+        bootstrapkeysreadtimeoutsecs: 120
+        exposeapplicationheaders: false
+    system:
+        technicalservername: ""

@@ -1,0 +1,14 @@
+{
+  "service_type" : "jfrt",
+  "microservice_name" : "artifactory",
+  "microservice_version" : "7.117.14",
+  "service_id" : "jfrt@01k3dadv4an03k1v3xy8fe0ccm",
+  "node_id" : "artifactory-0",
+  "bundle_info" : {
+    "id" : "firstSupportBundle-1756020385110",
+    "name" : "firstSupportBundle",
+    "description" : "",
+    "created" : "2025-08-24T07:26:25Z",
+    "status" : "in progress"
+  }
+}

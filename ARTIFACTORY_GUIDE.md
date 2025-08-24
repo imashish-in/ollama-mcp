@@ -209,7 +209,7 @@ The Artifactory tools provide comprehensive management capabilities:
 3. **`artifactory_get_users`** - List all users
 4. **`artifactory_create_user`** - Create new users
 5. **`artifactory_get_repository_sizes`** - Storage analytics
-6. **`artifactory_manage_permission_group`** - Permission management
+
 7. **`artifactory_create_repository`** - Repository creation
 
 ### Tool Categories

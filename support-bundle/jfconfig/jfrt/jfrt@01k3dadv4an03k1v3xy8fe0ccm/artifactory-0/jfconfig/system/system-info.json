@@ -1,0 +1,66 @@
+{
+  "Host Info" : {
+    "Available Processors" : "11",
+    "Heap Memory Usage-Commited" : "163577856",
+    "Heap Memory Usage-Init" : "1644167168",
+    "Heap Memory Usage-Max" : "5754585088",
+    "Heap Memory Usage-Used" : "63300872",
+    "Non-Heap Memory Usage-Commited" : "143982592",
+    "Non-Heap Memory Usage-Init" : "7667712",
+    "Non-Heap Memory Usage-Max" : "-1",
+    "Non-Heap Memory Usage-Used" : "141574704",
+    "os.arch" : "aarch64",
+    "os.name" : "Linux",
+    "os.version" : "6.10.14-linuxkit"
+  },
+  "Java System Info" : {
+    "JVM Input arguments" : [
+      "-XX:+UseStringDeduplication",
+      "-XX:+UseG1GC",
+      "-XX:InitialRAMPercentage=20",
+      "-XX:MaxRAMPercentage=70",
+      "-Djava.io.tmpdir=/opt/jfrog/artifactory/var/work/jfconfig/tomcat/work"
+    ],
+    "java.class.version" : "65.0",
+    "java.home" : "/opt/jfrog/artifactory/app/third-party/java",
+    "java.io.tmpdir" : "/opt/jfrog/artifactory/var/work/jfconfig/tomcat/work",
+    "java.runtime.name" : "OpenJDK Runtime Environment",
+    "java.runtime.version" : "21.0.7+6-LTS",
+    "java.specification.name" : "Java Platform API Specification",
+    "java.specification.vendor" : "Oracle Corporation",
+    "java.specification.version" : "21",
+    "java.vendor" : "Eclipse Adoptium",
+    "java.vendor.url" : "https://adoptium.net/",
+    "java.vendor.url.bug" : "https://github.com/adoptium/adoptium-support/issues",
+    "java.version" : "21.0.7",
+    "java.vm.info" : "mixed mode, sharing",
+    "java.vm.name" : "OpenJDK 64-Bit Server VM",
+    "java.vm.specification.name" : "Java Virtual Machine Specification",
+    "java.vm.specification.vendor" : "Oracle Corporation",
+    "java.vm.specification.version" : "21",
+    "java.vm.vendor" : "Eclipse Adoptium",
+    "java.vm.version" : "21.0.7+6-LTS",
+    "sun.arch.data.model" : "64",
+    "sun.boot.library.path" : "/opt/jfrog/artifactory/app/third-party/java/lib",
+    "sun.cpu.endian" : "little",
+    "sun.io.unicode.encoding" : "UnicodeLittle",
+    "sun.java.launcher" : "SUN_STANDARD",
+    "sun.jnu.encoding" : "UTF-8",
+    "sun.management.compiler" : "HotSpot 64-Bit Tiered Compilers"
+  },
+  "System Info" : {
+    "java.class.path" : [
+      "/opt/jfrog/artifactory/var/work/jfconfig/tomcat/lib/*",
+      "/opt/jfrog/artifactory/app/jfconfig/tomcat/lib/*",
+      "/opt/jfrog/artifactory/app/jfconfig/bin/jf-jfconfig.war"
+    ],
+    "java.library.path" : "/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"
+  },
+  "User Info" : {
+    "user.dir" : "/var/opt/jfrog/artifactory",
+    "user.home" : "/home/artifactory",
+    "user.language" : "en",
+    "user.name" : "artifactory",
+    "user.timezone" : "GMT"
+  }
+}

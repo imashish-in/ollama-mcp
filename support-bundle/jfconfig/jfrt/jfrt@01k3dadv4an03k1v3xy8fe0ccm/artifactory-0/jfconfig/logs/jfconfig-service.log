@@ -1,0 +1,36 @@
+2025-08-24T05:56:27.820Z [jfcfg] [INFO ] [                ] [plicationContextInitializer:81] [main                ] - jfconfig (jfcfg) service initialization started. Version: 1.73.3 Revision: 17303900 PID: 24 Home: /opt/jfrog/artifactory
+2025-08-24T05:56:27.822Z [jfcfg] [INFO ] [                ] [plicationContextInitializer:42] [main                ] - JFConfig service deployment type: OnPrem
+2025-08-24T05:56:28.856Z [jfcfg] [INFO ] [                ] [c.j.j.s.l.RequestLogHelper:25 ] [main                ] - HttpRequestConfig: Config[filterPaths=[], filterStatusCodes=[], filterDurationThreshold=100]
+2025-08-24T05:56:28.859Z [jfcfg] [INFO ] [                ] [c.j.j.s.l.RequestLogHelper:26 ] [main                ] - GrpcRequestConfig: Config[filterPaths=[], filterStatusCodes=[], filterDurationThreshold=100]
+2025-08-24T05:56:33.064Z [jfcfg] [INFO ] [                ] [ingleTenantAccessThinClient:60] [main                ] - Cluster join: Retry 5:  Service registry ping failed, will retry. Error: I/O error on GET request for "http://localhost:8046/access/api/v1/system/ping": Connection refused
+2025-08-24T05:56:38.083Z [jfcfg] [INFO ] [                ] [ingleTenantAccessThinClient:60] [main                ] - Cluster join: Retry 10:  Service registry ping failed, will retry. Error: I/O error on GET request for "http://localhost:8046/access/api/v1/system/ping": Connection refused
+2025-08-24T05:56:43.110Z [jfcfg] [INFO ] [                ] [ingleTenantAccessThinClient:60] [main                ] - Cluster join: Retry 15:  Service registry ping failed, will retry. Error: I/O error on GET request for "http://localhost:8046/access/api/v1/system/ping": Connection refused
+2025-08-24T05:56:48.141Z [jfcfg] [INFO ] [                ] [ingleTenantAccessThinClient:60] [main                ] - Cluster join: Retry 20:  Service registry ping failed, will retry. Error: I/O error on GET request for "http://localhost:8046/access/api/v1/system/ping": Connection refused
+2025-08-24T05:56:53.159Z [jfcfg] [INFO ] [                ] [ingleTenantAccessThinClient:60] [main                ] - Cluster join: Retry 25:  Service registry ping failed, will retry. Error: I/O error on GET request for "http://localhost:8046/access/api/v1/system/ping": Connection refused
+2025-08-24T05:56:58.176Z [jfcfg] [INFO ] [                ] [ingleTenantAccessThinClient:60] [main                ] - Cluster join: Retry 30:  Service registry ping failed, will retry. Error: I/O error on GET request for "http://localhost:8046/access/api/v1/system/ping": Connection refused
+2025-08-24T05:57:03.187Z [jfcfg] [INFO ] [                ] [ingleTenantAccessThinClient:60] [main                ] - Cluster join: Retry 35:  Service registry ping failed, will retry. Error: I/O error on GET request for "http://localhost:8046/access/api/v1/system/ping": Connection refused
+2025-08-24T05:57:08.195Z [jfcfg] [INFO ] [                ] [ingleTenantAccessThinClient:60] [main                ] - Cluster join: Retry 40:  Service registry ping failed, will retry. Error: I/O error on GET request for "http://localhost:8046/access/api/v1/system/ping": Connection refused
+2025-08-24T05:57:11.252Z [jfcfg] [INFO ] [                ] [ServiceIdSingleTenantConfig:28] [main                ] - Service id initialized: jfcfg@01k3dadp7e688m028tztv9160g
+2025-08-24T05:57:11.922Z [jfcfg] [INFO ] [                ] [c.j.j.s.a.GrpcServerImpl:96   ] [main                ] - Starting gRPC Server on port 8011
+2025-08-24T05:57:11.931Z [jfcfg] [INFO ] [                ] [c.j.j.s.a.GrpcServerImpl:165  ] [main                ] - Using NIO for gRPC transport
+2025-08-24T05:57:11.936Z [jfcfg] [INFO ] [                ] [c.j.j.s.l.RequestLogHelper:25 ] [main                ] - HttpRequestConfig: Config[filterPaths=[], filterStatusCodes=[], filterDurationThreshold=100]
+2025-08-24T05:57:11.936Z [jfcfg] [INFO ] [                ] [c.j.j.s.l.RequestLogHelper:26 ] [main                ] - GrpcRequestConfig: Config[filterPaths=[], filterStatusCodes=[], filterDurationThreshold=100]
+2025-08-24T05:57:12.021Z [jfcfg] [INFO ] [                ] [c.j.j.s.a.GrpcServerImpl:120  ] [main                ] - gRPC Server started, listening on 8011
+2025-08-24T05:57:12.032Z [jfcfg] [INFO ] [                ] [c.j.j.s.j.HeartBeatJob:43     ] [main                ] - Starting a Heartbeat job
+2025-08-24T05:57:12.038Z [jfcfg] [INFO ] [                ] [c.j.j.s.m.MetricsService:78   ] [main                ] - Metrics Framework Service is enabled
+2025-08-24T05:57:12.045Z [jfcfg] [INFO ] [                ] [c.j.j.s.m.MetricsService:92   ] [main                ] - Metric Framework service is started and is running in background...
+2025-08-24T05:57:12.332Z [jfcfg] [INFO ] [                ] [j.j.JFConfigStartUpListener:39] [main                ] - JFConfig started applying migration
+2025-08-24T05:57:12.748Z [jfcfg] [INFO ] [                ] [c.j.j.s.c.FlywayFactory:63    ] [main                ] - Database migration started
+2025-08-24T05:57:12.761Z [jfcfg] [INFO ] [                ] [c.j.j.s.c.FlywayFactory:72    ] [main                ] - Latest pending Flyway changelog: 1.0
+2025-08-24T05:57:12.767Z [jfcfg] [INFO ] [                ] [c.j.j.s.c.FlywayFactory:75    ] [main                ] - Current Flyway changelog: none
+2025-08-24T05:57:12.767Z [jfcfg] [INFO ] [                ] [c.j.j.s.c.FlywayFactory:77    ] [main                ] - Database migration in progress...
+2025-08-24T05:57:12.818Z [jfcfg] [INFO ] [                ] [c.j.j.s.c.MigrationCallback:20] [main                ] - Applying changelog: 1.0 (initial schema)
+2025-08-24T05:57:12.825Z [jfcfg] [INFO ] [                ] [c.j.j.s.c.MigrationCallback:24] [main                ] - Applied changelog: 1.0 (initial schema)
+2025-08-24T05:57:12.859Z [jfcfg] [INFO ] [                ] [c.j.j.s.c.FlywayFactory:82    ] [main                ] - Current Flyway changelog: 1.0
+2025-08-24T05:57:12.860Z [jfcfg] [INFO ] [                ] [c.j.j.s.c.FlywayFactory:84    ] [main                ] - Database migration done
+2025-08-24T05:57:12.860Z [jfcfg] [INFO ] [                ] [j.j.JFConfigStartUpListener:41] [main                ] - JFConfig finished applying migration
+2025-08-24T05:57:12.860Z [jfcfg] [INFO ] [                ] [essSingleTenantClientConfig:65] [main                ] - Creating access client for single tenant
+2025-08-24T05:57:13.044Z [jfcfg] [INFO ] [                ] [.a.c.AccessClientBootstrap:180] [main                ] - Cluster join: Executing join on 'http://localhost:8046/access'
+2025-08-24T05:57:13.108Z [jfcfg] [INFO ] [                ] [.a.c.AccessClientBootstrap:191] [main                ] - Cluster join: Successfully joined the cluster
+2025-08-24T05:57:13.271Z [jfcfg] [INFO ] [                ] [j.j.JFConfigStartUpListener:46] [main                ] - jfconfig (jfcfg) service initialization completed in 46.439 seconds. Listening on port: 8010
+2025-08-24T07:26:25.768Z [jfcfg] [INFO ] [5714fb0404ab2aa5] [.j.s.s.SupportBundleService:99] [http-nio-8010-exec-8] - Starting collecting support bundle firstSupportBundle-1756020385110

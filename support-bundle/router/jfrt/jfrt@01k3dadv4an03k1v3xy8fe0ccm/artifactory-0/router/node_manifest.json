@@ -1,0 +1,11 @@
+{
+	"service_type": "jfrt",
+	"microservice_name": "router",
+	"microservice_version": "7.177.4-1 (revision: 38dcd77cf1541c72950b8ed53a514af5f678d047, build date: 2025-08-18T12:52:28Z)",
+	"service_id": "jfrou@01k3dadrcbtvwy2ktf3s9ehtjd",
+	"node_id": "artifactory-0",
+	"bundle_info": {
+		"id": "firstSupportBundle-1756020385110",
+		"name": "firstSupportBundle"
+	}
+}

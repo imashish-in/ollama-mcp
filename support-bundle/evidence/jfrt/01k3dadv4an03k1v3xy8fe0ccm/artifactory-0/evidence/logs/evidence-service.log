@@ -1,0 +1,174 @@
+2025-08-24T05:56:25.912Z [jfevd] [INFO ] [42a488c734c8a2de] [application.go:289            ] [main                ] [                ] - Effective configuration:
+access.database.maxOpenConnections (File): 80
+access.extraJavaOpts (File): -XX:InitialRAMPercentage=20 -XX:MaxRAMPercentage=70
+
+access.tomcat.connector.extraConfig (File): acceptCount="100"
+access.tomcat.connector.maxThreads (File): 50
+access.tomcat.connector.sendReasonPhrase (File): false
+artifactory.database.maxOpenConnections (File): 80
+artifactory.tomcat.connector.extraConfig (File): acceptCount="400"
+artifactory.tomcat.connector.maxThreads (File): 200
+artifactory.tomcat.connector.sendReasonPhrase (File): false
+artifactory.tomcat.maintenanceConnector.port (File): 8091
+artifactory.user (Environment Variable: JF_ARTIFACTORY_USER): artifactory
+evidence.access.bypass.accessUrl (Default Value): 
+evidence.access.bypass.retryBackoffInitialIntervalMillis (Default Value): 500
+evidence.access.bypass.retryBackoffMaxElapsedTimeMillis (Default Value): 0
+evidence.access.bypass.retryBackoffMaxIntervalMillis (Default Value): 3600000
+evidence.access.bypass.revocableExpiryThresholdSeconds (Default Value): -1
+evidence.access.joinTimeoutMillis (Default Value): 180000
+evidence.access.pingTimeoutMillis (Default Value): 120000
+evidence.api.maxFilterSize (Default Value): 50
+evidence.api.maxPageSize (Default Value): 200
+evidence.api.maxQueryDepth (Default Value): 20
+evidence.caching.license.capacity (Default Value): 100
+evidence.caching.license.expirationSecs (Default Value): 300
+evidence.caching.publicKeys.capacity (Default Value): 500
+evidence.caching.publicKeys.expirationSecs (Default Value): 14400
+evidence.database.disableParallelSelect (Default Value): true
+evidence.database.enableLogForPostgres (Default Value): false
+evidence.database.kerberosAuth (Default Value): false
+evidence.database.maxIdleConnections (Default Value): 10
+evidence.database.maxOpenConnections (Default Value): 100
+evidence.database.maxRecordsLimit (Default Value): 1000
+evidence.database.metrics.enabled (Default Value): false
+evidence.database.metrics.maxQueriesToTrack (Default Value): 5
+evidence.database.migrationLockRetryIntervalSecs (Default Value): 60
+evidence.database.password (Environment Variable: JF_SHARED_DATABASE_PASSWORD): *****
+evidence.database.queryTimeoutSecs (Default Value): 1800
+evidence.database.type (File: shared.database.type): postgresql
+evidence.database.url (File: shared.database.url): jdbc:postgresql://artifactory-postgresql:5432/artifactory
+evidence.database.username (File: shared.database.username): artifactory
+evidence.database.waitForConnectionTimeoutSecs (Default Value): 15
+evidence.enabled (File): true
+evidence.graphql.playground (Default Value): true
+evidence.graphql.releaseBundleArtifactsWithEvidenceBulkSize (Default Value): 1000
+evidence.httpPort (Default Value): 8051
+evidence.jfConnect.establishConnectionTimeoutMillis (Default Value): 3000
+evidence.jfConnect.fetchIntervalMillis (Default Value): 30000
+evidence.jfConnect.requestTimeoutMillis (Default Value): 30000
+evidence.jfConnect.retryConnectionIntervalMillis (Default Value): 1000
+evidence.jfConnect.tokenExpiryMinutes (Default Value): 1440
+evidence.logging.application.caller (Default Value): false
+evidence.logging.application.console (Default Value): true
+evidence.logging.application.filePath (Default Value): evidence-service.log
+evidence.logging.application.format (Default Value): jftext
+evidence.logging.application.level (Default Value): info
+evidence.logging.application.rotation.compress (Default Value): true
+evidence.logging.application.rotation.keepLastDecompressed (Default Value): 1
+evidence.logging.application.rotation.maxAgeDays (Default Value): 365
+evidence.logging.application.rotation.maxFiles (Default Value): 10
+evidence.logging.application.rotation.maxSizeMb (Default Value): 25
+evidence.logging.consoleLog.format (Default Value): jftext
+evidence.logging.metrics.console (Default Value): false
+evidence.logging.metrics.filePath (Default Value): evidence-metrics.log
+evidence.logging.metrics.rotation.compress (Default Value): true
+evidence.logging.metrics.rotation.keepLastDecompressed (Default Value): 1
+evidence.logging.metrics.rotation.maxAgeDays (Default Value): 365
+evidence.logging.metrics.rotation.maxFiles (Default Value): 10
+evidence.logging.metrics.rotation.maxSizeMb (Default Value): 25
+evidence.logging.request.console (Default Value): false
+evidence.logging.request.filePath (Default Value): evidence-request.log
+evidence.logging.request.rotation.compress (Default Value): true
+evidence.logging.request.rotation.keepLastDecompressed (Default Value): 1
+evidence.logging.request.rotation.maxAgeDays (Default Value): 365
+evidence.logging.request.rotation.maxFiles (Default Value): 10
+evidence.logging.request.rotation.maxSizeMb (Default Value): 25
+evidence.metrics.backOffice.enabled (Default Value): true
+evidence.metrics.enabled (Default Value): false
+evidence.metrics.exclude (Default Value): []
+evidence.metrics.intervalMillis (Default Value): 10s
+evidence.metrics.logPeriodically (Default Value): false
+evidence.metrics.triggers.enabled (Default Value): true
+evidence.metrics.triggers.intervalMillis (Default Value): 20000
+evidence.metrics.triggers.limit (Default Value): 1000000
+evidence.profiling.enabled (Default Value): false
+evidence.supportBundle.aggregationTimeoutMillis (Default Value): 3600000
+frontend.session.timeMinutes (File): 30
+jfconfig.database.maxOpenConnections (File): 80
+jfconfig.enabled (File): true
+jfconfig.extraJavaOpts (File): -XX:+UseStringDeduplication -XX:+UseG1GC -XX:InitialRAMPercentage=20 -XX:MaxRAMPercentage=70
+
+jfconfig.port (File): 8010
+jfconnect.enabled (File): true
+metadata.database.maxOpenConnections (File): 80
+onemodel.enabled (File): true
+product.data.internal (Environment Variable: JF_PRODUCT_DATA_INTERNAL): /var/opt/jfrog/artifactory
+product.home (Environment Variable: JF_PRODUCT_HOME): /opt/jfrog/artifactory
+router.entrypoints.internalPort (Default Value): 8046
+router.serviceRegistry.insecure (File): false
+rtfs.enabled (File): false
+shared.database.allowNonPostgresql (File): false
+shared.database.driver (File): org.postgresql.Driver
+shared.database.password (Environment Variable: JF_SHARED_DATABASE_PASSWORD): *****
+shared.database.type (File): postgresql
+shared.database.url (File): jdbc:postgresql://artifactory-postgresql:5432/artifactory
+shared.database.username (File): artifactory
+shared.extraJavaOpts (File): -Dartifactory.graceful.shutdown.max.request.duration.millis=30000 -Dartifactory.access.client.max.connections=50
+
+shared.logging.consoleLog.enabled (File): false
+shared.multiTenant.cellId (Default Value): 
+shared.multiTenant.enabled (Default Value): false
+shared.multiTenant.tenantRegistryClient.caCert (Default Value): 
+shared.multiTenant.tenantRegistryClient.cacheExpirationSecs (Default Value): 21600
+shared.multiTenant.tenantRegistryClient.clientCert (Default Value): 
+shared.multiTenant.tenantRegistryClient.clientCertKey (Default Value): *****
+shared.multiTenant.tenantRegistryClient.dialTimeoutSecs (Default Value): 10
+shared.multiTenant.tenantRegistryClient.endpoints (Default Value): 
+shared.multiTenant.tenantRegistryClient.pingCacheExpirationSecs (Default Value): 15
+shared.multiTenant.tenantRegistryClient.pingTimeoutSecs (Default Value): 1
+shared.multiTenant.tenantRegistryClient.requestTimeoutSecs (Default Value): 30
+shared.newrelic.appName (Default Value): 
+shared.newrelic.distributedTracerEnabled (Default Value): true
+shared.newrelic.enableDebugLog (Default Value): false
+shared.newrelic.enabled (Default Value): false
+shared.newrelic.licenseKey (Default Value): *****
+shared.node.id (Environment Variable: JF_SHARED_NODE_ID): artifactory-0
+shared.node.ip (Default Value): 10.1.0.7
+shared.restrictedmode.enabled (Environment Variable: JF_SHARED_RESTRICTEDMODE_ENABLED): true
+shared.security.bootstrapKeysReadTimeoutSecs (Default Value): 120
+shared.security.exposeApplicationHeaders (Default Value): false
+shared.security.joinKeyFile (Default Value): etc/security/join.key
+shared.security.masterKeyFile (Default Value): etc/security/master.key
+topology.database.maxOpenConnections (File): 80
+topology.enabled (File): true
+topology.extraJavaOpts (File): -XX:InitialRAMPercentage=20 -XX:MaxRAMPercentage=70
+
+topology.port (File): 8020 [bootstrap]
+2025-08-24T05:56:30.919Z [jfevd] [INFO ] [42a488c734c8a2de] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 5 seconds with 2m0s timeout [bootstrap]
+2025-08-24T05:56:35.925Z [jfevd] [INFO ] [42a488c734c8a2de] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 10 seconds with 2m0s timeout [bootstrap]
+2025-08-24T05:56:40.933Z [jfevd] [INFO ] [42a488c734c8a2de] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 15 seconds with 2m0s timeout [bootstrap]
+2025-08-24T05:56:45.939Z [jfevd] [INFO ] [42a488c734c8a2de] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 20 seconds with 2m0s timeout [bootstrap]
+2025-08-24T05:56:50.946Z [jfevd] [INFO ] [42a488c734c8a2de] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 25 seconds with 2m0s timeout [bootstrap]
+2025-08-24T05:56:55.954Z [jfevd] [INFO ] [42a488c734c8a2de] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 30 seconds with 2m0s timeout [bootstrap]
+2025-08-24T05:57:00.959Z [jfevd] [INFO ] [42a488c734c8a2de] [security_keys.go:185          ] [main                ] [                ] - Cluster join: Join key is missing. Pending for 35 seconds with 2m0s timeout [bootstrap]
+2025-08-24T05:57:09.977Z [jfevd] [INFO ] [42a488c734c8a2de] [access_client_thin.go:112     ] [main                ] [                ] - Cluster join: Retry 5: Service registry ping failed, will retry. Error: Failed to ping access, response status: 404 Not Found (returned 404) [bootstrap]
+2025-08-24T05:57:10.988Z [jfevd] [INFO ] [42a488c734c8a2de] [application.go:293            ] [main                ] [                ] - JFrog Evidence Service ID: jfevd@01k3dadp7e688m028tztv9160g [bootstrap]
+2025-08-24T05:57:10.988Z [jfevd] [INFO ] [42a488c734c8a2de] [application.go:294            ] [main                ] [                ] - JFrog Evidence Node ID: artifactory-0 [bootstrap]
+2025-08-24T05:57:10.988Z [jfevd] [INFO ] [42a488c734c8a2de] [application.go:295            ] [main                ] [                ] - JFrog Evidence Node IP: 10.1.0.7 [bootstrap]
+2025-08-24T05:57:10.988Z [jfevd] [INFO ] [42a488c734c8a2de] [metrics_evidence_collector.go:] [main                ] [                ] - Back office metrics service initialized successfully. Usage directory: /opt/jfrog/artifactory/var/data/evidence/usage [metrics-collector]
+2025-08-24T05:57:10.988Z [jfevd] [INFO ] [42a488c734c8a2de] [database.go:90                ] [main                ] [                ] - Database connection driver: pgx [database]
+2025-08-24T05:57:10.989Z [jfevd] [INFO ] [42a488c734c8a2de] [postgres_jdbc_url_converter.go] [main                ] [                ] - No ssl parameter found, falling back to sslmode=disable [database]
+2025-08-24T05:57:10.989Z [jfevd] [INFO ] [42a488c734c8a2de] [database.go:104               ] [main                ] [                ] - Connecting to DB with parameters: Type: postgresql, Url: jdbc:postgresql://artifactory-postgresql:5432/artifactory, User: artifactory [database]
+2025-08-24T05:57:10.994Z [jfevd] [INFO ] [42a488c734c8a2de] [database_migration.go:75      ] [main                ] [                ] - Applying database migration files [database]
+2025-08-24T05:57:10.997Z [jfevd] [INFO ] [42a488c734c8a2de] [database_migration.go:159     ] [main                ] [                ] - Migration lock table created or is already present [database]
+2025-08-24T05:57:10.997Z [jfevd] [INFO ] [42a488c734c8a2de] [database_migration_locker.go:5] [main                ] [                ] - Trying to acquire migration lock for artifactory-0 [database]
+2025-08-24T05:57:10.998Z [jfevd] [INFO ] [42a488c734c8a2de] [database_migration_locker.go:7] [main                ] [                ] - Migration lock acquired for artifactory-0 [database]
+2025-08-24T05:57:11.000Z [jfevd] [INFO ] [42a488c734c8a2de] [database_migration.go:141     ] [main                ] [                ] - Applying 4 migrations files [database]
+2025-08-24T05:57:11.005Z [jfevd] [INFO ] [42a488c734c8a2de] [database_migration.go:255     ] [main                ] [                ] - Migration v001_evd_evidence.sql successfully applied (8 statements) [database]
+2025-08-24T05:57:11.006Z [jfevd] [INFO ] [42a488c734c8a2de] [database_migration.go:255     ] [main                ] [                ] - Migration v002_column_evidence_key_id.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:11.007Z [jfevd] [INFO ] [42a488c734c8a2de] [database_migration.go:255     ] [main                ] [                ] - Migration v003_column_evidence_subject_type.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:11.007Z [jfevd] [INFO ] [42a488c734c8a2de] [database_migration.go:255     ] [main                ] [                ] - Migration v004_column_evidence_provider_id.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:11.007Z [jfevd] [INFO ] [42a488c734c8a2de] [database_migration_locker.go:8] [main                ] [                ] - Trying to release lock owned by: artifactory-0 [database]
+2025-08-24T05:57:11.008Z [jfevd] [INFO ] [42a488c734c8a2de] [database_migration_locker.go:9] [main                ] [                ] - Released lock owned by node artifactory-0 [database]
+2025-08-24T05:57:11.008Z [jfevd] [INFO ] [42a488c734c8a2de] [database_migration.go:85      ] [main                ] [                ] - Applied 11 database migrations statements in 0.013322583 seconds [database]
+2025-08-24T05:57:11.008Z [jfevd] [WARN ] [42a488c734c8a2de] [graphql_handler.go:129        ] [main                ] [                ] - GraphQL OneModel compatibility filter is disabled by configuration [graphql-handler]
+2025-08-24T05:57:11.011Z [jfevd] [INFO ] [42a488c734c8a2de] [application.go:194            ] [main                ] [                ] - HTTP server listening on 127.0.0.1:8051 [application]
+2025-08-24T05:57:11.040Z [jfevd] [INFO ] [42a488c734c8a2de] [join_executor.go:178          ] [main                ] [                ] - Cluster join: Successfully joined the cluster [access-client]
+2025-08-24T05:57:11.041Z [jfevd] [INFO ] [42a488c734c8a2de] [join_executor.go:190          ] [main                ] [                ] - Cluster join: executing Router register at: localhost:8046 for service id jfevd@01k3dadp7e688m028tztv9160g [access-client]
+2025-08-24T05:57:11.054Z [jfevd] [INFO ] [42a488c734c8a2de] [dedicated_grpc_connection.go:2] [main                ] [                ] - Creating a new dedicated gRPC connection for localhost:8046 [access-client]
+2025-08-24T05:57:15.571Z [jfevd] [INFO ] [42a488c734c8a2de] [application.go:300            ] [main                ] [                ] - JFrog Evidence (jfevd) service initialization completed in 49.661 seconds [application]
+2025-08-24T05:57:15.571Z [jfevd] [INFO ] [42a488c734c8a2de] [platform_config_stream.go:49  ] [main                ] [                ] - Starting Platform Config stream connect goroutine [access-client]
+2025-08-24T05:57:15.572Z [jfevd] [INFO ] [42a488c734c8a2de] [platform_config_stream.go:62  ] [main                ] [                ] - Connecting to Platform Config stream [access-client]
+2025-08-24T05:57:15.589Z [jfevd] [INFO ] [42a488c734c8a2de] [platform_config_stream.go:105 ] [main                ] [                ] - Starting Platform Config stream Recv loop [access-client]
+2025-08-24T05:57:15.589Z [jfevd] [INFO ] [42a488c734c8a2de] [platform_config_stream.go:137 ] [main                ] [                ] - Starting Platform Config checkKeepAlive [access-client]

@@ -1,0 +1,10 @@
+{
+	"service_type": "jfrt",
+	"microservice_name": "metadata",
+	"microservice_version": "7.192.0 (revision: ef09a4d198b, build date: 2025-06-23T23:45:34Z)",
+	"service_id": "jfmd@01k3dadr63xzjbxrqt9ej476by",
+	"node_id": "artifactory-0",
+	"bundle_info": {
+		"id": "firstSupportBundle-1756020385110"
+	}
+}

@@ -1,0 +1,159 @@
+evidence:
+    enabled: true
+onemodel:
+    accessclient:
+        jointimeoutmillis: 360000
+        pingtimeoutmillis: 240000
+    centralaccess:
+        accessurl: ""
+        retrybackoffinitialintervalmillis: 500
+        retrybackoffmaxelapsedtimemillis: 0
+        retrybackoffmaxintervalmillis: 3600000
+        revocableexpirythresholdseconds: -1
+    composition:
+        historyretention:
+            maxarchives: 20
+        incomingregistersubgraphbuffer: 10
+        outputsupergraphpath: supergraph.graphqls
+        roverpath: rover
+        scheduledtaskdelaysecs: 30
+        staticsubgraphs:
+            jfctlg-custom:
+                endpoint: /catalog/api/v1/custom/graphql
+                path: schemas/graphql/jfctlg-custom/schema.graphqls
+                skip: true
+                version: 0.0.0-dev+static.omr
+            jfctlg-public:
+                endpoint: /catalog/api/v1/public/graphql
+                path: schemas/graphql/jfctlg-public/schema.graphqls
+                skip: true
+                version: 0.0.0-dev+static.omr
+            jfevd:
+                endpoint: /evidence/api/v1/onemodel/graphql
+                path: schemas/graphql/jfevd/schema.graphqls
+                skip: true
+                version: 0.0.0-dev+static.omr
+            jfomr:
+                endpoint: /onemodel/api/v1/onemodel/graphql
+                path: schemas/graphql/onemodel/schema.graphqls
+                skip: false
+                version: 1.52.3
+        version: 2.11.0
+    database:
+        maxopenconnections: 5
+        password: '*****'
+        url: ""
+        username: ""
+    graphql:
+        apollorouterport: 8073
+        compatibilityfilterenabled: true
+        querycachesize: 5
+        queryparsertokenlimit: 50
+    grpcport: 8072
+    healthcheck:
+        apollohealthcheckport: 8074
+        intervalsecs: 15
+    listenaddr: 0.0.0.0
+    logging:
+        application:
+            caller: false
+            console: true
+            filepath: onemodelregistry-service.log
+            format: jftext
+            level: info
+            packages: {}
+            rotation:
+                compress: true
+                intervalsecs: 86400
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        consolelog:
+            format: jftext
+        metrics:
+            console: false
+            filepath: onemodelregistry-metrics.log
+            rotation:
+                compress: true
+                intervalsecs: 86400
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+        request:
+            console: false
+            filepath: onemodelregistry-request.log
+            rotation:
+                compress: true
+                intervalsecs: 86400
+                keeplastdecompressed: 1
+                maxagedays: 365
+                maxfiles: 10
+                maxsizemb: 25
+    metrics:
+        enabled: false
+        exclude: []
+        intervalmillis: 10000
+        logperiodically: true
+        tokenverification:
+            accessurl: ""
+            retrybackoffinitialintervalmillis: 500
+            retrybackoffmaxelapsedtimemillis: 0
+            retrybackoffmaxintervalmillis: 3600000
+            revocableexpirythresholdseconds: -1
+        triggers:
+            enabled: true
+            intervalmillis: 20000
+            limit: 1000000
+    port: 8071
+    probes:
+        liveness:
+            failonlongfailingreadiness:
+                enabled: true
+                failuredurationsecs: 60
+    profiling:
+        enabled: false
+    storage:
+        maxrecordsperowner: 10
+        supergraphsretentiondays: 365
+    supportbundle:
+        nodebundleaggregationtimeoutmillis: 30000
+        servicebundleaggregationtimeoutmillis: 300000
+router:
+    entrypoints:
+        internalport: 8046
+shared:
+    logging:
+        consolelog:
+            format: jftext
+        enablejsonconsolelogappenders: false
+    multitenant:
+        cellid: ""
+        enabled: false
+        tenantregistryclient:
+            cacert: ""
+            cacheexpirationsecs: 21600
+            clientcert: ""
+            clientcertkey: ""
+            dialtimeoutsecs: 10
+            endpoints: []
+            password: '*****'
+            pingcacheexpirationsecs: 15
+            pingtimeoutsecs: 1
+            requesttimeoutsecs: 30
+            username: ""
+    newrelic:
+        appname: ""
+        distributedtracerenabled: true
+        enabled: false
+        enabledebuglog: false
+        licensekey: ""
+    node:
+        id: artifactory-0
+        ip: 10.1.0.7
+    runtime:
+        issaas: false
+    security:
+        bootstrapkeysreadtimeoutsecs: 120
+        exposeapplicationheaders: false

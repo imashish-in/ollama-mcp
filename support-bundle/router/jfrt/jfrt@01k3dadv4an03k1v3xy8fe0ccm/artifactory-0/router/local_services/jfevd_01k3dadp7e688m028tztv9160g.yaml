@@ -1,0 +1,15 @@
+endpoints:
+    - excludedpaths: []
+      paths:
+        - match: /evidence/(.*)
+          replace: /$1
+      port: 8051
+      protocol: 1
+healthcheckendpoint:
+    path: /api/v1/system/readiness
+    port: 8051
+nodeid: artifactory-0
+nodestatusendpoint: null
+revision: b4744de74f
+serviceid: jfevd@01k3dadp7e688m028tztv9160g
+version: 7.126.1

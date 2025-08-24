@@ -1,0 +1,125 @@
+2025-08-24T05:56:31.026Z [jfmd ] [INFO ] [                ] [security_keys.go:185          ] [main                ] - Cluster join: Join key is missing. Pending for 5 seconds with 2m0s timeout [init]
+2025-08-24T05:56:36.033Z [jfmd ] [INFO ] [                ] [security_keys.go:185          ] [main                ] - Cluster join: Join key is missing. Pending for 10 seconds with 2m0s timeout [init]
+2025-08-24T05:56:41.040Z [jfmd ] [INFO ] [                ] [security_keys.go:185          ] [main                ] - Cluster join: Join key is missing. Pending for 15 seconds with 2m0s timeout [init]
+2025-08-24T05:56:46.047Z [jfmd ] [INFO ] [                ] [security_keys.go:185          ] [main                ] - Cluster join: Join key is missing. Pending for 20 seconds with 2m0s timeout [init]
+2025-08-24T05:56:51.054Z [jfmd ] [INFO ] [                ] [security_keys.go:185          ] [main                ] - Cluster join: Join key is missing. Pending for 25 seconds with 2m0s timeout [init]
+2025-08-24T05:56:56.066Z [jfmd ] [INFO ] [                ] [security_keys.go:185          ] [main                ] - Cluster join: Join key is missing. Pending for 30 seconds with 2m0s timeout [init]
+2025-08-24T05:57:01.072Z [jfmd ] [INFO ] [                ] [security_keys.go:185          ] [main                ] - Cluster join: Join key is missing. Pending for 35 seconds with 2m0s timeout [init]
+2025-08-24T05:57:06.079Z [jfmd ] [INFO ] [                ] [database_bearer.go:165        ] [main                ] - Db connection driver::pgx and kerberosAuth::false [database]
+2025-08-24T05:57:06.081Z [jfmd ] [INFO ] [                ] [postgres_jdbc_url_converter.go] [main                ] - No ssl parameter found, falling back to sslmode=disable [database]
+2025-08-24T05:57:06.081Z [jfmd ] [INFO ] [                ] [database_bearer.go:180        ] [main                ] - Connecting to (db config: {postgresql jdbc:postgresql://artifactory-postgresql:5432/artifactory}) [database]
+2025-08-24T05:57:06.100Z [jfmd ] [INFO ] [                ] [migrator.go:65                ] [main                ] - Applying migration files [database]
+2025-08-24T05:57:06.106Z [jfmd ] [INFO ] [                ] [migrator.go:232               ] [main                ] - Migration lock table created or is already present [database]
+2025-08-24T05:57:06.106Z [jfmd ] [INFO ] [                ] [migration_lock_manager.go:49  ] [main                ] - Trying to acquire migration lock for artifactory-0 [database]
+2025-08-24T05:57:06.107Z [jfmd ] [INFO ] [                ] [migration_lock_manager.go:70  ] [main                ] - Migration lock acquired for artifactory-0 [database]
+2025-08-24T05:57:06.110Z [jfmd ] [INFO ] [                ] [migrator_planner.go:122       ] [main                ] - Found 0 existing migrations in the database [database]
+2025-08-24T05:57:06.110Z [jfmd ] [INFO ] [                ] [migrator_planner.go:20        ] [main                ] - Installation type: %!s(models.InstallationType=0) [database]
+2025-08-24T05:57:06.110Z [jfmd ] [INFO ] [                ] [migrator.go:150               ] [main                ] - Applying 58 migrations files [database]
+2025-08-24T05:57:06.118Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v001_packages.sql successfully applied (4 statements) [database]
+2025-08-24T05:57:06.128Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v002_versions.sql successfully applied (5 statements) [database]
+2025-08-24T05:57:06.133Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v003_package_qualifiers.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.138Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v004_package_user_properties.sql successfully applied (3 statements) [database]
+2025-08-24T05:57:06.143Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v005_package_tags.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.146Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v006_package_stats.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.151Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v007_sources.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.160Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v008_package_info_sources.sql successfully applied (3 statements) [database]
+2025-08-24T05:57:06.164Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v009_servers.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.170Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v010_version_qualifiers.sql successfully applied (3 statements) [database]
+2025-08-24T05:57:06.181Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v011_version_user_properties.sql successfully applied (3 statements) [database]
+2025-08-24T05:57:06.188Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v012_version_tags.sql successfully applied (3 statements) [database]
+2025-08-24T05:57:06.191Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v013_version_stats.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.196Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v014_licenses.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.205Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v015_files.sql successfully applied (5 statements) [database]
+2025-08-24T05:57:06.212Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v016_file_qualifiers.sql successfully applied (3 statements) [database]
+2025-08-24T05:57:06.217Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v017_package_licenses.sql successfully applied (3 statements) [database]
+2025-08-24T05:57:06.225Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v018_version_licenses.sql successfully applied (3 statements) [database]
+2025-08-24T05:57:06.232Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v019_files_versions.sql successfully applied (3 statements) [database]
+2025-08-24T05:57:06.239Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v020_repo.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.246Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v021_lead_paths.sql successfully applied (4 statements) [database]
+2025-08-24T05:57:06.248Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v022_package_descriptions.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.254Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v023_contributors.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.260Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v024_version_contributors.sql successfully applied (3 statements) [database]
+2025-08-24T05:57:06.266Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v025_sharedconfigs.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.270Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v026_version_vulns.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.273Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v027_package_vulns.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.275Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v028_versions_ordinal_index.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.278Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v029_qualifier_user_prop_length.sql successfully applied (4 statements) [database]
+2025-08-24T05:57:06.279Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v030_version_addcolumn_size.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.280Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v031_package_add_base_model_complete.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.282Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v032_rename_stats_columns.sql successfully applied (3 statements) [database]
+2025-08-24T05:57:06.283Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v033_rename_size_column.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.286Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v034_ver_stats_fk_ver_repos_fk.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.292Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v035_files_unique_name_sha256.sql successfully applied (4 statements) [database]
+2025-08-24T05:57:06.295Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v036_version_add_modified.sql successfully applied (3 statements) [database]
+2025-08-24T05:57:06.296Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v037_version_add_base_model_complete.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.303Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v038_file_targets.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.306Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v039_file_targets_fk.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.308Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v040_resize_pkg_tags_value_column.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.312Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v041_resize_ver_tags_value_column.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.324Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v042_async_data_converter.sql successfully applied (5 statements) [database]
+2025-08-24T05:57:06.327Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v043_add_mark_for_deletion.sql successfully applied (3 statements) [database]
+2025-08-24T05:57:06.330Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v044_add_dependant_task.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.332Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v045_delete_reorder_prerelease_version_task.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.333Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v046_add_cvss3.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.338Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v047_reorder_task_temp_table.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.342Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v048_version_operational_risk.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.346Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v049_package_operational_risk.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.347Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v050_tasks_drop_index.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.349Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v051_md_fil_qualifiers_delete_cascade.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.353Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v052_md_version_repo_stats.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.355Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v053_md_packages_rename_package_type_column.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.357Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v054_md_packages_add_stored_package_type_column.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.359Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v055_md_packages_create_repo_package_type_index.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.362Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v056_md_packages_create_stored_package_type_index.sql successfully applied (1 statements) [database]
+2025-08-24T05:57:06.365Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v057_md_package_version_location.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.367Z [jfmd ] [INFO ] [                ] [migrator.go:314               ] [main                ] - Migration v058_md_package_version_location_stats.sql successfully applied (2 statements) [database]
+2025-08-24T05:57:06.368Z [jfmd ] [INFO ] [                ] [migration_lock_manager.go:76  ] [main                ] - Trying to release lock owned by: artifactory-0 [database]
+2025-08-24T05:57:06.369Z [jfmd ] [INFO ] [                ] [migration_lock_manager.go:90  ] [main                ] - Released lock owned by node artifactory-0 [database]
+2025-08-24T05:57:06.369Z [jfmd ] [INFO ] [                ] [migrator.go:75                ] [main                ] - Applied 123 database migrations statements in 0.268989084 seconds [database]
+2025-08-24T05:57:06.370Z [jfmd ] [INFO ] [                ] [application.go:78             ] [main                ] - Metadata (jfmd) service initialization started. Version: 7.192.0 Revision: ef09a4d198b PID: 1 Home: /opt/jfrog/artifactory/var [app_initializer]
+2025-08-24T05:57:06.372Z [jfmd ] [INFO ] [                ] [server_bearer.go:188          ] [main                ] - Created service_id and pushed to store: jfmd@01k3dadr63xzjbxrqt9ej476by [ServerInit]
+2025-08-24T05:57:10.385Z [jfmd ] [INFO ] [                ] [access_client_bootstrap.go:255] [main                ] - Cluster join: Retry 5: Service registry join failed, will retry. Error: cluster join: Failed joining the cluster; Error: error response from service registry with no message, status code: 404 [access_client]
+2025-08-24T05:57:11.416Z [jfmd ] [INFO ] [                ] [join_executor.go:178          ] [main                ] - Cluster join: Successfully joined the cluster [access_client]
+2025-08-24T05:57:11.416Z [jfmd ] [INFO ] [                ] [join_executor.go:190          ] [main                ] - Cluster join: executing Router register at: localhost:8046 for service id jfmd@01k3dadr63xzjbxrqt9ej476by [access_client]
+2025-08-24T05:57:11.437Z [jfmd ] [INFO ] [                ] [dedicated_grpc_connection.go:2] [main                ] - Creating a new dedicated gRPC connection for localhost:8046 [access_client]
+2025-08-24T05:57:11.450Z [jfmd ] [INFO ] [                ] [reindex_pkgid_task.go:36      ] [main                ] - Initializing reindexPkgidTask [reindex_pkgid_task]
+2025-08-24T05:57:11.452Z [jfmd ] [INFO ] [                ] [reindex_pkgid_task.go:42      ] [main                ] - Found range for reindexPkgidTask: startId [-1] endId [-1] [reindex_pkgid_task]
+2025-08-24T05:57:11.464Z [jfmd ] [INFO ] [                ] [router_middlewares.go:55      ] [main                ] - 
+Metadata Info
+========================
+
+Logging.Application.Rotation.Compress                | true
+Logging.Request.Rotation.MaxSizeMb                   | 25
+Logging.Request.Rotation.MaxFiles                    | 10
+Logging.Request.Rotation.IntervalSeconds             | 0
+metrics.enabled                                      | true
+Profiling.Enabled                                    | true
+Port                                                 | 8086
+Shared.NewRelic.EnableDebugLog                       | false
+Shared.NewRelic.DistributedTracerEnabled             | true
+Logging.Application.FilePath                         | metadata-service.log
+Logging.Application.Rotation.MaxSizeMb               | 25
+Logging.Request.Rotation.MaxAgeDays                  | 365
+AccessClient.Url                                     | http://localhost:8046/access
+Shared.NewRelic.DisableErrorLog                      | true
+Logging.Application.Rotation.MaxFiles                | 10
+Logging.Application.Rotation.MaxAgeDays              | 365
+Logging.Application.Rotation.IntervalSeconds         | 0
+Logging.Request.FilePath                             | metadata-request.log
+Database.Type                                        | 5
+Keys.ReadAttempts                                    | 120
+Keys.ReadIntervalDuration                            | 1s
+Shared.NewRelic.AppName                              | 
+Logging.Request.Rotation.Compress                    | true
+AccessClient.JoinTimeout                             | 5m0s
+database.metrics.enabled                             | false
+database.metrics.maxQueriesToTrack                   | 5
+Shared.NewRelic.Enabled                              | false
+Logging.Application.Level                            | info
+
+2025-08-24T05:57:11.465Z [jfmd ] [INFO ] [                ] [router_middlewares.go:56      ] [main                ] - Metadata (jfmd) service initialization completed in 5.094 seconds. Listening on port: 8086 [router]
+2025-08-24T05:57:11.465Z [jfmd ] [INFO ] [                ] [async_converter.go:205        ] [main                ] - Starting async converter routine [async_converter] [workerNumber][1]
+2025-08-24T05:57:11.465Z [jfmd ] [INFO ] [                ] [pprof_server_unix.go:22       ] [main                ] - Starting SIGUSR2 listener for pprof server [server_manager]
+2025-08-24T06:40:46.254Z [jfmd ] [WARN ] [                ] [project_cache_handler.go:236  ] [main                ] - Unexpected project entity update type UPSERT in project key '' update [access_client]
+2025-08-24T06:40:46.255Z [jfmd ] [WARN ] [                ] [project_cache_handler.go:236  ] [main                ] - Unexpected project entity update type UPSERT in project key '' update [access_client]
+2025-08-24T07:26:25.338Z [jfmd ] [INFO ] [5714fb0404ab2aa5] [system_service.go:154         ] [main                ] - Creating support bundle [system_service]

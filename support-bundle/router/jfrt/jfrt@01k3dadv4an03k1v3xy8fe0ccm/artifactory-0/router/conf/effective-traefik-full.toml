@@ -1,0 +1,1760 @@
+- http:
+    middlewares:
+        clearRouteToHeader@externalRoutes:
+            headers:
+                customRequestHeaders:
+                    X-JFrog-Route-To: ""
+        hotPath@file:
+            plugin:
+                hotPath:
+                    enabled: "true"
+        jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-add@file:
+            addPrefix:
+                prefix: /jfconfig
+        jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /jfconfig/
+        jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /jfconnect/
+        jfevd_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /evidence/
+        jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /event/
+        jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /ui/
+        jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0-1-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /ui
+        jfmd_01k3dadr63xzjbxrqt9ej476by-artifactory-0-0-0-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /metadata/
+        jfob_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-0-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /observability/
+        jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /onemodel/
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-4-add@file:
+            addPrefix:
+                prefix: /artifactory/api/v2/release_bundle
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-4-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /lifecycle/api/v2/release_bundle
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-5-add@file:
+            addPrefix:
+                prefix: /artifactory/api/v2/release_bundle
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-5-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /lifecycle/api/v2/release_bundle/
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-6-add@file:
+            addPrefix:
+                prefix: /artifactory/api/v2/promotion
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-6-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /lifecycle/api/v2/promotion/
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-7-add@file:
+            addPrefix:
+                prefix: /artifactory/api/v2/keys
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-7-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /lifecycle/api/v2/keys/
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-8-add@file:
+            addPrefix:
+                prefix: /artifactory/api/v2/audit
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-8-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /lifecycle/api/v2/audit
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-9-add@file:
+            addPrefix:
+                prefix: /artifactory/api/v2/audit
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-9-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /lifecycle/api/v2/audit/
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-10-add@file:
+            addPrefix:
+                prefix: /artifactory/api/v1/evidence
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-10-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /lifecycle/api/v1/evidence/
+        jftpl_0000-artifactory-0-2-0-add@file:
+            addPrefix:
+                prefix: /topology/api/v1/topology
+        jftpl_0000-artifactory-0-2-0-strip@file:
+            stripPrefix:
+                forceSlash: true
+                prefixes:
+                    - /access/api/v1/topology
+        mtls@file:
+            plugin:
+                mtls:
+                    enabled: "true"
+        replace-internal-traefik@file:
+            replacePathRegex:
+                regex: ^/router/api/v1/traefik/(health|api(/.*)?)$
+                replacement: /$1
+        retryEnabledOnUnavailable@externalRoutes:
+            plugin:
+                retryEnabledOnUnavailable:
+                    attempts: "3"
+        semicolon-encoder-18443303041307913017@internal:
+            plugin:
+                querySemicolonReplacer:
+                    querySemicolonReplacer: true
+        tenantValidator@file:
+            plugin:
+                tenantValidator:
+                    enabled: "true"
+    routers:
+        jfac_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 723
+            rule: PathPrefix(`/com.jfrog.access.`)
+            service: local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jfac_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 723
+            rule: PathPrefix(`/com.jfrog.access.`)
+            service: local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jfac_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 709
+            rule: PathPrefix(`/access/`)
+            service: local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-1
+        jfac_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 709
+            rule: PathPrefix(`/access/`)
+            service: local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-1
+        jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file
+                - jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-add@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 714
+            rule: PathPrefix(`/jfconfig/`)
+            service: local-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file
+                - jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-add@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 714
+            rule: PathPrefix(`/jfconfig/`)
+            service: local-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 735
+            rule: PathPrefix(`/com.jfrog.access.v1.config.`)
+            service: local-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-1
+        jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 735
+            rule: PathPrefix(`/com.jfrog.access.v1.config.`)
+            service: local-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-1
+        jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule1-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 725
+            rule: PathPrefix(`/com.jfrog.jfconfig.`)
+            service: local-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-1
+        jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule1-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 725
+            rule: PathPrefix(`/com.jfrog.jfconfig.`)
+            service: local-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-1
+        jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 715
+            rule: PathPrefix(`/jfconnect/`)
+            service: local-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 715
+            rule: PathPrefix(`/jfconnect/`)
+            service: local-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 726
+            rule: PathPrefix(`/com.jfrog.jfconnect.`)
+            service: local-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-1
+        jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 726
+            rule: PathPrefix(`/com.jfrog.jfconnect.`)
+            service: local-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-1
+        jfevd_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfevd_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 714
+            rule: PathPrefix(`/evidence/`)
+            service: local-jfevd_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jfevd_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfevd_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 714
+            rule: PathPrefix(`/evidence/`)
+            service: local-jfevd_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 711
+            rule: PathPrefix(`/event/`)
+            service: local-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 711
+            rule: PathPrefix(`/event/`)
+            service: local-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 722
+            rule: PathPrefix(`/com.jfrog.event.`)
+            service: local-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-1
+        jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 722
+            rule: PathPrefix(`/com.jfrog.event.`)
+            service: local-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-1
+        jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 708
+            rule: PathPrefix(`/ui/`)
+            service: local-jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 708
+            rule: PathPrefix(`/ui/`)
+            service: local-jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule1-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0-1-strip@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 703
+            rule: Path(`/ui`)
+            service: local-jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule1-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0-1-strip@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 703
+            rule: Path(`/ui`)
+            service: local-jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule2-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 701
+            rule: Path(`/`)
+            service: local-jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule2-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 701
+            rule: Path(`/`)
+            service: local-jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jfmd_01k3dadr63xzjbxrqt9ej476by-artifactory-0-0-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfmd_01k3dadr63xzjbxrqt9ej476by-artifactory-0-0-0-strip@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 714
+            rule: PathPrefix(`/metadata/`)
+            service: local-jfmd_01k3dadr63xzjbxrqt9ej476by-artifactory-0-0
+        jfmd_01k3dadr63xzjbxrqt9ej476by-artifactory-0-0-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfmd_01k3dadr63xzjbxrqt9ej476by-artifactory-0-0-0-strip@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 714
+            rule: PathPrefix(`/metadata/`)
+            service: local-jfmd_01k3dadr63xzjbxrqt9ej476by-artifactory-0-0
+        jfob_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfob_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-0-strip@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 719
+            rule: PathPrefix(`/observability/`)
+            service: local-jfob_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfob_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfob_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-0-strip@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 719
+            rule: PathPrefix(`/observability/`)
+            service: local-jfob_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 714
+            rule: PathPrefix(`/onemodel/`)
+            service: local-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-0-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-0-0-strip@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 714
+            rule: PathPrefix(`/onemodel/`)
+            service: local-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-0
+        jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 733
+            rule: PathPrefix(`/com.jfrog.onemodelregistry.`)
+            service: local-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-1
+        jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-1-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 733
+            rule: PathPrefix(`/com.jfrog.onemodelregistry.`)
+            service: local-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-1
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 712
+            rule: Path(`/artifactory`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 712
+            rule: Path(`/artifactory`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule1-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 717
+            rule: PathPrefix(`/artifactory/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule1-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 717
+            rule: PathPrefix(`/artifactory/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule2-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 708
+            rule: PathPrefix(`/v2/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule2-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 708
+            rule: PathPrefix(`/v2/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule3-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 727
+            rule: Path(`/.well-known/terraform.json`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule3-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 727
+            rule: Path(`/.well-known/terraform.json`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule4-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-4-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-4-add@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 732
+            rule: Path(`/lifecycle/api/v2/release_bundle`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule4-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-4-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-4-add@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 732
+            rule: Path(`/lifecycle/api/v2/release_bundle`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule5-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-5-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-5-add@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 737
+            rule: PathPrefix(`/lifecycle/api/v2/release_bundle/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule5-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-5-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-5-add@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 737
+            rule: PathPrefix(`/lifecycle/api/v2/release_bundle/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule6-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-6-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-6-add@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 732
+            rule: PathPrefix(`/lifecycle/api/v2/promotion/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule6-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-6-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-6-add@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 732
+            rule: PathPrefix(`/lifecycle/api/v2/promotion/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule7-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-7-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-7-add@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 727
+            rule: PathPrefix(`/lifecycle/api/v2/keys/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule7-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-7-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-7-add@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 727
+            rule: PathPrefix(`/lifecycle/api/v2/keys/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule8-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-8-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-8-add@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 723
+            rule: Path(`/lifecycle/api/v2/audit`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule8-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-8-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-8-add@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 723
+            rule: Path(`/lifecycle/api/v2/audit`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule9-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-9-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-9-add@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 728
+            rule: PathPrefix(`/lifecycle/api/v2/audit/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule9-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-9-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-9-add@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 728
+            rule: PathPrefix(`/lifecycle/api/v2/audit/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule10-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-10-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-10-add@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 731
+            rule: PathPrefix(`/lifecycle/api/v1/evidence/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-rule10-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-10-strip@file
+                - jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0-10-add@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 731
+            rule: PathPrefix(`/lifecycle/api/v1/evidence/`)
+            service: local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0
+        jftpl_0000-artifactory-0-0-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 711
+            rule: PathPrefix(`/topology/`)
+            service: local-jftpl_0000-artifactory-0-0
+        jftpl_0000-artifactory-0-0-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 711
+            rule: PathPrefix(`/topology/`)
+            service: local-jftpl_0000-artifactory-0-0
+        jftpl_0000-artifactory-0-1-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 725
+            rule: PathPrefix(`/com.jfrog.topology.`)
+            service: local-jftpl_0000-artifactory-0-1
+        jftpl_0000-artifactory-0-1-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 725
+            rule: PathPrefix(`/com.jfrog.topology.`)
+            service: local-jftpl_0000-artifactory-0-1
+        jftpl_0000-artifactory-0-2-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - jftpl_0000-artifactory-0-2-0-strip@file
+                - jftpl_0000-artifactory-0-2-0-add@file
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 722
+            rule: Path(`/access/api/v1/topology`)
+            service: local-jftpl_0000-artifactory-0-2
+        jftpl_0000-artifactory-0-2-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - jftpl_0000-artifactory-0-2-0-strip@file
+                - jftpl_0000-artifactory-0-2-0-add@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 722
+            rule: Path(`/access/api/v1/topology`)
+            service: local-jftpl_0000-artifactory-0-2
+        jftpl_0000-artifactory-0-3-rule0-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 744
+            rule: PathPrefix(`/com.jfrog.access.v1.serviceregistry.`)
+            service: local-jftpl_0000-artifactory-0-3
+        jftpl_0000-artifactory-0-3-rule0-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 744
+            rule: PathPrefix(`/com.jfrog.access.v1.serviceregistry.`)
+            service: local-jftpl_0000-artifactory-0-3
+        ping@internal:
+            entryPoints:
+                - api
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 9223372036854775807
+            rule: PathPrefix(`/ping`)
+            service: ping@internal
+        router-blackhole-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 1000
+            rule: HeadersRegexp(`X-JFrog-Route-To`,`.*`)
+            service: blackhole
+        router-blackhole-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 1000
+            rule: HeadersRegexp(`X-JFrog-Route-To`,`.*`)
+            service: blackhole
+        router-grpc@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 3000
+            rule: PathPrefix(`/com.jfrog.router.`)
+            service: router-grpc
+        router-rest-external@file:
+            entryPoints:
+                - external
+            middlewares:
+                - hotPath@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 9999
+            rule: Path(`/router/api/v1/system/{path:(ping|health|liveness|readiness)}`) || Path(`/router/api/v1/metrics`)
+            service: router-rest
+        router-rest-internal-traefik@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - replace-internal-traefik@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 3500
+            rule: Path(`/router/api/v1/traefik/{endpoint:health|api}`,`/router/api/v1/traefik/api/{endpoint:.*}`)
+            service: router-rest
+        router-rest-internal@file:
+            entryPoints:
+                - internal
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 3000
+            rule: PathPrefix(`/router/`)
+            service: router-rest
+        ? rule-route-to-jfac_01k3dadp7e688m028tztv9160g-/com\.jfrog\.access\..*-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2023
+            rule: Path(`/{part0:com\.jfrog\.access\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfac_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfac_01k3dadp7e688m028tztv9160g-/com\.jfrog\.access\..*-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2023
+            rule: Path(`/{part0:com\.jfrog\.access\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfac_01k3dadp7e688m028tztv9160g-artifactory-0
+        rule-route-to-jfac_01k3dadp7e688m028tztv9160g-access/.*-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes:
+            entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2009
+            rule: Path(`/{part0:access}/{part1:.*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfac_01k3dadp7e688m028tztv9160g-artifactory-0
+        rule-route-to-jfac_01k3dadp7e688m028tztv9160g-access/.*-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes:
+            entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2009
+            rule: Path(`/{part0:access}/{part1:.*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfac_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfcfg_01k3dadp7e688m028tztv9160g-/com\.jfrog\.access\.v1\.config\..*-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2035
+            rule: Path(`/{part0:com\.jfrog\.access\.v1\.config\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfcfg_01k3dadp7e688m028tztv9160g-/com\.jfrog\.access\.v1\.config\..*-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2035
+            rule: Path(`/{part0:com\.jfrog\.access\.v1\.config\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfcfg_01k3dadp7e688m028tztv9160g-/com\.jfrog\.jfconfig\..*-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2025
+            rule: Path(`/{part0:com\.jfrog\.jfconfig\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfcfg_01k3dadp7e688m028tztv9160g-/com\.jfrog\.jfconfig\..*-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2025
+            rule: Path(`/{part0:com\.jfrog\.jfconfig\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfcfg_01k3dadp7e688m028tztv9160g-/jfconfig/(.*)-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2014
+            rule: Path(`/{part0:jfconfig}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfcfg_01k3dadp7e688m028tztv9160g-/jfconfig/(.*)-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2014
+            rule: Path(`/{part0:jfconfig}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfcon_01k3dadp7e688m028tztv9160g-/com\.jfrog\.jfconnect\..*-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2026
+            rule: Path(`/{part0:com\.jfrog\.jfconnect\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfcon_01k3dadp7e688m028tztv9160g-/com\.jfrog\.jfconnect\..*-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2026
+            rule: Path(`/{part0:com\.jfrog\.jfconnect\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfcon_01k3dadp7e688m028tztv9160g-/jfconnect/(.*)-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2015
+            rule: Path(`/{part0:jfconnect}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfcon_01k3dadp7e688m028tztv9160g-/jfconnect/(.*)-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2015
+            rule: Path(`/{part0:jfconnect}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfevd_01k3dadp7e688m028tztv9160g-/evidence/(.*)-jfevd_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2014
+            rule: Path(`/{part0:evidence}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfevd_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfevd_01k3dadp7e688m028tztv9160g-/evidence/(.*)-jfevd_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2014
+            rule: Path(`/{part0:evidence}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfevd_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfevt_01k3dadp7e688m028tztv9160g-/com\.jfrog\.event\..*-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2022
+            rule: Path(`/{part0:com\.jfrog\.event\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfevt_01k3dadp7e688m028tztv9160g-/com\.jfrog\.event\..*-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2022
+            rule: Path(`/{part0:com\.jfrog\.event\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfevt_01k3dadp7e688m028tztv9160g-/event/(.*)-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2011
+            rule: Path(`/{part0:event}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfevt_01k3dadp7e688m028tztv9160g-/event/(.*)-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2011
+            rule: Path(`/{part0:event}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0
+        rule-route-to-jffe_01k3dadp7e688m028tztv9160g-/-jffe_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes:
+            entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2001
+            rule: Path(`/`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jffe_01k3dadp7e688m028tztv9160g-artifactory-0
+        rule-route-to-jffe_01k3dadp7e688m028tztv9160g-/-jffe_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes:
+            entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2001
+            rule: Path(`/`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jffe_01k3dadp7e688m028tztv9160g-artifactory-0
+        rule-route-to-jffe_01k3dadp7e688m028tztv9160g-/ui-jffe_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes:
+            entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2003
+            rule: Path(`/{part0:ui}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jffe_01k3dadp7e688m028tztv9160g-artifactory-0
+        rule-route-to-jffe_01k3dadp7e688m028tztv9160g-/ui-jffe_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes:
+            entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2003
+            rule: Path(`/{part0:ui}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jffe_01k3dadp7e688m028tztv9160g-artifactory-0
+        rule-route-to-jffe_01k3dadp7e688m028tztv9160g-/ui/(.*)-jffe_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes:
+            entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2008
+            rule: Path(`/{part0:ui}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jffe_01k3dadp7e688m028tztv9160g-artifactory-0
+        rule-route-to-jffe_01k3dadp7e688m028tztv9160g-/ui/(.*)-jffe_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes:
+            entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2008
+            rule: Path(`/{part0:ui}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jffe_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfmd_01k3dadr63xzjbxrqt9ej476by-/metadata/(.*)-jfmd_01k3dadr63xzjbxrqt9ej476by-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2014
+            rule: Path(`/{part0:metadata}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfmd_01k3dadr63xzjbxrqt9ej476by-artifactory-0
+        ? rule-route-to-jfmd_01k3dadr63xzjbxrqt9ej476by-/metadata/(.*)-jfmd_01k3dadr63xzjbxrqt9ej476by-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2014
+            rule: Path(`/{part0:metadata}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfmd_01k3dadr63xzjbxrqt9ej476by-artifactory-0
+        ? rule-route-to-jfob_01k3dadv4an03k1v3xy8fe0ccm-/observability/(.*)-jfob_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2019
+            rule: Path(`/{part0:observability}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfob_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfob_01k3dadv4an03k1v3xy8fe0ccm-/observability/(.*)-jfob_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2019
+            rule: Path(`/{part0:observability}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfob_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfomr_01k3dadp7e688m028tztv9160g-/com\.jfrog\.onemodelregistry\..*-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2033
+            rule: Path(`/{part0:com\.jfrog\.onemodelregistry\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfomr_01k3dadp7e688m028tztv9160g-/com\.jfrog\.onemodelregistry\..*-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2033
+            rule: Path(`/{part0:com\.jfrog\.onemodelregistry\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfomr_01k3dadp7e688m028tztv9160g-/onemodel/(.*)-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2014
+            rule: Path(`/{part0:onemodel}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfomr_01k3dadp7e688m028tztv9160g-/onemodel/(.*)-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2014
+            rule: Path(`/{part0:onemodel}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/.well-known/terraform.json-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2027
+            rule: Path(`/{part0:.well-known}/{part1:terraform.json}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/.well-known/terraform.json-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2027
+            rule: Path(`/{part0:.well-known}/{part1:terraform.json}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/artifactory-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-external@externalRoutes:
+            entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2012
+            rule: Path(`/{part0:artifactory}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/artifactory-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-internal@externalRoutes:
+            entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2012
+            rule: Path(`/{part0:artifactory}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/artifactory/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2017
+            rule: Path(`/{part0:artifactory}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/artifactory/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2017
+            rule: Path(`/{part0:artifactory}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v1/evidence/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2031
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v1}/{part3:evidence}/{part4:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v1/evidence/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2031
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v1}/{part3:evidence}/{part4:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v2/audit-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2023
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v2}/{part3:audit}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v2/audit-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2023
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v2}/{part3:audit}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v2/audit/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2028
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v2}/{part3:audit}/{part4:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v2/audit/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2028
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v2}/{part3:audit}/{part4:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v2/keys/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2027
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v2}/{part3:keys}/{part4:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v2/keys/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2027
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v2}/{part3:keys}/{part4:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v2/promotion/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2032
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v2}/{part3:promotion}/{part4:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v2/promotion/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2032
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v2}/{part3:promotion}/{part4:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v2/release_bundle-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2032
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v2}/{part3:release_bundle}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v2/release_bundle-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2032
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v2}/{part3:release_bundle}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v2/release_bundle/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2037
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v2}/{part3:release_bundle}/{part4:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/lifecycle/api/v2/release_bundle/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2037
+            rule: Path(`/{part0:lifecycle}/{part1:api}/{part2:v2}/{part3:release_bundle}/{part4:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/v2/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-external@externalRoutes:
+            entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2008
+            rule: Path(`/{part0:v2}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        rule-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-/v2/(.*)-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-internal@externalRoutes:
+            entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2008
+            rule: Path(`/{part0:v2}/{part1:(.*)}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0
+        ? rule-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-/com\.jfrog\.access\.v1\.serviceregistry\..*-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2044
+            rule: Path(`/{part0:com\.jfrog\.access\.v1\.serviceregistry\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0
+        ? rule-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-/com\.jfrog\.access\.v1\.serviceregistry\..*-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2044
+            rule: Path(`/{part0:com\.jfrog\.access\.v1\.serviceregistry\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0
+        ? rule-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-/com\.jfrog\.topology\..*-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2025
+            rule: Path(`/{part0:com\.jfrog\.topology\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0
+        ? rule-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-/com\.jfrog\.topology\..*-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2025
+            rule: Path(`/{part0:com\.jfrog\.topology\..*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0
+        ? rule-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-access/api/v1/topology-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2022
+            rule: Path(`/{part0:access}/{part1:api}/{part2:v1}/{part3:topology}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0
+        ? rule-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-access/api/v1/topology-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2022
+            rule: Path(`/{part0:access}/{part1:api}/{part2:v1}/{part3:topology}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0
+        ? rule-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-topology/.*-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0-external@externalRoutes
+        :   entryPoints:
+                - external
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - hotPath@file
+                - mtls@file
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2011
+            rule: Path(`/{part0:topology}/{part1:.*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0
+        ? rule-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-topology/.*-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0-internal@externalRoutes
+        :   entryPoints:
+                - internal
+            middlewares:
+                - clearRouteToHeader@externalRoutes
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 2011
+            rule: Path(`/{part0:topology}/{part1:.*}`) && Headers(`X-JFrog-Route-To`,`artifactory-0`)
+            service: node-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0
+        traefik-api-internal@file:
+            entryPoints:
+                - api
+            middlewares:
+                - semicolon-encoder-18443303041307913017@internal
+            priority: 500
+            rule: PathPrefix(`/api`) || PathPrefix(`/router/`) || PathPrefix(`/debug/`)
+            service: api@internal
+    serversTransports:
+        default@internal:
+            maxIdleConnsPerHost: 200
+            rootCAs:
+                - /opt/jfrog/router/var/data/router/keys/trusted/access-root-ca.crt
+        externalService@externalRoutes:
+            forwardingTimeouts:
+                dialTimeout: 30s
+                idleConnTimeout: 1m30s
+                pingTimeout: 1s
+                readIdleTimeout: 10s
+            rootCAs:
+                - /opt/jfrog/router/var/data/router/keys/trusted/access-root-ca.crt
+        multiTenantTransport@externalRoutes:
+            forwardingTimeouts:
+                dialTimeout: 30s
+                idleConnTimeout: 5s
+                pingTimeout: 1s
+                readIdleTimeout: 10s
+            insecureSkipVerify: true
+    services:
+        api@internal: {}
+        blackhole@file:
+            loadBalancer:
+                passHostHeader: false
+        local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-0@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://localhost:8045
+        local-jfac_01k3dadp7e688m028tztv9160g-artifactory-0-1@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: http://localhost:8040
+        local-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-0@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: http://localhost:8010
+        local-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0-1@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://localhost:8011
+        local-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-0@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: http://localhost:8030
+        local-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0-1@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://localhost:8035
+        local-jfevd_01k3dadp7e688m028tztv9160g-artifactory-0-0@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: http://localhost:8051
+        local-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-0@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: http://localhost:8061
+        local-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0-1@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://localhost:8062
+        local-jffe_01k3dadp7e688m028tztv9160g-artifactory-0-0@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: http://localhost:8070
+        local-jfmd_01k3dadr63xzjbxrqt9ej476by-artifactory-0-0@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: http://localhost:8086
+        local-jfob_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: http://localhost:8036
+        local-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-0@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: http://localhost:8071
+        local-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0-1@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://localhost:8072
+        local-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0-0@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: http://localhost:8081
+        local-jftpl_0000-artifactory-0-0@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: http://localhost:8020
+        local-jftpl_0000-artifactory-0-1@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://localhost:8021
+        local-jftpl_0000-artifactory-0-2@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: http://localhost:8020
+        local-jftpl_0000-artifactory-0-3@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://localhost:8021
+        node-route-to-jfac_01k3dadp7e688m028tztv9160g-artifactory-0@externalRoutes:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://10.1.0.7:8082
+                serversTransport: externalService@externalRoutes
+        node-route-to-jfcfg_01k3dadp7e688m028tztv9160g-artifactory-0@externalRoutes:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://10.1.0.7:8082
+                serversTransport: externalService@externalRoutes
+        node-route-to-jfcon_01k3dadp7e688m028tztv9160g-artifactory-0@externalRoutes:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://10.1.0.7:8082
+                serversTransport: externalService@externalRoutes
+        node-route-to-jfevd_01k3dadp7e688m028tztv9160g-artifactory-0@externalRoutes:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://10.1.0.7:8082
+                serversTransport: externalService@externalRoutes
+        node-route-to-jfevt_01k3dadp7e688m028tztv9160g-artifactory-0@externalRoutes:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://10.1.0.7:8082
+                serversTransport: externalService@externalRoutes
+        node-route-to-jffe_01k3dadp7e688m028tztv9160g-artifactory-0@externalRoutes:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://10.1.0.7:8082
+                serversTransport: externalService@externalRoutes
+        node-route-to-jfmd_01k3dadr63xzjbxrqt9ej476by-artifactory-0@externalRoutes:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://10.1.0.7:8082
+                serversTransport: externalService@externalRoutes
+        node-route-to-jfob_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0@externalRoutes:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://10.1.0.7:8082
+                serversTransport: externalService@externalRoutes
+        node-route-to-jfomr_01k3dadp7e688m028tztv9160g-artifactory-0@externalRoutes:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://10.1.0.7:8082
+                serversTransport: externalService@externalRoutes
+        node-route-to-jfrt_01k3dadv4an03k1v3xy8fe0ccm-artifactory-0@externalRoutes:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://10.1.0.7:8082
+                serversTransport: externalService@externalRoutes
+        node-route-to-jftpl_01k3dacmf6vjpv0na12khv0zcm-artifactory-0@externalRoutes:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://10.1.0.7:8082
+                serversTransport: externalService@externalRoutes
+        noop@internal: {}
+        ping@internal: {}
+        router-grpc@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: h2c://localhost:8047
+        router-rest@file:
+            loadBalancer:
+                passHostHeader: false
+                servers:
+                    - url: http://localhost:8049
+  tcp: {}
+  tls:
+    options:
+        default:
+            sniStrict: true
+    stores:
+        acme-tls/1: {}
+        default: {}
+  udp: {}
+- accessLog:
+    fields:
+        defaultMode: drop
+        headers:
+            defaultMode: drop
+            names:
+                Uber-Trace-Id: keep
+                User-Agent: keep
+                X-B3-Traceid: keep
+        names:
+            clientaddr: keep
+            downstreamcontentsize: keep
+            downstreamstatus: keep
+            duration: keep
+            requestmethod: keep
+            requestpath: keep
+            serviceaddr: keep
+            startutc: keep
+    format: json
+  api: {}
+  entryPoints:
+    api:
+        address: localhost:8049
+        forwardedHeaders:
+            insecure: true
+        http2:
+            maxConcurrentStreams: 250
+        transport:
+            lifeCycle:
+                graceTimeOut: 10s
+                requestAcceptGraceTimeout: 10s
+            respondingTimeouts:
+                idleTimeout: 3m0s
+    external:
+        address: :8082
+        forwardedHeaders:
+            insecure: true
+        http2:
+            maxConcurrentStreams: 500
+        transport:
+            lifeCycle:
+                graceTimeOut: 10s
+            respondingTimeouts:
+                idleTimeout: 3m0s
+    internal:
+        address: localhost:8046
+        forwardedHeaders:
+            insecure: true
+        http2:
+            maxConcurrentStreams: 500
+        transport:
+            lifeCycle:
+                graceTimeOut: 10s
+                requestAcceptGraceTimeout: 10s
+            respondingTimeouts:
+                idleTimeout: 3m0s
+  global: {}
+  ping:
+    entryPoint: api
+  providers:
+    file:
+        directory: /opt/jfrog/router/var/data/router/traefik/routes
+        watch: true
+    providersThrottleDuration: 2s
+  serversTransport:
+    maxIdleConnsPerHost: 200
+    rootCAs:
+        - /opt/jfrog/router/var/data/router/keys/trusted/access-root-ca.crt
+  tracing:
+    jaeger:
+        propagation: jaeger
+        samplingType: const
+        traceContextHeaderName: uber-trace-id
+    serviceName: jfrog-router

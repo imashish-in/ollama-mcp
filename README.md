@@ -291,7 +291,7 @@ Each builtin server entry requires:
     - `artifactory_get_users`: Get list of all users
     - `artifactory_create_user`: Create new users with configurable permissions
     - `artifactory_get_repository_sizes`: Get size information for all repositories
-    - `artifactory_manage_permission_group`: Create or update permission groups with users, permissions, and repository access
+    
     - `artifactory_create_repository`: Create new repositories (LOCAL, REMOTE, VIRTUAL) with configurable settings
   - **Configuration Options**:
     - `base_url`: Artifactory instance URL (defaults to `http://localhost`)
@@ -422,7 +422,7 @@ The Artifactory builtin server provides comprehensive management of JFrog Artifa
      mcphost -p "Get the size information for all repositories in my local Artifactory instance"
      ```
 
-6. **Permission Group Management** (`artifactory_manage_permission_group`)
+
    - **Endpoints**: 
      - `/artifactory/api/security/groups/{groupName}` (create/update group)
      - `/artifactory/api/security/permissions/{permissionName}` (create/update permission)
@@ -631,6 +631,8 @@ Start an interactive conversation session:
 ```bash
 mcphost
 ```
+
+
 
 ### Script Mode
 

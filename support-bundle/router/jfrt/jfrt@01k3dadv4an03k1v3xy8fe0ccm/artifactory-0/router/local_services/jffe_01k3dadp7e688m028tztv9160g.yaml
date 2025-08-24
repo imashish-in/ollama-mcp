@@ -1,0 +1,19 @@
+endpoints:
+    - excludedpaths: []
+      paths:
+        - match: /ui/(.*)
+          replace: /$1
+        - match: /ui
+          replace: /
+        - match: /
+          replace: ""
+      port: 8070
+      protocol: 1
+healthcheckendpoint:
+    path: /readiness
+    port: 8070
+nodeid: artifactory-0
+nodestatusendpoint: null
+revision: ""
+serviceid: jffe@01k3dadp7e688m028tztv9160g
+version: ""
